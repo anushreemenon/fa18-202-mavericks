@@ -1,8 +1,8 @@
 
 Week 1: (11/4 to 11/10)
 What tasks did I work on / complete?
-- Browsed through various games available on the internet. Found out some demos (https://www.youtube.com/watch?v=XP1riBB3XNE) and suggested a list of 4 games for brainstorming: duck-hunt, pong, donkey kong and the highway-crossing.
-Finalized on the "crossy read" which is based on the similar concepts of the highway-crossing game
+- Browsed through various games available on the internet. 
+- Finalized on the "crossy read" which is based on the similar concepts of the highway-crossing game
 - Identified the possible design patterns beyond the 12 design patterns that can be applied to these scenarios
 Started with implementing a basic proof of concept for changing terrains in Greenfoot.
 
