@@ -4,7 +4,7 @@ What tasks did I work on / complete?
 - Browsed through various games available on the internet. 
 - Finalized on the "crossy road" which is based on the similar concepts of the highway-crossing game
 - Identified the possible design patterns beyond the 12 design patterns that can be applied to these scenarios
-Started with implementing a basic proof of concept for changing terrains in Greenfoot.
+- Started with implementing a basic proof of concept for changing terrains in Greenfoot.
 
 I chose "Courage" and as a part of this XP value, I made certain suggestions:
 
