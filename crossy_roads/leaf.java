@@ -1,6 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-
+// leaf class in the composite pattern. All the leafs will extend this class
 public class leaf extends Actor implements Component {
     
     

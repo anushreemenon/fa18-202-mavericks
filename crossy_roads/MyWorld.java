@@ -18,7 +18,8 @@ public class MyWorld extends greenfoot.World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
 
-        // Ensure that player is on top of everything else
+        // Ensure that player is on top of everything else. This order needs to 
+        // be revisited once all the terrains are set up
         setPaintOrder(player.class, log.class, car.class, car_blue.class, road.class);
         
         composite terrains = new composite() ;
@@ -28,6 +29,7 @@ public class MyWorld extends greenfoot.World
         rail_terrain rail_t = new rail_terrain() ;
         land_terrain land_t = new land_terrain() ;
         
+        // set up hierarchy for road terrain
         road rd = new road() ;
         car_blue car1 = new car_blue() ;
         car car2 = new car() ;
@@ -41,7 +43,7 @@ public class MyWorld extends greenfoot.World
         terrains.addChild( rail_t );
         terrains.addChild( land_t );
 
-        // Add the life counter to the World
+        // Add the road image to the World
         addObject (rd, 67, 25);
        
     }
