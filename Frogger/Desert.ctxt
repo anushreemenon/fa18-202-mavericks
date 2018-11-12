@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.target=Desert
+comment0.text=\n\ Controller\ Class.\ Owns\ and\ coordinates\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=Desert()
+comment1.text=\n\ \ \ \ Constructor\ for\ objects\ of\ class\ Desert.\n\n\ \ \ \ Once\ upon\ a\ time\ there\ was\ a\ comp\ sci\ class\n\ \ \ \ that\ was\ wondering\ why\ their\ teacher\ was\ typing\n\ \ \ \ random\ comments\ during\ a\ lesson.\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\n\ The\ Act\ method\ is\ responsible\ for\:\n\ \ \ \ \ \ loading\ new\ levels\ and\ death\ screens\n\ \ \ \ \ \ Triggering\ scoreboard\ and\ end\ the\ game\n\ \ \ \ \ \ Spawning\ cars\n
+comment3.params=
+comment3.target=void\ levelLoader()
+comment4.params=
+comment4.target=void\ spawnCars()
+comment4.text=\n\ Controlled\ spawning\ of\ new\ cars\n
+comment5.params=win
+comment5.target=void\ endLevel(boolean)
+comment5.text=\n\ This\ method\ gets\ called\ when\ the\ player\ dies\ or\ finishes\ a\ level\n\ \n\ True\ \=\ player\ completed\ level\n\ False\ \=\ player\ died\n
+comment6.params=
+comment6.target=boolean\ isActionPaused()
+comment6.text=\n\ Returns\ whether\ the\ current\ gamestate\ is\ paused\ (true)\ or\ not\ (false)\n
+comment7.params=byHowMany
+comment7.target=void\ reduceAutoCount(int)
+comment7.text=\n\ Allows\ objects\ to\ inform\ this\ controller\ when\ they\ are\ about\ to\ \n\ remove\ themselves\ from\ the\ world.\n
+numComments=8

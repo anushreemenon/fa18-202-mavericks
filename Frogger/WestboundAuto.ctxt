@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=WestboundAuto
+comment0.text=\n\ West-bound\ cars\ -\ \n
+comment1.params=speed
+comment1.target=WestboundAuto(int)
+comment2.params=w
+comment2.target=void\ addedToWorld(greenfoot.World)
+comment3.params=
+comment3.target=void\ act()
+comment3.text=\n\ Act\ serves\ to\ check\ for\ cars\ in\ front\ and\ adjust\ speed\ when\ necessary.\ Also\ removes\n\ this\ object\ when\ it\ reaches\ the\ edge\ of\ the\ screen.\n
+comment4.params=
+comment4.target=boolean\ atWorldEdge()
+comment4.text=\n\ Returns\ true\ if\ at\ the\ edge\ of\ the\ world\ and\ in\ need\ of\n\ self-removal\n
+comment5.params=
+comment5.target=int\ getSpeed()
+comment5.text=\n\ Allows\ other\ cars\ to\ see\ how\ fast\ I\ am\ moving.\ Returns\ speed\ in\ pixels-per-act\n
+numComments=6

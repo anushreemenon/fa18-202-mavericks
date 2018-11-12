@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=EastboundAuto
+comment0.text=\n\ Write\ a\ description\ of\ class\ Car\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=speed
+comment1.target=EastboundAuto(int)
+comment2.params=w
+comment2.target=void\ addedToWorld(greenfoot.World)
+comment3.params=
+comment3.target=void\ act()
+comment4.params=
+comment4.target=boolean\ atWorldEdge()
+comment5.params=
+comment5.target=int\ getSpeed()
+numComments=6
