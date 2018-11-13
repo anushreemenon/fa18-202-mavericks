@@ -13,38 +13,44 @@ public class MyWorld extends greenfoot.World
      * Constructor for objects of class MyWorld.
      * 
      */
+    
+    private Level1Strategy currentLevel;
+    private int currentScore;
+    private int noOfCoinsCollected;
+    private int currentNoOfLives;
+    
+    static final int DEFAULT_MAX_LIVES = 3;
+    static final int DEFAULT_MAX_LEVELS = 3;
+ 
+    
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
+        
+        currentLevel = new Level1Strategy();
+        
+        addObject(currentLevel,67,25);
+        
+        //addObject(currentLevel,67,25);
+        
+        currentLevel.LoadTerrains();
+        
+        
+        
+        
 
         // Ensure that player is on top of everything else. This order needs to 
         // be revisited once all the terrains are set up
-        setPaintOrder(player.class, log.class, car.class, car_blue.class, road.class);
+        //setPaintOrder(player.class, log.class, car.class, car_blue.class, road.class);
         
-        composite terrains = new composite() ;
         
-        road_terrain road_t = new road_terrain() ;
-        river_terrain river_t = new river_terrain() ;
-        rail_terrain rail_t = new rail_terrain() ;
-        land_terrain land_t = new land_terrain() ;
+        //composite terrains = new composite() ;
         
-        // set up hierarchy for road terrain
-        road rd = new road() ;
-        car_blue car1 = new car_blue() ;
-        car car2 = new car() ;
-        road_t.addChild( rd ) ;
-        road_t.addChild( car1 ) ;
-        road_t.addChild( car2 ) ;
 
-
-        terrains.addChild( road_t );
-        terrains.addChild( river_t );
-        terrains.addChild( rail_t );
-        terrains.addChild( land_t );
 
         // Add the road image to the World
-        addObject (rd, 67, 25);
+        //addObject (rd, 67, 25);
        
     }
 }
