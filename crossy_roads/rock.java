@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class rock extends leaf
+public class Rock extends Leaf
 {
     /**
      * Act - do whatever the rock wants to do. This method is called whenever

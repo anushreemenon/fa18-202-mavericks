@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class land extends leaf
+public class Land extends Leaf
 {
     /**
      * Act - do whatever the land wants to do. This method is called whenever

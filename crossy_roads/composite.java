@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 import java.util.ArrayList;
 // Composite class in the composite pattern. All the terrains will extend this class
-public class composite extends Actor implements Component {
+public class Composite extends Actor implements Component {
 
     protected ArrayList<Component> components = new ArrayList<Component>()  ;
     
@@ -16,18 +16,17 @@ public class composite extends Actor implements Component {
         // Add your action code here.
     }    
     
-    public composite ()
+    public Composite ()
     {
        
     }
     
-    public composite ( String d )
+    public Composite ( String d )
     {
        
         
     }
     
-   
 
     public void addChild(Component c) {
         components.add( c ) ;
@@ -43,9 +42,9 @@ public class composite extends Actor implements Component {
     
     public void display(){
         // add implementation below
-        // for (Component obj  : components)
-        // {
-        //     obj.display();
-        // }
+         for (Component obj  : components)
+         {
+             obj.display();
+         }
     }
 }

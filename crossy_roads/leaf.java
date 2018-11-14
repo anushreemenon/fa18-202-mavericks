@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 // leaf class in the composite pattern. All the leafs will extend this class
-public class leaf extends Actor implements Component {
+public class Leaf extends Actor implements Component {
     
     
     /**
@@ -12,10 +12,10 @@ public class leaf extends Actor implements Component {
     {
         // Add your action code here.
     }
-    public leaf() {
+    public Leaf() {
         
     }
-    public leaf (String d) 
+    public Leaf (String d) 
     {
        
     }
