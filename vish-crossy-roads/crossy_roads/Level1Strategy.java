@@ -107,9 +107,9 @@ public class Level1Strategy extends Actor implements LevelStrategy{
       car6Img = car6.getImage();
       car6Img.scale(70,30);
       
-      myWorld.addObject( rd1, 0, 600 );
-      myWorld.addObject( rd2, 0, 500 );
-      myWorld.addObject( rd3, 0, 400 );
+      //myWorld.addObject( rd1, 0, 600 );
+      //myWorld.addObject( rd2, 0, 500 );
+      //myWorld.addObject( rd3, 0, 400 );
       myWorld.addObject( roadTerrain, 0, 400 );
      /*
       myWorld.addObject( car1, 1200, 625);
