@@ -24,12 +24,15 @@ public class RoadTerrain extends Composite {
         
         createRoads();
 
-        if (count%50 == 0) {
+        if (count%100 == 0) {
             car = getCar();
             actualCar = (Actor)car;
             myWorld.addObject(actualCar,1200,y);
             cars.add(car);
-            y -= 50;
+            if (y < 375)
+                y = 625;
+            else
+                y -=50;
 
         }
 
@@ -52,9 +55,7 @@ public class RoadTerrain extends Composite {
     public Component getCar() {
 
         Component car;
-
-        int carCounter = 1;
-        
+        int carCounter = 1;    
         while (carCounter < 3)
               carCounter = Greenfoot.getRandomNumber(9);
 
