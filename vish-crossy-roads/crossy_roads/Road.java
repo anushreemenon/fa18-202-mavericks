@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class River extends Leaf
+public class Road extends Leaf
 {
     /**
      * Act - do whatever the river wants to do. This method is called whenever
@@ -20,11 +20,10 @@ public class River extends Leaf
     public void display() {
         
        // addObject(this, 67, 25);
-       /*
+       
        World myWorld = getWorld();
        if (myWorld != null)
             myWorld.addObject(this,67,25);
-       */
         
     }
     

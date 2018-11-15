@@ -22,7 +22,7 @@ public class Log extends Leaf
         int worldY = world.getHeight();
         int pos = 0;
         if (getX() == 0)
-            pos = 600;
+            pos = 1200;
         else
             pos = 0;
             
