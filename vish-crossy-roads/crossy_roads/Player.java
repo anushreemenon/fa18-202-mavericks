@@ -12,29 +12,60 @@ public class Player extends Leaf
      * Act - do whatever the player wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    private int speed = 2; //movement speed  
+    private int vSpeed = 0; //vertical speed  
+    private int acceleration = 2; //gravity effect while falling  
+    private int jumpStrength = -8; 
     public void act() 
     {
         checkKeys();
     }  
-    
-    private void checkKeys()
+
+     public void checkKeys()
     {
-            if (Greenfoot.isKeyDown("up"))
-            {
-                setLocation (getX(), getY() - 10);
-            }
-            if (Greenfoot.isKeyDown("down"))
-            {
-                setLocation (getX(), getY() + 10);
-            }
-            if (Greenfoot.isKeyDown("left"))
-            {
-                setLocation (getX() - 10, getY());
-            }
-            if (Greenfoot.isKeyDown("right"))
-            {
-                setLocation (getX()  + 10, getY());
-            }
+        if( Greenfoot.isKeyDown("left"))
+        {
+            move(-5);
+        }
+        if(Greenfoot.isKeyDown("right"))
+        {
+            move(5);
+        }
+        if(Greenfoot.isKeyDown("up")) 
+        { 
+            jump("up");
+        }
+        if(Greenfoot.isKeyDown("down")) 
+        {
+           jump("down");
+        }
+
     }
+    
+    public void jump(String keyEvent)  
+    {  
+       
+            vSpeed = jumpStrength;  
+            if(keyEvent.equals("up"))
+            fall();   
+            else
+            fallDown();
+    }
+   
+    
+    public void fall()  
+    {  
+        setLocation(getX(), getY()+vSpeed);  
+        vSpeed = vSpeed + acceleration;  
+    }
+    public void fallDown()  
+    {  
+        setLocation(getX(), getY()-vSpeed);  
+        vSpeed = vSpeed - acceleration;  
+    }
+    
+
+
+    
 }
 

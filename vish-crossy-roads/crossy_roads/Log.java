@@ -18,7 +18,7 @@ public class Log extends Leaf
         World world = getWorld();
         // Add your action code here.
         int worldX = world.getWidth();
-        System.out.println("getX = " + getX());
+        
         int worldY = world.getHeight();
         int pos = 0;
         if (getX() == 0)
