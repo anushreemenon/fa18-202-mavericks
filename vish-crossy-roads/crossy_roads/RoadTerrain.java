@@ -27,7 +27,7 @@ public class RoadTerrain extends Composite {
             actualCar = (Actor)car;
             myWorld.addObject(actualCar,1200,y);
             cars.add(car);
-            y -= 50;
+            //y -= 50;
 
         }
 
