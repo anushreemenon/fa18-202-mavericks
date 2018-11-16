@@ -15,7 +15,7 @@ public class Level1Strategy extends Actor implements LevelStrategy{
         
       //  RoadTerrain roadTerrain = new RoadTerrain() ;
       
-      GreenfootImage log1Img, log2Img, log3Img, riverImg, playerImg, r1Img, r2Img , t1Img, t2Img;
+      GreenfootImage log1Img, log2Img, log3Img, riverImg, playerImg, r1Img, r2Img , t1Img, t2Img, trackImg, trainImg;
       GreenfootImage rd1Img,rd2Img, rd3Img, land1Img,landImg, car1Img,car2Img,car3Img, car4Img,car5Img,car6Img, r3Img, r4Img, t3Img, t4Img;
 
       MyWorld myWorld =  getWorldOfType(MyWorld.class);
@@ -184,13 +184,35 @@ public class Level1Strategy extends Actor implements LevelStrategy{
       myWorld.addObject( log2, 1200, 150);
       myWorld.addObject( log3, 1200, 100);
       
+      
+      
+      riverTerrain.display();
+
+      // Set up rail terrain
+      RailTerrain railTerrain = new RailTerrain();
+      
+      Track track = new Track();
+      
+      trackImg = track.getImage();
+      
+      trackImg.scale(2400,300);
+      
+      Train train = new Train();
+      trainImg = train.getImage();
+      trainImg.scale(120,40);
+      railTerrain.addChild ( train );
+      
+      
+      myWorld.addObject( railTerrain, 0, 00 );
+      myWorld.addObject( train, 1200, 200);
+      
       Player p = new Player();
       
       playerImg = p.getImage();
-      playerImg.scale(40,40);
+      playerImg.scale(50,50);
       myWorld.addObject( p, 600, 700);
       
-      riverTerrain.display();
+      railTerrain.display();
        
     }
 }
