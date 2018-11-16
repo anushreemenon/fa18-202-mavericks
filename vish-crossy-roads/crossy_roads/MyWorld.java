@@ -42,7 +42,7 @@ public class MyWorld extends greenfoot.World
 
         // Ensure that player is on top of everything else. This order needs to 
         // be revisited once all the terrains are set up
-        //setPaintOrder(player.class, log.class, car.class, car_blue.class, road.class);
+        setPaintOrder(Player.class, Road.class);
         
         
         //composite terrains = new composite() ;
