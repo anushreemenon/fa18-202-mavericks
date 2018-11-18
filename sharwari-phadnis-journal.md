@@ -19,6 +19,7 @@ What tasks are blocked waiting on another team member?
 
 No blocking items, so far.
 
+----------------------------------------------------------------------------------------------------------------
 
 Week 2: (11/11 to 11/17)
 What tasks did I work on / complete?
