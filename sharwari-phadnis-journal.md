@@ -5,8 +5,6 @@ What tasks did I work on / complete?
 - Finalized on the "crossy road" which is based on the similar concepts of the highway-crossing game
 - Identified the possible design patterns beyond the 12 design patterns that can be applied to these scenarios
 - Started with implementing a basic proof of concept for changing terrains in Greenfoot.
-- Created UI wireframes for the project.
-- Implemented code for movement of the main Player.
 
 I chose "Courage" and as a part of this XP value, I made certain suggestions:
 
@@ -15,6 +13,25 @@ Took a step to go beyond keeping a static game and implement dynamically changin
 Created 
 
 What am I planning to work on next?
+Started working on creating UI mockups
+
+What tasks are blocked waiting on another team member?
+
+No blocking items, so far.
+
+----------------------------------------------------------------------------------------------------------------
+
+Week 2: (11/11 to 11/17)
+What tasks did I work on / complete?
+- Created UI wireframes for the project.
+- Implemented code for movement of the main Player.
+- Fixed player ordering issues.
+
+
+
+Created 
+
+What am I planning to work on next?<br>
 Started working on integrating dynamically changing terrain feature
 
 What tasks are blocked waiting on another team member?
