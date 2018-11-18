@@ -20,7 +20,7 @@
    - No blocking items, so far.
 ------------------------------------
 
-## Week 1: (11/11 to 11/17)
+## Week 2: (11/11 to 11/17)
  * **What tasks did I work on / complete?**
  1. Constructed the use-case diagram comprising of all the possible use cases
  2. Started working on a user story 'As a player I want to cross land by avoiding obstacles' - wrote the logic to check if there is an obstacles (such as tree or rock) in the way when the player tries to move up/down/left/right. Partial implementation is done.
