@@ -21,16 +21,19 @@ public class MyWorld extends greenfoot.World
     
     static final int DEFAULT_MAX_LIVES = 3;
     static final int DEFAULT_MAX_LEVELS = 3;
- 
+    static final int level = 1;
+    private LevelBoard levelBoard;
     
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1200, 800, 1);
-        
+        levelBoard = new LevelBoard ();
+        levelBoard.setLevel(level);
         currentLevel = new Level1Strategy();
-        
+        setPaintOrder(LevelBoard.class, Level1Strategy.class);
         addObject(currentLevel,67,25);
+        addObject (levelBoard, 70, 750);
         
         //addObject(currentLevel,67,25);
         
