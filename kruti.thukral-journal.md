@@ -26,3 +26,23 @@ I also picked a XP value of Feedback. As part of this, during the course of the 
 
 ### What tasks are blocked waiting on another team member?
 Vish and Sharwari are going to provide the images that can be used as actors in the greenfoot game
+
+
+## Week 2: 11/11 - 11/17:
+
+### What tasks did I work on / complete?
+
+1. Worked on use case specification for all the stories in the crossy roads game
+2. Started on setting up the rail terrain
+3. Implemented composite pattern to incorporate object hierarchy
+
+As part of XP value of Feedback, during the course of the week I suggested below:
+1. Provided feedback on stories that needed to be picked up on priority to ensure timely deliverable of tasks
+
+### What am I planning to work on next?
+1. Implement the story of player being able to check his/her lives, coins collected, the current level in order to track his/her progress in the game
+2. Getting started with the story : As a player, I want to collect coins to get extra lives
+
+
+### What tasks are blocked waiting on another team member?
+None
