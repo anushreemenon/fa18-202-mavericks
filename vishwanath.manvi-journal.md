@@ -1,5 +1,23 @@
 # Weekly Scrum Report:
 
+
+## Week 2: 11/11 - 11/17:
+
+### What tasks did I work on / complete?
+## Week 1: 11/4 - 11/10:
+
+### What tasks did I work on / complete?
+1. Worked on setting up Road Terrains and River terrains and setup the strategy patterns.
+2. Created activity diagram.
+
+
+### What am I planning to work on next?
+1. Implement river terrain with log movements.
+2. Implement crash detection and ending life user story.
+
+### What tasks are blocked waiting on another team member?
+No blockers as of now.
+
 ## Week 1: 11/4 - 11/10:
 
 ### What tasks did I work on / complete?
@@ -19,21 +37,3 @@ Take up my tasks:
 
 ### What tasks are blocked waiting on another team member?
 No blockers as of now.
-
-## Week 2: 11/11 - 11/17:
-
-### What tasks did I work on / complete?
-## Week 1: 11/4 - 11/10:
-
-### What tasks did I work on / complete?
-1. Worked on setting up Road Terrains and River terrains and setup the strategy patterns.
-2. Created activity diagram.
-
-
-### What am I planning to work on next?
-1. Implement river terrain with log movements.
-2. Implement crash detection and ending life user story.
-
-### What tasks are blocked waiting on another team member?
-No blockers as of now.
-
