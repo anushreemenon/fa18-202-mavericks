@@ -31,7 +31,7 @@ What tasks did I work on / complete?
 
 Created 
 
-What am I planning to work on next?
+What am I planning to work on next?<br>
 Started working on integrating dynamically changing terrain feature
 
 What tasks are blocked waiting on another team member?
