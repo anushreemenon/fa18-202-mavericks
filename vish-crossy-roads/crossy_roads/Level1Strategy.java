@@ -17,7 +17,7 @@ public class Level1Strategy extends Actor implements LevelStrategy{
       
       GreenfootImage log1Img, log2Img, log3Img, riverImg, playerImg, r1Img, r2Img , t1Img, t2Img, trackImg, trainImg;
       GreenfootImage rd1Img,rd2Img, rd3Img, land1Img,landImg, car1Img,car2Img,car3Img, car4Img,car5Img,car6Img, r3Img, r4Img, t3Img, t4Img;
-
+      GreenfootImage log4Img, log5Img, log6Img, log7Img, log8Img, log9Img, car7Img,car8Img,car9Img, car10Img,car11Img,car12Img;
       MyWorld myWorld =  getWorldOfType(MyWorld.class);
       
       LandTerrain landTerrain1 = new LandTerrain(); 
@@ -69,6 +69,12 @@ public class Level1Strategy extends Actor implements LevelStrategy{
       CarBlue car4 = new CarBlue();           
       Car car5 = new Car();          
       CarBlue car6 = new CarBlue();
+      CarBlue car7 = new CarBlue();
+      Car car8 = new Car();
+      CarBlue car9 = new CarBlue();
+      CarBlue car10 = new CarBlue();
+      Car car11 = new Car();
+      CarBlue car12 = new CarBlue();
      
       roadTerrain.addChild ( rd1 );      
       roadTerrain.addChild ( rd2 );
@@ -79,6 +85,13 @@ public class Level1Strategy extends Actor implements LevelStrategy{
       roadTerrain.addChild ( car4 );
       roadTerrain.addChild ( car5 );
       roadTerrain.addChild ( car6 );
+      roadTerrain.addChild ( car7 );
+      roadTerrain.addChild ( car8 );
+      roadTerrain.addChild ( car9 );
+      roadTerrain.addChild ( car10 );
+      roadTerrain.addChild ( car11 );
+      roadTerrain.addChild ( car12 );
+      
       
       rd1Img = rd1.getImage();
       rd1Img.scale(2400,100);
@@ -106,6 +119,34 @@ public class Level1Strategy extends Actor implements LevelStrategy{
       
       car6Img = car6.getImage();
       car6Img.scale(70,30);
+      
+      car4Img = car4.getImage();
+      car4Img.scale(70,30);
+      
+      car5Img = car5.getImage();
+      car5Img.scale(70,30);
+      
+      car6Img = car6.getImage();
+      car6Img.scale(70,30);
+      
+      car7Img = car7.getImage();
+      car7Img.scale(70,30);
+      
+      car8Img = car8.getImage();
+      car8Img.scale(70,30);
+      
+      car9Img = car9.getImage();
+      car9Img.scale(70,30);
+      
+      car10Img = car10.getImage();
+      car10Img.scale(70,30);
+      
+      car11Img = car11.getImage();
+      car11Img.scale(70,30);
+      
+      car12Img = car12.getImage();
+      car12Img.scale(70,30);
+      
       
       //myWorld.addObject( rd1, 0, 600 );
       //myWorld.addObject( rd2, 0, 500 );
@@ -158,6 +199,8 @@ public class Level1Strategy extends Actor implements LevelStrategy{
     
       RiverTerrain riverTerrain = new RiverTerrain();
       
+      myWorld.addObject(riverTerrain,0,100);
+      
       River r = new River();
       
       riverImg = r.getImage();
@@ -166,29 +209,55 @@ public class Level1Strategy extends Actor implements LevelStrategy{
       
       Log log1 = new Log();
       log1Img = log1.getImage();
-      log1Img.scale(120,40);
-      Log log2 = new Log();
+      log1Img.scale(120,30);
+      LogRight log2 = new LogRight();
       log2Img = log2.getImage();
-      log2Img.scale(120,40);
+      log2Img.scale(120,30);
       Log log3 = new Log();
       log3Img = log3.getImage();
-      log3Img.scale(120,40);
+      log3Img.scale(120,30);
+      
+      Log log4 = new Log();
+      log4Img = log4.getImage();
+      log4Img.scale(120,30);
+      LogRight log5 = new LogRight();
+      log5Img = log5.getImage();
+      log5Img.scale(120,30);
+      Log log6 = new Log();
+      log6Img = log6.getImage();
+      log6Img.scale(120,30);
+      
+      Log log7 = new Log();
+      log7Img = log7.getImage();
+      log7Img.scale(120,30);
+      LogRight log8 = new LogRight();
+      log8Img = log8.getImage();
+      log8Img.scale(120,30);
+      Log log9 = new Log();
+      log9Img = log9.getImage();
+      log9Img.scale(120,30);
       
       riverTerrain.addChild ( r );
       riverTerrain.addChild ( log1 );
       riverTerrain.addChild ( log2 );
       riverTerrain.addChild ( log3 );
+      riverTerrain.addChild ( log4 );
+      riverTerrain.addChild ( log5 );
+      riverTerrain.addChild ( log6 );
+      riverTerrain.addChild ( log7 );
+      riverTerrain.addChild ( log8 );
+      riverTerrain.addChild ( log9 );
       
-      myWorld.addObject( r, 0, 100 );
-      myWorld.addObject( log1, 1200, 200);
-      myWorld.addObject( log2, 1200, 150);
-      myWorld.addObject( log3, 1200, 100);
+
+
+
       
       
       
       riverTerrain.display();
 
       // Set up rail terrain
+      /*
       RailTerrain railTerrain = new RailTerrain();
       
       Track track = new Track();
@@ -205,14 +274,14 @@ public class Level1Strategy extends Actor implements LevelStrategy{
       
       myWorld.addObject( railTerrain, 0, 00 );
       myWorld.addObject( train, 1200, 200);
-      
+      */
       Player p = new Player();
       
       playerImg = p.getImage();
       playerImg.scale(50,50);
       myWorld.addObject( p, 600, 700);
       
-      railTerrain.display();
+      //railTerrain.display();
        
     }
 }

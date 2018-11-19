@@ -15,49 +15,19 @@ public class RoadTerrain extends Composite {
     private ArrayList <Component> cars = new ArrayList<Component>()  ;
     private static int count = 0;
     private static int y = 625;
+    
     public void act() {
-        Actor actualCar;
-
-        World myWorld = getWorld();
-
-        count++;
         
-        createRoads();
+        display();
 
-        if (count%100 == 0) {
-            car = getCar();
-            actualCar = (Actor)car;
-            myWorld.addObject(actualCar,1200,y);
-            cars.add(car);
-            if (y < 375)
-                y = 625;
-            else
-                y -=50;
-
-        }
-
-         for (Component car  : cars) {
-            int pos = 0;
-            actualCar = (Actor)car;
-            
-             if (actualCar.getX() == 0) {
-                pos = 1200;
-            }
-             else {
-                pos = 0;
-            }
-             
-            actualCar.setLocation(pos + actualCar.getX() - 1, actualCar.getY());
-           
-         }
     }
 
     public Component getCar() {
 
         Component car;
-        int carCounter = 1;    
-        while (carCounter < 3)
-              carCounter = Greenfoot.getRandomNumber(9);
+        int carCounter = 0;    
+        while (carCounter <= 2)
+              carCounter = Greenfoot.getRandomNumber(15);
 
         return getChild(carCounter);
     }
@@ -73,11 +43,33 @@ public class RoadTerrain extends Composite {
             myWorld.addObject(road,0,y);
             y-=100;
         }
-
-        
-        
-        
-        
     }
 
+    
+    public void display() {
+        Actor actualCar;
+
+        World myWorld = getWorld();
+
+        count++;
+        
+        createRoads();
+
+        if (count%100 == 0) {
+            car = getCar();
+            actualCar = (Actor)car;
+            myWorld.addObject(actualCar,1200,y);
+            cars.add(car);
+            if (y < 425)
+                y = 625;
+            else
+                y -=50;
+
+        }
+
+    } 
+        
+        
 }
+
+

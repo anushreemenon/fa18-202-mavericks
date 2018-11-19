@@ -14,6 +14,14 @@ public class CarBlue extends Leaf
      */
     public void act() 
     {
-        // Add your action code here.
+            int pos = 0;
+            if (getX() == 0) {
+                pos = 1200;
+            }
+             else {
+                pos = 0;
+            }
+             
+            setLocation(pos + getX() - 1, getY()); // Add your action code here.
     }    
 }
