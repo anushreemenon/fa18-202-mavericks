@@ -59,14 +59,13 @@ public class Player extends Leaf
 		    int worldX = world.getWidth();      
 		    int worldY = world.getHeight();
 		    if(Level1Strategy.getFinalLevelState()==false)
-		        setLocation((getX())%worldX, (getY()+1)%worldY);
+		        setLocation(getX(), getY()+1);
 			
-			if(getY() == worldY) {
-				// TODO: 1. Kill the Player, decrease the count and reset the world
-				//System.out.println("Player at the edge!");
-				//((MyWold)world).lostLife();
+			if(isAtEdge()) {
+                    // Stop the level
+					// TODO: Stop only when the Player reaches the lowermost edge of the world. Otherwise, do nothing.
+                    ((MyWorld)world).lostLife();
 			}
-				
 		}
 
 	}
