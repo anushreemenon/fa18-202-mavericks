@@ -39,19 +39,34 @@ public class Player extends Leaf
 			if(!obstacle)
 				move(-5);
 		}
-		if(Greenfoot.isKeyDown("right"))
+		else if(Greenfoot.isKeyDown("right"))
 		{
 			obstacle = checkObstacle(10, 0);
 			if(!obstacle)
 				move(5);
 		}
-		if(Greenfoot.isKeyDown("up")) 
+		else if(Greenfoot.isKeyDown("up")) 
 		{ 
 			jump("up");
 		}
-		if(Greenfoot.isKeyDown("down")) 
+		else if(Greenfoot.isKeyDown("down")) 
 		{
 			jump("down");
+		}
+		else {
+		    // Drag player down if he stands at one place and doesn't move
+			World world = getWorld();
+		    int worldX = world.getWidth();      
+		    int worldY = world.getHeight();
+		    if(Level1Strategy.getFinalLevelState()==false)
+		        setLocation((getX())%worldX, (getY()+1)%worldY);
+			
+			if(getY() == worldY) {
+				// TODO: 1. Kill the Player, decrease the count and reset the world
+				//System.out.println("Player at the edge!");
+				//((MyWold)world).lostLife();
+			}
+				
 		}
 
 	}
