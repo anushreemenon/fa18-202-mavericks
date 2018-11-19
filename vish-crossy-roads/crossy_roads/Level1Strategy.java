@@ -44,12 +44,22 @@ public class Level1Strategy extends Actor implements LevelStrategy{
       r4Img = r4.getImage();
       r4Img.scale(50,50);
       
+      Coin coin1 = new Coin();
+      Coin coin2 = new Coin();
+      Coin coin3 = new Coin();
+      Coin coin4 = new Coin();
+      Coin coin5 = new Coin();
       
       landTerrain1.addChild ( l1 );
       landTerrain1.addChild ( t1 );
       landTerrain1.addChild ( t2 );
       landTerrain1.addChild ( r3 );
       landTerrain1.addChild ( r4 );
+      landTerrain1.addChild ( coin1 );
+      landTerrain1.addChild ( coin2 );
+      landTerrain1.addChild ( coin3 );
+      landTerrain1.addChild ( coin4 );
+      landTerrain1.addChild ( coin5 );
       
 
       myWorld.addObject( l1, 0, 700);
@@ -57,6 +67,11 @@ public class Level1Strategy extends Actor implements LevelStrategy{
       myWorld.addObject( t2, 840, 700);
       myWorld.addObject( r3, 250, 700);
       myWorld.addObject( r4, 950, 700);
+      myWorld.addObject( coin1, 1000, 700);
+      myWorld.addObject( coin2, 500, 500);
+      myWorld.addObject( coin3, 600, 600);
+      myWorld.addObject( coin4, 100, 700);
+      myWorld.addObject( coin5, 500, 700);
       
       RoadTerrain roadTerrain = new RoadTerrain();   
       

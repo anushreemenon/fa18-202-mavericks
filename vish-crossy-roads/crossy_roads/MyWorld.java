@@ -23,37 +23,27 @@ public class MyWorld extends greenfoot.World
     static final int DEFAULT_MAX_LEVELS = 3;
     static final int level = 1;
     private LevelBoard levelBoard;
+    private CoinBoard coinBoard;
     
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1200, 800, 1);
         levelBoard = new LevelBoard ();
+        coinBoard = new CoinBoard (this);
         levelBoard.setLevel(level);
+
         currentLevel = new Level1Strategy();
-        setPaintOrder(LevelBoard.class, Level1Strategy.class);
+        setPaintOrder(Player.class, LevelBoard.class, CoinCounter.class, Coin.class, DisplayMessage.class, Level1Strategy.class);
         addObject(currentLevel,67,25);
         addObject (levelBoard, 70, 750);
-        
-        //addObject(currentLevel,67,25);
-        
+        coinBoard.loadCoinBoard();
         currentLevel.LoadTerrains();
         
         
-        
-        
+    }
 
-        // Ensure that player is on top of everything else. This order needs to 
-        // be revisited once all the terrains are set up
-        setPaintOrder(Player.class);
-        
-        
-        //composite terrains = new composite() ;
-        
-
-
-        // Add the road image to the World
-        //addObject (rd, 67, 25);
-       
+    public void incrementCoinCount() {
+        coinBoard.incrementCount();
     }
 }
