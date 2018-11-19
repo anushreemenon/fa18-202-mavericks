@@ -18,12 +18,14 @@ public class MyWorld extends greenfoot.World
     private int currentScore;
     private int noOfCoinsCollected;
     private int currentNoOfLives;
-    
-    static final int DEFAULT_MAX_LIVES = 3;
+    private GreenfootSound gameOverSound;
+   
     static final int DEFAULT_MAX_LEVELS = 3;
     static final int level = 1;
     private LevelBoard levelBoard;
     private CoinBoard coinBoard;
+    private LifeCounter lifeCounter;
+    
     
     public MyWorld()
     {    
@@ -34,16 +36,46 @@ public class MyWorld extends greenfoot.World
         levelBoard.setLevel(level);
 
         currentLevel = new Level1Strategy();
-        setPaintOrder(Player.class, LevelBoard.class, CoinCounter.class, Coin.class, DisplayMessage.class, Level1Strategy.class);
+        setPaintOrder(Player.class, ScoreBoard.class, LifeCounter.class, LevelBoard.class, CoinCounter.class, Coin.class, DisplayMessage.class, Level1Strategy.class);
         addObject(currentLevel,67,25);
         addObject (levelBoard, 70, 750);
         coinBoard.loadCoinBoard();
-        currentLevel.LoadTerrains();
+        currentLevel.loadTerrains();
+        lifeCounter = new LifeCounter ();
+        // Add the life counter to the World
+        addObject (lifeCounter,  130, 100);
+        gameOverSound = new GreenfootSound("GameOver.wav");
+        lifeCounter.lostLife();
+        // lifeCounter.lostLife();
+        // lifeCounter.lostLife();
         
-        
+    }
+
+    /**
+     * The Act method is responsible for:
+     *      loading new levels and death screens
+     *      Triggering scoreboard and end the game
+     *      Spawning cars
+     */
+    public void endGame ()
+    {
+        ScoreBoard s = new ScoreBoard (coinBoard.getCoinCount() , "Game Over", "Score: ");
+        addObject (s, getWidth()/2,getHeight()/2);
+        gameOverSound.play();
+        // End program
+        Greenfoot.stop();  
     }
 
     public void incrementCoinCount() {
         coinBoard.incrementCount();
+
+    }
+
+    public void powerUp() {
+        lifeCounter.powerUp();
+    }
+
+    public void lostLife() {
+        lifeCounter.lostLife();
     }
 }

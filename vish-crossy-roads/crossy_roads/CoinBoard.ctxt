@@ -7,4 +7,6 @@ comment2.params=
 comment2.target=void\ incrementCount()
 comment3.params=
 comment3.target=void\ loadCoinBoard()
-numComments=4
+comment4.params=
+comment4.target=int\ getCoinCount()
+numComments=5

@@ -6,5 +6,5 @@
  */
 public interface LevelStrategy  
 {
-    public void LoadTerrains();
+    public void loadTerrains();
 }

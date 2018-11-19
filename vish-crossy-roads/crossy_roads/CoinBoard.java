@@ -12,13 +12,16 @@ public class CoinBoard extends Actor
 {
     private CoinCounter coin; 
     private DisplayMessage displayMessage;
-    private int coin_count;
+    private int coinCount;
     MyWorld myWorld;
+    static final int COINS_FOR_EXTRA_LIFE = 3;
+    private int totalCount;
 
     public CoinBoard (MyWorld world)
     {
-        coin_count = 0;
-        String str = " " + coin_count;
+        coinCount = 0;
+        totalCount = 0;
+        String str = " " + coinCount;
         displayMessage = new DisplayMessage(str);
         coin = new CoinCounter();
         coin.getImage().scale(60,60);
@@ -27,14 +30,23 @@ public class CoinBoard extends Actor
 
     public void incrementCount ()
     {
-        coin_count++;
-        String str = " " + coin_count; 
+        coinCount++;
+        totalCount++;
+        if (coinCount % COINS_FOR_EXTRA_LIFE == 0) {
+            myWorld.powerUp();
+            coinCount = 0;
+        }
+        String str = " " + coinCount; 
         displayMessage.updateMessage(str);
     }
 
     public void loadCoinBoard () {
-        myWorld.addObject (coin, 1100, 100);
-        myWorld.addObject (displayMessage, 1150, 100);
+        myWorld.addObject (coin, myWorld.getWidth() - 120, 30);
+        myWorld.addObject (displayMessage, myWorld.getWidth() - 70, 30);
+    }
+
+    public int getCoinCount() {
+        return totalCount;
     }
 
 }

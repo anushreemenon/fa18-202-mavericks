@@ -11,7 +11,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level1Strategy extends Actor implements LevelStrategy{
     // instance variables - replace the example below with your own
-    public void LoadTerrains() {
+    public void loadTerrains() {
         
       //  RoadTerrain roadTerrain = new RoadTerrain() ;
       
