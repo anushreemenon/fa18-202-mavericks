@@ -1,7 +1,4 @@
 
-
-
-
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Level1Strategy here.
@@ -25,12 +22,27 @@ public class Level1Strategy extends Actor implements LevelStrategy{
       
       Tree t1 = new Tree();
       Tree t2 = new Tree();
+	  Tree t9 = new Tree();
+	  Tree t10 = new Tree();
+	  Tree t11 = new Tree();
+	  Tree t12 = new Tree();
+	  Tree t13 = new Tree();
+	  Tree t14 = new Tree();
+	  
       
       t1Img = t1.getImage();
       t1Img.scale(30,75);
       
       t2Img = t2.getImage();
       t2Img.scale(30,75);
+	  
+	  GreenfootImage t9Img = t9.getImage();
+	  t9Img.scale(40,85);
+	  
+	  t10.getImage().scale(40,85);
+	  t11.getImage().scale(40,85);
+	  t12.getImage().scale(40,85);
+	  t13.getImage().scale(20,65);
       
      
       land1Img = l1.getImage();
@@ -43,6 +55,13 @@ public class Level1Strategy extends Actor implements LevelStrategy{
       Rock r4 = new Rock();
       r4Img = r4.getImage();
       r4Img.scale(50,50);
+	  
+	  Rock r9 = new Rock();
+      GreenfootImage r9Img = r9.getImage();
+      r9Img.scale(50,50);
+	  
+	  Rock r10 = new Rock();
+	  r10.getImage().scale(70,70);
       
       Coin coin1 = new Coin();
       Coin coin2 = new Coin();
@@ -53,8 +72,15 @@ public class Level1Strategy extends Actor implements LevelStrategy{
       landTerrain1.addChild ( l1 );
       landTerrain1.addChild ( t1 );
       landTerrain1.addChild ( t2 );
+	  landTerrain1.addChild ( t9 );
+	  landTerrain1.addChild ( t10 );
+	  landTerrain1.addChild ( t11 );
+	  landTerrain1.addChild ( t12 );
+	  landTerrain1.addChild ( t13 );
       landTerrain1.addChild ( r3 );
       landTerrain1.addChild ( r4 );
+	  landTerrain1.addChild ( r9 );
+	  landTerrain1.addChild ( r10 );
       landTerrain1.addChild ( coin1 );
       landTerrain1.addChild ( coin2 );
       landTerrain1.addChild ( coin3 );
@@ -65,13 +91,21 @@ public class Level1Strategy extends Actor implements LevelStrategy{
       myWorld.addObject( l1, 0, 700);
       myWorld.addObject( t1, 400, 700);
       myWorld.addObject( t2, 840, 700);
+	  myWorld.addObject( t9, 790, 700);
+	  myWorld.addObject( t10, 1070, 700);
+	  myWorld.addObject( t11, 50, 670);
+	  myWorld.addObject( t12, 150, 700);
+	  myWorld.addObject( t13, 250, 640);
+	  myWorld.addObject( t14, 250, 640);
       myWorld.addObject( r3, 250, 700);
       myWorld.addObject( r4, 950, 700);
+	  myWorld.addObject( r9, 740, 700);
+	  myWorld.addObject( r10, 500, 700);
       myWorld.addObject( coin1, 1000, 700);
       myWorld.addObject( coin2, 500, 500);
       myWorld.addObject( coin3, 600, 600);
       myWorld.addObject( coin4, 100, 700);
-      myWorld.addObject( coin5, 500, 700);
+      myWorld.addObject( coin5, 350, 650);
       
       RoadTerrain roadTerrain = new RoadTerrain();   
       
@@ -140,13 +174,28 @@ public class Level1Strategy extends Actor implements LevelStrategy{
       
       Tree t3 = new Tree();
       Tree t4 = new Tree();
-      
+      Tree t5 = new Tree();
+	  Tree t6 = new Tree();
+	  Tree t7 = new Tree();
+	  Tree t8 = new Tree();	  
+
       t3Img = t3.getImage();
       t3Img.scale(30,75);
       
       t4Img = t4.getImage();
       t4Img.scale(30,75);
       
+      GreenfootImage t5Img = t5.getImage();
+      t5Img.scale(30,75);
+	  
+	  GreenfootImage t6Img = t6.getImage();
+      t6Img.scale(30,75);
+	  
+	  GreenfootImage t7Img = t7.getImage();
+      t7Img.scale(40,85);
+	  
+	  GreenfootImage t8Img = t8.getImage(); 
+	  t8Img.scale(40,85);      
      
       landImg = l.getImage();
       landImg.scale(2400,100);
@@ -158,18 +207,51 @@ public class Level1Strategy extends Actor implements LevelStrategy{
       Rock r2 = new Rock();
       r2Img = r2.getImage();
       r2Img.scale(50,50);
+      
+      Rock r5 = new Rock();
+      GreenfootImage r5Img = r5.getImage();
+      r5Img.scale(50,50);
+      
+      Rock r6 = new Rock();
+      GreenfootImage r6Img = r6.getImage();
+      r6Img.scale(60,60);
+	  
+	  Rock r7 = new Rock();
+      GreenfootImage r7Img = r7.getImage();
+      r7Img.scale(60,60);
+	  
+	  Rock r8 = new Rock();
+      GreenfootImage r8Img = r8.getImage();
+      r8Img.scale(60,60);
     
       landTerrain2.addChild ( l );
       landTerrain2.addChild ( t3 );
       landTerrain2.addChild ( t4 );
+      landTerrain2.addChild ( t5 );
+	  landTerrain2.addChild ( t6 );
+	  landTerrain2.addChild ( t7 );
+	  landTerrain2.addChild ( t8 );
       landTerrain2.addChild ( r1 );
       landTerrain2.addChild ( r2 );
+      landTerrain2.addChild ( r5 );
+      landTerrain2.addChild ( r6 );
+	  landTerrain2.addChild ( r7 );
+	  landTerrain2.addChild ( r8 );
       
       myWorld.addObject( l, 0, 300);
       myWorld.addObject( t3, 540, 300);
       myWorld.addObject( t4, 150, 300);
+      myWorld.addObject( t5, 50, 300);
+	  myWorld.addObject( t6, 580, 300);
+	  myWorld.addObject( t7, 750, 300);
+	  myWorld.addObject( t8, 900, 300);
       myWorld.addObject( r1, 700, 300);
       myWorld.addObject( r2, 250, 300);
+      myWorld.addObject( r5, 300, 300);
+      myWorld.addObject( r6, 400, 300);
+	  myWorld.addObject( r7, 1020, 300);
+	  myWorld.addObject( r8, 1070, 300);
+	  
     
       RiverTerrain riverTerrain = new RiverTerrain();
       
