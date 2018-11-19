@@ -1,7 +1,5 @@
 import greenfoot.*; // (World, Actor, GreenfootImage, and Greenfoot)
-//import java.awt.Color;
-//import java.awt.Font;
-//import java.util.Calendar;
+
 
 /**
  * The ScoreBoard is used to display results on the screen. It can display some
@@ -22,7 +20,7 @@ public class ScoreBoard extends Actor
     }
 
     /**
-     * Create a score board for the final result.
+     * Create a score board
      */
     public ScoreBoard(int score)
     {

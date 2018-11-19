@@ -8,9 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class LifeCounter extends Actor
 {
-    //declare the number of lives
+    
     private int livesLeft;
-    //set images for frog at different points
+    
     private GreenfootImage player = new GreenfootImage ("boy2.png");
     private GreenfootImage image = new GreenfootImage (200,200);
     static final int DEFAULT_MAX_LIVES = 3;

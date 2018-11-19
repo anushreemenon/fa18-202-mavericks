@@ -3,7 +3,7 @@ import greenfoot.Font;
 import greenfoot.Color;
 
 /**
- * Write a description of class LevelCounter here.
+ * class LevelCounter 
  * 
  * @author (your name) 
  * @version (a version number or a date)
