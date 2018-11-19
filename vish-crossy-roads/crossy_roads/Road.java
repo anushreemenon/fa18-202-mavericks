@@ -12,11 +12,7 @@ public class Road extends Leaf
      * Act - do whatever the river wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void act() 
-    {
-        // Add your action code here.
-    }  
-    
+    private static int Y=0;
     public void display() {
         
        // addObject(this, 67, 25);
@@ -25,6 +21,20 @@ public class Road extends Leaf
        if (myWorld != null)
             myWorld.addObject(this,67,25);
         
+    }
+    public void act() 
+    {
+        World world = getWorld();
+        
+        
+        // Add your action code here.
+        int worldX = world.getWidth();
+        
+        int worldY = world.getHeight();
+        if(Level1Strategy.getFinalLevelState()==false)
+            setLocation((getX())%worldX, (getY()+1)%worldY);
+    }  
+    public void update(){
     }
     
 }

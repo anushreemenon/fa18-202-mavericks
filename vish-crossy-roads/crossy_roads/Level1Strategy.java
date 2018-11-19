@@ -1,7 +1,3 @@
-
-
-
-
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Level1Strategy here.
@@ -10,16 +6,47 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class Level1Strategy extends Actor implements LevelStrategy{
-    // instance variables - replace the example below with your own
+    //private List<Leaf> observers = new ArrayList<Leaf>();
+     private int targetTimer=0;
+     private static boolean isFinalLevelReached = false;
+    private Target target;
+
+    
+    
+    public void act(){
+        runTargetTimer();
+    }
+    public void runTargetTimer()
+    {
+        if(getFinalLevelState()==false){
+            if(targetTimer==2000){
+                addTarget();
+            }
+            else
+                targetTimer++;
+            } 
+    }
+    public static void setFinalLevelState(boolean state){
+        isFinalLevelReached = state;
+    }
+    public static boolean getFinalLevelState(){
+        return isFinalLevelReached;
+    }
+    
+
+    public void addTarget(){
+        MyWorld myWorld =  getWorldOfType(MyWorld.class);
+        myWorld.addObject( target, 600, 50);
+        
+    }
     public void LoadTerrains() {
         
       //  RoadTerrain roadTerrain = new RoadTerrain() ;
       
-      GreenfootImage log1Img, log2Img, log3Img, riverImg, playerImg, r1Img, r2Img , t1Img, t2Img, trackImg, trainImg;
+      GreenfootImage log1Img, log2Img, log3Img, riverImg, playerImg, r1Img, r2Img , t1Img, t2Img, trackImg, trainImg, targetImg;
       GreenfootImage rd1Img,rd2Img, rd3Img, land1Img,landImg, car1Img,car2Img,car3Img, car4Img,car5Img,car6Img, r3Img, r4Img, t3Img, t4Img;
 
       MyWorld myWorld =  getWorldOfType(MyWorld.class);
-      
       LandTerrain landTerrain1 = new LandTerrain(); 
       Land l1 = new Land();
       
@@ -106,20 +133,8 @@ public class Level1Strategy extends Actor implements LevelStrategy{
       
       car6Img = car6.getImage();
       car6Img.scale(70,30);
-      
-      //myWorld.addObject( rd1, 0, 600 );
-      //myWorld.addObject( rd2, 0, 500 );
-      //myWorld.addObject( rd3, 0, 400 );
-      myWorld.addObject( roadTerrain, 0, 400 );
-     /*
-      myWorld.addObject( car1, 1200, 625);
-      myWorld.addObject( car2, 1200, 575);
-      myWorld.addObject( car3, 1200, 525);
-      myWorld.addObject( car4, 1200, 475);
-      myWorld.addObject( car5, 1200, 425);
-      myWorld.addObject( car6, 1200, 375);
-     */
-      
+
+      myWorld.addObject( roadTerrain, 0, 800 );  
       LandTerrain landTerrain2 = new LandTerrain();   
       Land l = new Land();
       
@@ -206,6 +221,8 @@ public class Level1Strategy extends Actor implements LevelStrategy{
       myWorld.addObject( railTerrain, 0, 00 );
       myWorld.addObject( train, 1200, 200);
       
+      
+      
       Player p = new Player();
       
       playerImg = p.getImage();
@@ -213,6 +230,9 @@ public class Level1Strategy extends Actor implements LevelStrategy{
       myWorld.addObject( p, 600, 700);
       
       railTerrain.display();
-       
+      
+       target = new Target();
+       targetImg = target.getImage();
+        targetImg.scale(myWorld.getWidth(),100);
     }
 }

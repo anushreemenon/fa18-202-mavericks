@@ -29,6 +29,7 @@ public class MyWorld extends greenfoot.World
         super(1200, 800, 1);
         
         currentLevel = new Level1Strategy();
+        currentLevel.setFinalLevelState(false);
         
         addObject(currentLevel,67,25);
         
@@ -36,10 +37,6 @@ public class MyWorld extends greenfoot.World
         
         currentLevel.LoadTerrains();
         
-        
-        
-        
-
         // Ensure that player is on top of everything else. This order needs to 
         // be revisited once all the terrains are set up
         setPaintOrder(Player.class);
@@ -53,4 +50,5 @@ public class MyWorld extends greenfoot.World
         //addObject (rd, 67, 25);
        
     }
+
 }

@@ -38,6 +38,5 @@ public class Leaf extends Actor implements Component {
         // add implementation
     }
 
-    
      
 }

@@ -12,6 +12,7 @@ public class Log extends Leaf
      * Act - do whatever the log wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    private static int Y=0;
     public void act() 
     {
        //setLocation (getX() - 5, getY());
@@ -26,9 +27,11 @@ public class Log extends Leaf
         else
             pos = 0;
             
-        setLocation((pos + getX()- 2), getY());
+        if(Level1Strategy.getFinalLevelState()==false)
+            setLocation((pos + getX()- 2), (getY()+1)%worldY);
     }    
-    
     public void display() {
+    }
+    public void update(){
     }
 }

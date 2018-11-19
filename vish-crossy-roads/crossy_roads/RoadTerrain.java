@@ -6,11 +6,12 @@ import java.util.ArrayList;
  * @author (your name) 
  * @version (a version number or a date)
  */
+
 public class RoadTerrain extends Composite {
-    /**
-     * Act - do whatever the Road_Terrain wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    
+     /** Act - do whatever the Road_Terrain wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.:**/
+     
     private Component car;
     private ArrayList <Component> cars = new ArrayList<Component>()  ;
     private static int count = 0;
@@ -20,36 +21,28 @@ public class RoadTerrain extends Composite {
 
         World myWorld = getWorld();
 
-        count++;
+        
         
         createRoads();
 
         if (count%100 == 0) {
+            
+            
+            if (count%600==0){
+                Component rd = getChild(0);
+            Actor road = (Actor)rd;
+            y = road.getY() + 25;}
+            else
+                y -=50;
             car = getCar();
             actualCar = (Actor)car;
             myWorld.addObject(actualCar,1200,y);
             cars.add(car);
-            if (y < 375)
-                y = 625;
-            else
-                y -=50;
-
-        }
-
-         for (Component car  : cars) {
-            int pos = 0;
-            actualCar = (Actor)car;
             
-             if (actualCar.getX() == 0) {
-                pos = 1200;
-            }
-             else {
-                pos = 0;
-            }
-             
-            actualCar.setLocation(pos + actualCar.getX() - 1, actualCar.getY());
-           
-         }
+        }
+        count++;
+        
+
     }
 
     public Component getCar() {
@@ -67,17 +60,15 @@ public class RoadTerrain extends Composite {
         Component rd;
         Actor road;
         int y = 600;
+        
         for (int i=0; i<3; i++) {
             rd = getChild(i);
             road = (Actor)rd;
-            myWorld.addObject(road,0,y);
+            myWorld.addObject(road, 0,y);
+            
             y-=100;
         }
 
-        
-        
-        
-        
     }
 
 }
