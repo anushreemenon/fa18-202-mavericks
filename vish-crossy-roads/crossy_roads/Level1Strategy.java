@@ -398,6 +398,10 @@ public class Level1Strategy extends Actor implements LevelStrategy{
       playerImg.scale(50,50);
       myWorld.addObject( p, 600, 700);
       
+      target = new Target();
+      targetImg = target.getImage();
+      targetImg.scale(myWorld.getWidth(),100);
+      
       //railTerrain.display();
        
     }
