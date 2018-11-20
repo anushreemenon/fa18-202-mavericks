@@ -30,8 +30,10 @@ public class Log extends Leaf
         if(Level1Strategy.getFinalLevelState()==false)
             setLocation((pos + getX()- 2), (getY()+1)%worldY);
     }    
+    
     public void display() {
     }
+
     public void update(){
     }
 }
