@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.util.ArrayList;
+import java.util.*;
 /**
  * Write a description of class Road_Terrain here.
  * 
@@ -14,7 +14,7 @@ public class RoadTerrain extends Composite {
     private Component car;
     private ArrayList <Component> cars = new ArrayList<Component>()  ;
     private static int count = 0;
-    private static int y = 625;
+    private static int carY = 625;
     
     public void act() {
         
@@ -54,16 +54,25 @@ public class RoadTerrain extends Composite {
         count++;
         
         createRoads();
+        
+        List<Road> rt = myWorld.getObjects(Road.class);
+            
+        int rtY = rt.get(0).getY();
+        
+       // System.out.println("rtY = " + rtY);
 
         if (count%100 == 0) {
             car = getCar();
             actualCar = (Actor)car;
-            myWorld.addObject(actualCar,1200,y);
-            cars.add(car);
-            if (y < 425)
-                y = 625;
-            else
-                y -=50;
+            
+            //rt = myWorld.getObjects(RoadTerrain.class);
+
+            
+            //carY = rtY+25;
+            if (carY <= rtY && carY > rtY-300)
+                    myWorld.addObject(actualCar,1200,carY);
+
+            carY -=50;
 
         }
 
