@@ -9,93 +9,127 @@ import java.util.*;
  */
 public class Player extends Leaf
 {
-	/**
-	 * Act - do whatever the player wants to do. This method is called whenever
-	 * the 'Act' or 'Run' button gets pressed in the environment.
-	 */
-	private int speed = 2; //movement speed  
-	private int vSpeed = 0; //vertical speed  
-	private int acceleration = 2; //gravity effect while falling  
-	private int jumpStrength = -8; 
-	public void act() 
-	{
-		checkKeys();
-	}  
+    /**
+     * Act - do whatever the player wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    private int speed = 2; //movement speed  
+    private int vSpeed = 0; //vertical speed  
+    private int acceleration = 2; //gravity effect while falling  
+    private int jumpStrength = -8; 
+    public void act() 
+    {
+        boolean onLog = false, onWater = false;
+        World myWorld = getWorld();
+        List<LifeCounter> lcs = myWorld.getObjects(LifeCounter.class);   
+        LifeCounter lc = lcs.get(0);
 
-	private boolean checkObstacle(int dx, int dy) {
-	    if(getObjectsAtOffset(dx, dy, Tree.class).size() == 0) {
-		    if(getObjectsAtOffset(dx, dy, Rock.class).size() == 0)
-			    return false;
-	    }
-	    return true;
-	}
+        if (isTouching(Car.class) || isTouching(CarBlue.class)) {
+            lc.lostLife();
+        }
+        
+        List<River> rivers = getNeighbours(50, true, River.class);    
+        System.out.println("River count is " + rivers.size());
+        if (rivers.size()>0) {  //TO-DO: Not sure why river is not being detected as neighbour
+            System.out.println("Water found");
+            onWater = true;
+        }
+               
+        List<Log> logs = getNeighbours(25, true, Log.class);
+        System.out.println("Logs count is " + logs.size());
+        if (logs.size()>0) {
+            System.out.println("Log found");
+            onLog = true;
+        }
+        
 
-	public void checkKeys()
-	{
-		boolean obstacle = true;
-		if( Greenfoot.isKeyDown("left"))
-		{
-			obstacle = checkObstacle(-10, 0);
-			if(!obstacle)
-				move(-5);
-		}
-		else if(Greenfoot.isKeyDown("right"))
-		{
-			obstacle = checkObstacle(10, 0);
-			if(!obstacle)
-				move(5);
-		}
-		else if(Greenfoot.isKeyDown("up")) 
-		{ 
-			jump("up");
-		}
-		else if(Greenfoot.isKeyDown("down")) 
-		{
-			jump("down");
-		}
-		else {
-		    // Drag player down if he stands at one place and doesn't move
-			World world = getWorld();
-		    int worldX = world.getWidth();      
-		    int worldY = world.getHeight();
-		    if(Level1Strategy.getFinalLevelState()==false)
-		        setLocation(getX(), getY()+1);
-			
-			if(isAtEdge()) {
+            
+        if (onLog && onWater) {
+            //safe.. do nothing
+        } else if (onWater) {
+                lc.lostLife();
+        }
+        
+            
+        checkKeys();
+    }  
+
+    private boolean checkObstacle(int dx, int dy) {
+        if(getObjectsAtOffset(dx, dy, Tree.class).size() == 0) {
+            if(getObjectsAtOffset(dx, dy, Rock.class).size() == 0)
+                return false;
+        }
+        return true;
+    }
+
+    public void checkKeys()
+    {
+        boolean obstacle = true;
+        if( Greenfoot.isKeyDown("left"))
+        {
+            obstacle = checkObstacle(-10, 0);
+            if(!obstacle)
+                move(-5);
+        }
+        else if(Greenfoot.isKeyDown("right"))
+        {
+            obstacle = checkObstacle(10, 0);
+            if(!obstacle)
+                move(5);
+        }
+        else if(Greenfoot.isKeyDown("up")) 
+        { 
+            jump("up");
+        }
+        else if(Greenfoot.isKeyDown("down")) 
+        {
+            jump("down");
+        }
+        else {
+            // Drag player down if he stands at one place and doesn't move
+            World world = getWorld();
+            int worldX = world.getWidth();      
+            int worldY = world.getHeight();
+            if(Level1Strategy.getFinalLevelState()==false)
+                setLocation(getX(), getY()+1);
+            
+            if(isAtEdge()) {
                     // Stop the level
-					// TODO: Stop only when the Player reaches the lowermost edge of the world. Otherwise, do nothing.
+                    // TODO: Stop only when the Player reaches the lowermost edge of the world. Otherwise, do nothing.
                     ((MyWorld)world).lostLife();
-			}
-		}
+            }
+        }
 
-	}
+    }
 
-	public void jump(String keyEvent)  
-	{  
+    public void jump(String keyEvent)  
+    {  
 
-		vSpeed = jumpStrength;  
-		if(keyEvent.equals("up"))
-			fall();   
-		else
-			fallDown();
-	}
+        vSpeed = jumpStrength;  
+        if(keyEvent.equals("up"))
+            fall();   
+        else
+            fallDown();
+    }
 
 
-	public void fall()  
-	{  
-		boolean obstacle = checkObstacle(0, vSpeed*2);
-		if(!obstacle) {
-			setLocation(getX(), getY()+vSpeed);  
-			vSpeed = vSpeed + acceleration;  
-		}
-	}
-	public void fallDown()  
-	{  
-		boolean obstacle = checkObstacle(0, -vSpeed*2);
-		if(!obstacle) {
-			setLocation(getX(), getY()-vSpeed);  
-			vSpeed = vSpeed - acceleration;  
-		}
-	}
+    public void fall()  
+    {  
+        boolean obstacle = checkObstacle(0, vSpeed*2);
+        if(!obstacle) {
+            setLocation(getX(), getY()+vSpeed);  
+            vSpeed = vSpeed + acceleration;  
+        }
+    }
+    
+    public void fallDown()  
+    {  
+        boolean obstacle = checkObstacle(0, -vSpeed*2);
+        if(!obstacle) {
+            setLocation(getX(), getY()-vSpeed);  
+            vSpeed = vSpeed - acceleration;  
+        }
+    }   
 }
+
 

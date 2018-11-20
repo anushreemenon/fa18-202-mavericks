@@ -376,9 +376,9 @@ public class Level1Strategy extends Actor implements LevelStrategy{
       riverTerrain.display();
 
           // Set up rail terrain
-      RailTerrain railTerrain = new RailTerrain();
+     /* RailTerrain railTerrain = new RailTerrain();
       
-      /*
+      
       Track track = new Track();
       
       trackImg = track.getImage();

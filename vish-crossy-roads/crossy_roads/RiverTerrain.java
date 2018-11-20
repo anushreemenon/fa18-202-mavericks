@@ -58,7 +58,7 @@ public class RiverTerrain extends Composite
         
         //logY = rvY;
         
-        System.out.println("rvY = " + rvY);
+       // System.out.println("rvY = " + rvY);
 
         if (count%25 == 0) {
             log = getLog();
