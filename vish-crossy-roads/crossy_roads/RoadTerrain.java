@@ -14,7 +14,7 @@ public class RoadTerrain extends Composite {
     private Component car;
     private ArrayList <Component> cars = new ArrayList<Component>()  ;
     private static int count = 0;
-    private static int carY = 625;
+    private int carY = 625;
     
     public void act() {
         

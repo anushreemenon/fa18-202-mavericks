@@ -14,7 +14,7 @@ public class RiverTerrain extends Composite
      */
    private Component log;
    private static int count = 0;
-   private static int logY = 300;
+   private int logY = 300;
 
    
    public void act() {
@@ -60,20 +60,21 @@ public class RiverTerrain extends Composite
         
         System.out.println("rvY = " + rvY);
 
-        if (count%40 == 0) {
+        if (count%25 == 0) {
             log = getLog();
             actualLog = (Actor)log;
             
-            if (logY > rvY-100 && logY < rvY+100) {
-                    myWorld.addObject(actualLog,1200,logY);
-                    logY +=100;
+            if (logY >= rvY-100 && logY <= rvY+100) {
+                    myWorld.addObject(actualLog,1200,logY+50);
+                    logY -=50;
             }
-        logY -= 25;
-
+            else {  
+                logY = rvY+100;
+        
         }
        
-
-    } 
+    }
+   } 
+}
         
     
-}
