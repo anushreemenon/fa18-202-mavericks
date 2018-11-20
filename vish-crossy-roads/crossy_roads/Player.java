@@ -28,29 +28,26 @@ public class Player extends Leaf
             lc.lostLife();
         }
         
-        List<River> rivers = getNeighbours(50, true, River.class);    
-        System.out.println("River count is " + rivers.size());
-        if (rivers.size()>0) {  //TO-DO: Not sure why river is not being detected as neighbour
-            System.out.println("Water found");
-            onWater = true;
+        if (isTouching(River.class)) {
+             onWater = true;
+             List<Log> logs = getNeighbours(50, true, Log.class);
+             System.out.println("Logs count is " + logs.size());
+             
+             if (logs.size()>0) {
+                 System.out.println("Log found");
+                 onLog = true;
+             }
         }
-               
-        List<Log> logs = getNeighbours(25, true, Log.class);
-        System.out.println("Logs count is " + logs.size());
-        if (logs.size()>0) {
-            System.out.println("Log found");
-            onLog = true;
+        else {
+            onWater = false;
         }
         
-
-            
         if (onLog && onWater) {
             //safe.. do nothing
         } else if (onWater) {
                 lc.lostLife();
         }
         
-            
         checkKeys();
     }  
 
