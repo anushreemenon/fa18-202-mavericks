@@ -38,7 +38,7 @@ public class RiverTerrain extends Composite
         Actor actualRiver;
         river = getChild(0);    //first element of composite is river. remaining ones are logs
         actualRiver = (Actor)river;
-        myWorld.addObject( actualRiver, 0, 100 );
+        myWorld.addObject( actualRiver, 0, 0 );
 
     }
 
