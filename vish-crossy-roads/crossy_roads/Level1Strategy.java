@@ -43,7 +43,8 @@ public class Level1Strategy extends Actor implements LevelStrategy {
     public void loadTerrains() {      
         MyWorld myWorld =  getWorldOfType(MyWorld.class);
 
-         // D. River terrain:
+        //------------------------------------------------------------
+         // A. River terrain:
 	    // 1. Create river terrain object
         RiverTerrain riverTerrain = new RiverTerrain();
       
@@ -92,7 +93,10 @@ public class Level1Strategy extends Actor implements LevelStrategy {
 	    // 8. Display the river terrain
         riverTerrain.display();
 
+        //------------------------------------------------------------
+         // B. Land Terrain 1:
         
+        // Lan Terrain Creation
         LandTerrain landTerrain1 = new LandTerrain(); 
         
         // 2. Land objects
@@ -196,8 +200,7 @@ public class Level1Strategy extends Actor implements LevelStrategy {
         myWorld.addObject( r8, 950, 300);
 
 
-       
-
+       //------------------------------------------------------------
         // C. Road terrain:
 	    // 1. Create object pof road terrain
         RoadTerrain roadTerrain = new RoadTerrain();
@@ -260,8 +263,8 @@ public class Level1Strategy extends Actor implements LevelStrategy {
 	    // 7. Adding road terrain to the my world
         myWorld.addObject( roadTerrain, 0, 400 );
 
-
-
+        //------------------------------------------------------------
+        // D. Land terrain2
         //LandTerrain2
 
         LandTerrain landTerrain2 = new LandTerrain();
@@ -308,7 +311,8 @@ public class Level1Strategy extends Actor implements LevelStrategy {
         myWorld.addObject( r9, 740, 700);
         myWorld.addObject( r10, 500, 700);
 
-        // B. Coins:
+        //------------------------------------------------------------
+        // E.Coins
 	    // 1. Construct coin objects
         Coin coin1 = new Coin();
         Coin coin2 = new Coin();
@@ -331,12 +335,12 @@ public class Level1Strategy extends Actor implements LevelStrategy {
         myWorld.addObject( coin5, 350, 650);
 
 
-        // E. Create the Player and it to appropriate coordinatesin the world
+        // F. Create the Player and it to appropriate coordinatesin the world
         Player p = new Player();
         p.getImage().scale(50,50);
         myWorld.addObject( p, 600, 700);
       
-	  // F. Setup the 'Target' terrain
+	  // G. Setup the 'Target' terrain
         target = new Target();
         target.getImage().scale(myWorld.getWidth(),100);  
 
