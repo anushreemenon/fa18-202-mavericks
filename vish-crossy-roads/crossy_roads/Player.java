@@ -28,7 +28,8 @@ public class Player extends Leaf
             lc.lostLife();
         }
         
-        if (isTouching(River.class)) {
+        List<River> r = getIntersectingObjects(River.class);
+        if (r.size() > 0) {
              onWater = true;
              List<Log> logs = getNeighbours(150, true, Log.class);
              System.out.println("Logs count is " + logs.size());
