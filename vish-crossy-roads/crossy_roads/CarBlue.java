@@ -27,7 +27,7 @@ public class CarBlue extends Leaf
             pos = 0;
             
         if(Level1Strategy.getFinalLevelState()==false)
-            setLocation((pos + getX()- 2), (getY()+1)%worldY);
+            setLocation((pos + getX()- 3), (getY()+1)%worldY);
     }
     public void update(){
     }    

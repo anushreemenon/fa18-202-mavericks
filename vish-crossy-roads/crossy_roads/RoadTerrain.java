@@ -14,7 +14,7 @@ public class RoadTerrain extends Composite {
     private Component car;
     private ArrayList <Component> cars = new ArrayList<Component>()  ;
     private static int count = 0;
-    private int carY = 625;
+    private int carY = 600;
     
     public void act() {
         
@@ -60,8 +60,25 @@ public class RoadTerrain extends Composite {
         int rtY = rt.get(0).getY();
         
        // System.out.println("rtY = " + rtY);
-
-        if (count%100 == 0) {
+/*
+            if (count%25 == 0) {
+            log = getLog();
+            actualLog = (Actor)log;
+            
+            if (logY >= rvY-100 && logY <= rvY+100) {
+                    myWorld.addObject(actualLog,1200,logY+50);
+                    logY -=50;
+            }
+            else {  
+                logY = rvY+100;
+        
+        }
+  */
+ 
+   
+       
+       /*
+        if (count%25 == 0) {
             car = getCar();
             actualCar = (Actor)car;
             
@@ -69,12 +86,31 @@ public class RoadTerrain extends Composite {
 
             
             //carY = rtY+25;
-            if (carY <= rtY && carY > rtY-300)
+            if (carY <= rtY && carY > rtY-249)
                     myWorld.addObject(actualCar,1200,carY);
 
             carY -=50;
 
         }
+        */
+        
+             
+        if (count%20 == 0) {
+            car = getCar();
+            actualCar = (Actor)car;
+            
+            //rt = myWorld.getObjects(RoadTerrain.class);
+
+            
+            //carY = rtY+25;
+            if (carY <= rtY && carY > rtY-250) {
+                    myWorld.addObject(actualCar,1200,carY);
+                    carY -=50;
+            } else {
+            carY = rtY;
+        }
+        }
+
 
     } 
         
