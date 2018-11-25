@@ -47,17 +47,6 @@ public class MyWorld extends greenfoot.World
         // Add the life counter to the World
         addObject (lifeCounter,  130, 100);
         gameOverSound = new GreenfootSound("GameOver.wav");
-        lifeCounter.lostLife();
-        // lifeCounter.lostLife();
-        // lifeCounter.lostLife();
-        
-        //addObject(currentLevel,67,25);
-        
-        // Ensure that player is on top of everything else. This order needs to 
-        // be revisited once all the terrains are set up
-        
-        
-        //composite terrains = new composite() ;
         
     }
 
