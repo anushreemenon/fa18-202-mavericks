@@ -40,7 +40,7 @@ public class Player extends Leaf
              }
         }
         else {
-            System.out.println("Not on water");
+            // System.out.println("Not on water");
             onWater = false;
         }
         

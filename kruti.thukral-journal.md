@@ -46,3 +46,22 @@ As part of XP value of Feedback, during the course of the week I suggested below
 
 ### What tasks are blocked waiting on another team member?
 None
+
+## Week 3: 11/18 - 11/24:
+
+### What tasks did I work on / complete?
+
+1. Implemented user story of getting aditional lives on collecting coins
+2. Implemented user story of player having the ability to check his/her progress in the game with the help of level board, coin board and life counter
+
+As part of XP value of Feedback, during the course of the week I suggested below:
+1. Proposed expedited implementation of few technical stories
+
+### What am I planning to work on next?
+1. Bug fixe - Game coming to an end after losing life when sufficient lives are available to continue the game
+2. Document sequence diagrams 
+
+
+### What tasks are blocked waiting on another team member?
+None
+
