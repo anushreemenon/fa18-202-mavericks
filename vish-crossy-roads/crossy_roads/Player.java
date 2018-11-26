@@ -19,38 +19,34 @@ public class Player extends Leaf
     private int jumpStrength = -8; 
     public void act() 
     {
-        boolean onLog = false, onWater = false;
+        boolean onLog = false;
         World myWorld = getWorld();
         List<LifeCounter> lcs = myWorld.getObjects(LifeCounter.class);   
         LifeCounter lc = lcs.get(0);
 
         if (isTouching(Car.class) || isTouching(CarBlue.class)) {
             lc.lostLife();
+            return;
+        } else if (isTouching(River.class)) {
+            List<Log> logs = getNeighbours(150, true, Log.class);
+            System.out.println("Logs count is " + logs.size());
+            
+            if (logs.size()>0) {
+                System.out.println("Log found");
+                onLog = true;
+            }
+        
+            if (onLog) {
+                //safe.. do nothing
+            } else {
+                    lc.lostLife();
+                    return;
+            }
+        } else {
+            checkKeys();
         }
         
-        List<River> r = getIntersectingObjects(River.class);
-        if (r.size() > 0) {
-             onWater = true;
-             List<Log> logs = getNeighbours(150, true, Log.class);
-             System.out.println("Logs count is " + logs.size());
-             
-             if (logs.size()>0) {
-                 System.out.println("Log found");
-                 onLog = true;
-             }
-        }
-        else {
-            // System.out.println("Not on water");
-            onWater = false;
-        }
         
-        if (onLog && onWater) {
-            //safe.. do nothing
-        } else if (onWater) {
-                lc.lostLife();
-        }
-        
-        checkKeys();
     }  
 
     private boolean checkObstacle(int dx, int dy) {

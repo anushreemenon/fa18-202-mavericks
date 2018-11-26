@@ -26,7 +26,7 @@ public class LifeCounter extends Actor
         livesLeft--;
         if (livesLeft != 0)
             drawLifeCounter();
-        else{
+        else {
             MyWorld myWorld =  getWorldOfType(MyWorld.class);
             myWorld.endGame();
         }

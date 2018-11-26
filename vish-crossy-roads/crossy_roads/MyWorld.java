@@ -33,23 +33,29 @@ public class MyWorld extends greenfoot.World
         super(1200, 800, 1);
         levelBoard = new LevelBoard ();
         coinBoard = new CoinBoard (this);
+        lifeCounter = new LifeCounter ();
         levelBoard.setLevel(level);
+        setPaintOrder(Player.class, ScoreBoard.class, LifeCounter.class, LevelBoard.class, CoinCounter.class, Coin.class, DisplayMessage.class, Level1Strategy.class);
+        startLevel();
+        gameOverSound = new GreenfootSound("GameOver.wav");
+       
+       
+        // Add the life counter to the World
+        
+       
+        
+    }
 
+    void startLevel() {
+        removeObjects(getObjects(null));
         currentLevel = new Level1Strategy();
         currentLevel.setFinalLevelState(false);
-        
-        setPaintOrder(Player.class, ScoreBoard.class, LifeCounter.class, LevelBoard.class, CoinCounter.class, Coin.class, DisplayMessage.class, Level1Strategy.class);
         addObject(currentLevel,67,25);
         addObject (levelBoard, 70, 750);
         coinBoard.loadCoinBoard();
         currentLevel.loadTerrains();
-        lifeCounter = new LifeCounter ();
-        // Add the life counter to the World
         addObject (lifeCounter,  130, 100);
-        gameOverSound = new GreenfootSound("GameOver.wav");
-        
     }
-
     /**
      * The Act method is responsible for:
      *      loading new levels and death screens
@@ -76,6 +82,7 @@ public class MyWorld extends greenfoot.World
 
     public void lostLife() {
         lifeCounter.lostLife();
+        startLevel();
     }
 
 }
