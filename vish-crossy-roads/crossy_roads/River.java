@@ -13,15 +13,7 @@ public class River extends Leaf
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     private static int Y=0;
-    public void act() 
-    {
-        // Add your action code here.
-         World myWorld = getWorld();
-        int worldX = myWorld.getWidth();
-        int worldY = myWorld.getHeight();
-        if(Level1Strategy.getFinalLevelState()==false)
-            setLocation((getX()%worldX), (getY()+1)%worldY);
-    }
+    
     public void display() {
          
     }

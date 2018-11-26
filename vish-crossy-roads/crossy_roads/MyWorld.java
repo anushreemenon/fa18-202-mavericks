@@ -81,6 +81,7 @@ public class MyWorld extends greenfoot.World
     }
 
     public void lostLife() {
+        
         lifeCounter.lostLife();
         startLevel();
     }

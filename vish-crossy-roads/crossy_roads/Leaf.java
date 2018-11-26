@@ -10,7 +10,12 @@ public class Leaf extends Actor implements Component {
      */
     public void act() 
     {
+        World world = getWorld();
         // Add your action code here.
+        int worldX = world.getWidth();      
+        int worldY = world.getHeight();
+        if(Level1Strategy.getFinalLevelState()==false)
+            setLocation((getX())%worldX, (getY()+1)%worldY);
     }
     public Leaf() {
         
