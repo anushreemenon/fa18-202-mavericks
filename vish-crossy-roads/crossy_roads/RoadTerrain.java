@@ -17,9 +17,7 @@ public class RoadTerrain extends Composite {
     private int carY = 600;
     
     public void act() {
-        
         display();
-
     }
 
     public Component getCar() {
@@ -36,7 +34,7 @@ public class RoadTerrain extends Composite {
         World myWorld = getWorld();
         Component rd;
         Actor road;
-        int y = 600;
+        int y = getY()+200;
         for (int i=0; i<3; i++) {
             rd = getChild(i);
             road = (Actor)rd;
@@ -50,59 +48,19 @@ public class RoadTerrain extends Composite {
         Actor actualCar;
 
         World myWorld = getWorld();
-
-        count++;
-        
+        count++;       
         createRoads();
+
+        //carY = getY()+300;
         
         List<Road> rt = myWorld.getObjects(Road.class);
             
         int rtY = rt.get(0).getY();
-        
-       // System.out.println("rtY = " + rtY);
-/*
-            if (count%25 == 0) {
-            log = getLog();
-            actualLog = (Actor)log;
-            
-            if (logY >= rvY-100 && logY <= rvY+100) {
-                    myWorld.addObject(actualLog,1200,logY+50);
-                    logY -=50;
-            }
-            else {  
-                logY = rvY+100;
-        
-        }
-  */
- 
-   
-       
-       /*
-        if (count%25 == 0) {
-            car = getCar();
-            actualCar = (Actor)car;
-            
-            //rt = myWorld.getObjects(RoadTerrain.class);
-
-            
-            //carY = rtY+25;
-            if (carY <= rtY && carY > rtY-249)
-                    myWorld.addObject(actualCar,1200,carY);
-
-            carY -=50;
-
-        }
-        */
-        
              
         if (count%20 == 0) {
             car = getCar();
             actualCar = (Actor)car;
-            
-            //rt = myWorld.getObjects(RoadTerrain.class);
 
-            
-            //carY = rtY+25;
             if (carY <= rtY && carY > rtY-250) {
                     myWorld.addObject(actualCar,1200,carY);
                     carY -=50;

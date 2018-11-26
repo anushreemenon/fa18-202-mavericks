@@ -19,32 +19,28 @@ public class Player extends Leaf
     private int jumpStrength = -8; 
     public void act() 
     {
-        boolean onLog = false;
         World myWorld = getWorld();
         List<LifeCounter> lcs = myWorld.getObjects(LifeCounter.class);   
         LifeCounter lc = lcs.get(0);
 
         if (isTouching(Car.class) || isTouching(CarBlue.class)) {
             lc.lostLife();
-            return;
         } else if (isTouching(River.class)) {
-            List<Log> logs = getNeighbours(150, true, Log.class);
-            System.out.println("Logs count is " + logs.size());
+            List<River> river = myWorld.getObjects(River.class);
+            int riverY = river.get(0).getY();
+         
             
-            if (logs.size()>0) {
-                System.out.println("Log found");
-                onLog = true;
+            if (getY() >= riverY+150){         
+                List<Log> logs = getNeighbours(50, true, Log.class);
+                if (logs.size() <=0) {
+                    lc.lostLife();
+                }
             }
         
-            if (onLog) {
-                //safe.. do nothing
-            } else {
-                    lc.lostLife();
-                    return;
-            }
-        } else {
-            checkKeys();
-        }
+        } 
+        checkKeys();
+        
+
         
         
     }  
@@ -83,8 +79,6 @@ public class Player extends Leaf
         else {
             // Drag player down if he stands at one place and doesn't move
             World world = getWorld();
-            int worldX = world.getWidth();      
-            int worldY = world.getHeight();
             if(Level1Strategy.getFinalLevelState()==false)
                 setLocation(getX(), getY()+1);
             

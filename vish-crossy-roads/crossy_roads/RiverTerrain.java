@@ -47,19 +47,11 @@ public class RiverTerrain extends Composite
         Actor actualLog;
 
         World myWorld = getWorld();
-
-        count++;
-        
-        createRiver();
-         
-        List<River> rv = myWorld.getObjects(River.class);
-            
+        count++;    
+        createRiver();     
+        List<River> rv = myWorld.getObjects(River.class);    
         int rvY = rv.get(0).getY();
-        
-        //logY = rvY;
-        
-       // System.out.println("rvY = " + rvY);
-
+ 
         if (count%25 == 0) {
             log = getLog();
             actualLog = (Actor)log;

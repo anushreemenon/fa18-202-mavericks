@@ -1,5 +1,33 @@
 # Weekly Scrum Report:
 
+## Week 3: 11/18 - 11/24:
+
+### What tasks did I work on / complete?
+1. Implemented Level2 and Level 3 strategies
+2. Fixed issues for cars going awry and crossing river
+3. Refactored code for Level1strategy.
+
+### What am I planning to work on next?
+1. Fix issues
+2. Implement more design patterns
+3. Prep presentation
+
+### What tasks are blocked waiting on another team member?
+None.
+
+## Week 1: 11/4 - 11/10:
+
+### What tasks did I work on / complete?
+1. Worked on setting up Road Terrains and River terrains and setup the strategy patterns.
+2. Created activity diagram.
+
+
+### What am I planning to work on next?
+1. Implement river terrain with log movements.
+2. Implement crash detection and ending life user story.
+
+### What tasks are blocked waiting on another team member?
+No blockers as of now.
 
 ## Week 2: 11/11 - 11/17:
 

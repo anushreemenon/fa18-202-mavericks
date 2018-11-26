@@ -26,8 +26,10 @@ public class CarBlue extends Leaf
         else
             pos = 0;
             
-        if(Level1Strategy.getFinalLevelState()==false)
-            setLocation((pos + getX()- 3), (getY()+1)%worldY);
+        if(Level1Strategy.getFinalLevelState()==false) {
+            int speed = Level1Strategy.getSpeed();
+            setLocation((pos + getX()- speed), (getY()+1)%worldY);
+        }
     }
     public void update(){
     }    
