@@ -44,12 +44,7 @@ public class Level1Strategy extends Actor implements LevelStrategy {
 
     public void addTarget(){
         MyWorld myWorld =  getWorldOfType(MyWorld.class);
-
-      // G. Setup the 'Target' terrain
-        target = new Target();
-        target.getImage().scale(myWorld.getWidth(),100); 
         myWorld.addObject( target, 600, 50);
-        
     }
     
     public void loadTerrains() {    
@@ -70,8 +65,13 @@ public class Level1Strategy extends Actor implements LevelStrategy {
         createLandTerrain(y);
 
         createPlayer();
+        createTarget();
     }
     
+    public void createTarget(){
+        target = new Target();
+        target.getImage().scale(myWorld.getWidth(),100);
+    }
     public void createRiverTerrain(int y) {
         //------------------------------------------------------------
          // A. River terrain:
