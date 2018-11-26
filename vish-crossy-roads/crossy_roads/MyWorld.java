@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
 
 /**
  * Write a description of class MyWorld here.
@@ -28,6 +29,7 @@ public class MyWorld extends greenfoot.World
     private CoinBoard coinBoard;
     private LifeCounter lifeCounter;
     private Boolean actionPaused;
+    private Boolean levelLoaded;
     
     
     public MyWorld()
@@ -39,27 +41,30 @@ public class MyWorld extends greenfoot.World
         lifeCounter = new LifeCounter ();
         levelBoard.setLevel(level);
         setPaintOrder(Player.class, ScoreBoard.class, LifeCounter.class, LevelBoard.class, CoinCounter.class, Coin.class, DisplayMessage.class, Level1Strategy.class);
-        startLevel();
-        gameOverSound = new GreenfootSound("explosion.wav");
-        explosionSound = new GreenfootSound("GameOver.wav");
+        gameOverSound = new GreenfootSound("GameOver.wav");
+        explosionSound = new GreenfootSound("explosion.wav");
         powerUpSound = new GreenfootSound("powerup.wav");
-        actionPaused = false;
-       
-        // Add the life counter to the World
-        
-       
+        loadLevel();
         
     }
-
-    void startLevel() {
-        removeObjects(getObjects(null));
+    public void act ()
+    {
+        if (!levelLoaded)
+            loadLevel();
+    }
+    void loadLevel() { 
+        List objects = getObjects(null);
+        removeObjects(objects);
         currentLevel = new Level1Strategy();
         currentLevel.setFinalLevelState(false);
         addObject(currentLevel,67,25);
         addObject (levelBoard, 70, 750);
         coinBoard.loadCoinBoard();
         currentLevel.loadTerrains();
+        lifeCounter.drawLifeCounter();
         addObject (lifeCounter,  130, 100);
+        levelLoaded = true;
+        actionPaused = false;
     }
     /**
      * The Act method is responsible for:
@@ -77,20 +82,22 @@ public class MyWorld extends greenfoot.World
     }
 
     public void incrementCoinCount() {
+        actionPaused = true;
         coinBoard.incrementCount();
+        actionPaused = false;
 
     }
 
     public void powerUp() {
         lifeCounter.powerUp();
-        powerUpSound.play();
     }
 
     public void lostLife() {
         lifeCounter.lostLife();
         explosionSound.play();
         actionPaused = true;
-        startLevel();
+        levelLoaded = false;
+        // startLevel();
     }
 
     /**

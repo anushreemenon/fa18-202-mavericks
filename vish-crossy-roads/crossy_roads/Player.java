@@ -20,14 +20,15 @@ public class Player extends Leaf
     public void act() 
     {
         MyWorld myWorld = (MyWorld) getWorld();
-        if (myWorld.isActionPaused() == false)
+        if (!myWorld.isActionPaused())
         {
            
-            List<LifeCounter> lcs = myWorld.getObjects(LifeCounter.class);   
-            LifeCounter lc = lcs.get(0);
+            // List<LifeCounter> lcs = myWorld.getObjects(LifeCounter.class);   
+            // LifeCounter lc = lcs.get(0);
 
             if (isTouching(Car.class) || isTouching(CarBlue.class)) {
-                lc.lostLife();
+                myWorld.lostLife();
+                // Greenfoot.delay(50);
             } else if (isTouching(River.class)) {
                 List<River> river = myWorld.getObjects(River.class);
                 int riverY = river.get(0).getY();
@@ -36,7 +37,8 @@ public class Player extends Leaf
                 if (getY() >= riverY+150){         
                     List<Log> logs = getNeighbours(50, true, Log.class);
                     if (logs.size() <=0) {
-                        lc.lostLife();
+                        myWorld.lostLife();
+                        // Greenfoot.delay(50);
                     }
                 }
             

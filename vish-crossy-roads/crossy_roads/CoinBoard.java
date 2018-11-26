@@ -14,7 +14,7 @@ public class CoinBoard extends Actor
     private DisplayMessage displayMessage;
     private int coinCount;
     MyWorld myWorld;
-    static final int COINS_FOR_EXTRA_LIFE = 3;
+    static final int COINS_FOR_EXTRA_LIFE = 5;
     private int totalCount;
 
     public CoinBoard (MyWorld world)
@@ -32,7 +32,7 @@ public class CoinBoard extends Actor
     {
         coinCount++;
         totalCount++;
-        if (coinCount % COINS_FOR_EXTRA_LIFE == 0) {
+        if ((coinCount % COINS_FOR_EXTRA_LIFE) == 0) {
             myWorld.powerUp();
             coinCount = 0;
         }

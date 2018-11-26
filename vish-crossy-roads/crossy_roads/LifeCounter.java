@@ -24,9 +24,8 @@ public class LifeCounter extends Actor
     {
         //Reduce life count in the life counter board
         livesLeft--;
-        if (livesLeft != 0)
-            drawLifeCounter();
-        else {
+        drawLifeCounter();
+        if (livesLeft <= 0){
             MyWorld myWorld =  getWorldOfType(MyWorld.class);
             myWorld.endGame();
         }
