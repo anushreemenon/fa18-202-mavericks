@@ -19,28 +19,31 @@ public class Player extends Leaf
     private int jumpStrength = -8; 
     public void act() 
     {
-        World myWorld = getWorld();
-        List<LifeCounter> lcs = myWorld.getObjects(LifeCounter.class);   
-        LifeCounter lc = lcs.get(0);
+        MyWorld myWorld = (MyWorld) getWorld();
+        if (myWorld.isActionPaused() == false)
+        {
+           
+            List<LifeCounter> lcs = myWorld.getObjects(LifeCounter.class);   
+            LifeCounter lc = lcs.get(0);
 
-        if (isTouching(Car.class) || isTouching(CarBlue.class)) {
-            lc.lostLife();
-        } else if (isTouching(River.class)) {
-            List<River> river = myWorld.getObjects(River.class);
-            int riverY = river.get(0).getY();
-         
+            if (isTouching(Car.class) || isTouching(CarBlue.class)) {
+                lc.lostLife();
+            } else if (isTouching(River.class)) {
+                List<River> river = myWorld.getObjects(River.class);
+                int riverY = river.get(0).getY();
             
-            if (getY() >= riverY+150){         
-                List<Log> logs = getNeighbours(50, true, Log.class);
-                if (logs.size() <=0) {
-                    lc.lostLife();
+                
+                if (getY() >= riverY+150){         
+                    List<Log> logs = getNeighbours(50, true, Log.class);
+                    if (logs.size() <=0) {
+                        lc.lostLife();
+                    }
                 }
-            }
+            
+            } 
+            checkKeys();
         
-        } 
-        checkKeys();
-        
-
+        }
         
         
     }  

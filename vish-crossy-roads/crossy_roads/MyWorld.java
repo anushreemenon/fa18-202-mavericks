@@ -19,12 +19,15 @@ public class MyWorld extends greenfoot.World
     private int noOfCoinsCollected;
     private int currentNoOfLives;
     private GreenfootSound gameOverSound;
+    private GreenfootSound explosionSound;
+    private GreenfootSound powerUpSound;
    
     static final int DEFAULT_MAX_LEVELS = 3;
     static final int level = 1;
     private LevelBoard levelBoard;
     private CoinBoard coinBoard;
     private LifeCounter lifeCounter;
+    private Boolean actionPaused;
     
     
     public MyWorld()
@@ -37,8 +40,10 @@ public class MyWorld extends greenfoot.World
         levelBoard.setLevel(level);
         setPaintOrder(Player.class, ScoreBoard.class, LifeCounter.class, LevelBoard.class, CoinCounter.class, Coin.class, DisplayMessage.class, Level1Strategy.class);
         startLevel();
-        gameOverSound = new GreenfootSound("GameOver.wav");
-       
+        gameOverSound = new GreenfootSound("explosion.wav");
+        explosionSound = new GreenfootSound("GameOver.wav");
+        powerUpSound = new GreenfootSound("powerup.wav");
+        actionPaused = false;
        
         // Add the life counter to the World
         
@@ -78,12 +83,23 @@ public class MyWorld extends greenfoot.World
 
     public void powerUp() {
         lifeCounter.powerUp();
+        powerUpSound.play();
     }
 
     public void lostLife() {
-        
         lifeCounter.lostLife();
+        explosionSound.play();
+        actionPaused = true;
         startLevel();
     }
+
+    /**
+     * Returns whether the current gamestate is paused (true) or not (false)
+     */
+    public boolean isActionPaused ()
+    {
+        return actionPaused;
+    }
+
 
 }
