@@ -8,6 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Tree extends Leaf
 {
+
+    public Tree() {
+        this.getImage().scale(30,75);
+    }
     /**
      * Act - do whatever the rock wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

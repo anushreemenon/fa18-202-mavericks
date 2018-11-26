@@ -82,7 +82,7 @@ public class Level1Strategy extends Actor implements LevelStrategy {
         River r = new River();
 
         // 4. Scale river image
-        r.getImage().scale(2400,300);
+        // r.getImage().scale(2400,300);
       
         // 5. Create wooden log objects
         Log log1 = new Log();                                                                                                                                      
@@ -95,16 +95,6 @@ public class Level1Strategy extends Actor implements LevelStrategy {
         Log log8 = new Log();
         Log log9 = new Log();
         
-        // 6. Scale log images
-        log1.getImage().scale(120,30);
-        log2.getImage().scale(120,30);
-        log3.getImage().scale(120,30);
-        log4.getImage().scale(120,30);
-        log5.getImage().scale(120,30);
-        log6.getImage().scale(120,30);
-        log7.getImage().scale(120,30);
-        log8.getImage().scale(120,30);
-        log9.getImage().scale(120,30);
       
         // 7. Setup composite pattern
         riverTerrain.addChild ( r );
@@ -135,7 +125,6 @@ public class Level1Strategy extends Actor implements LevelStrategy {
         // 2. Land objects
         Land l1 = new Land();//Upper 
 
-        l1.getImage().scale(2500,100);
 
         // 3. Tree objects
         Tree t1 = new Tree();
@@ -166,39 +155,27 @@ public class Level1Strategy extends Actor implements LevelStrategy {
         Rock r10 = new Rock();
 
         // 5. Scale rock images to required sizes
-        r1.getImage().scale(50,50);
-        r2.getImage().scale(50,50);
-        r3.getImage().scale(50,50);
-        r4.getImage().scale(50,50);     
-        r5.getImage().scale(50,50);
-        r6.getImage().scale(60,60);
-        r7.getImage().scale(60,60);
-        r8.getImage().scale(60,60);
-        r9.getImage().scale(50,50);
-        r10.getImage().scale(70,70);
+        r6.scale(60,60);
+        r7.scale(60,60);
+        r8.scale(60,60);
+        r10.scale(70,70);
         
         // 6. Scale tree images to appropriate size
-        t1.getImage().scale(30,75);
-        t2.getImage().scale(30,75);
-        t3.getImage().scale(30,75);
-        t4.getImage().scale(30,75);
-        t5.getImage().scale(30,75);
-        t6.getImage().scale(30,75);
-        t7.getImage().scale(40,85);
-        t8.getImage().scale(40,85);
-        t9.getImage().scale(40,85);
-        t10.getImage().scale(40,85);
-        t11.getImage().scale(40,85);
-        t12.getImage().scale(40,85);
-        t13.getImage().scale(20,65);
-        t14.getImage().scale(20,65);
+        t7.scale(40,85);
+        t8.scale(40,85);
+        t9.scale(40,85);
+        t10.scale(40,85);
+        t11.scale(40,85);
+        t12.scale(40,85);
+        t13.scale(20,65);
+        t14.scale(20,65);
         
         // 7. Scale image of land to appropriate size
 
         if (y == 300)
-            l1.getImage().scale(2500,300);
+            l1.scale(2500,300);
         else
-            l1.getImage().scale(2500,120);
+            l1.scale(2500,120);
 
 
          // 8. Setup the composite pattern for land terrain
@@ -295,25 +272,6 @@ public class Level1Strategy extends Actor implements LevelStrategy {
         roadTerrain.addChild ( car11 );
         roadTerrain.addChild ( car12 );
       
-        // 5. Scale road images to appropriate size
-        rd1.getImage().scale(2500,100);
-        rd2.getImage().scale(2500,100);
-        rd3.getImage().scale(2500,100);
-      
-        // 6. Scale car images
-        car1.getImage().scale(70,30);
-        car2.getImage().scale(70,30);
-        car3.getImage().scale(70,30);
-        car4.getImage().scale(70,30);
-        car5.getImage().scale(70,30);
-        car6.getImage().scale(70,30);
-        car7.getImage().scale(70,30);
-        car8.getImage().scale(70,30);
-        car9.getImage().scale(70,30);
-        car10.getImage().scale(70,30);
-        car11.getImage().scale(70,30);
-        car12.getImage().scale(70,30);
-      
         // 7. Adding road terrain to the my world
         myWorld.addObject( roadTerrain, 0, y );
 
@@ -324,7 +282,7 @@ public class Level1Strategy extends Actor implements LevelStrategy {
         // F. Create the Player and it to appropriate coordinatesin the world
         Player p = new Player();
         p.getImage().scale(50,50);
-        myWorld.addObject( p, 600, 700);
+        myWorld.addObject( p, 600, 650);
     }
      
 

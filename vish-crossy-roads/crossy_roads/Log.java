@@ -8,11 +8,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Log extends Leaf
 {
+    
+    public Log() {
+        this.getImage().scale(120,30);
+    }
+
+    private static int Y=0;
     /**
      * Act - do whatever the log wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    private static int Y=0;
     public void act() 
     {
        //setLocation (getX() - 5, getY());

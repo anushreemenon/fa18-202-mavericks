@@ -37,10 +37,10 @@ public class Player extends Leaf
                 List<River> river = myWorld.getObjects(River.class);
                 int riverY = river.get(0).getY();
                 
-                System.out.println("River Y: "+ riverY + " PlayerY = " + getY());
+                // System.out.println("River Y: "+ riverY + " PlayerY = " + getY());
             
                 
-                if (getY() > riverY-50){        //not yet crossed the river
+                if (getY() > -50){        //not yet crossed the river
                     List<Log> logs = getNeighbours(75, true, Log.class);
                     if (logs.size() <=0) {
                         myWorld.lostLife();

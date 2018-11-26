@@ -47,4 +47,6 @@ public class Composite extends Actor implements Component {
              obj.display();
          }
     }
+
+   
 }

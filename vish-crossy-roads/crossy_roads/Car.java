@@ -8,6 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Car extends Leaf
 {
+
+    public Car() {
+        this.getImage().scale(70,30);
+    }
     /**
      * Act - do whatever the car wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

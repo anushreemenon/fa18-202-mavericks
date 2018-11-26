@@ -43,5 +43,9 @@ public class Leaf extends Actor implements Component {
         // add implementation
     }
 
+    public void scale(int x, int y) {
+        this.getImage().scale(x,y);
+    }
+
      
 }

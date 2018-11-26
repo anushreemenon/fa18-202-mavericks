@@ -8,6 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class River extends Leaf
 {
+    public River() {
+        this.getImage().scale(2400,300);
+    }
     /**
      * Act - do whatever the river wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
