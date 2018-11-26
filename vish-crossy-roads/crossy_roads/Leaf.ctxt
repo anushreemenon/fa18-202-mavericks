@@ -15,4 +15,6 @@ comment6.params=i
 comment6.target=Component\ getChild(int)
 comment7.params=
 comment7.target=void\ display()
-numComments=8
+comment8.params=x\ y
+comment8.target=void\ scale(int,\ int)
+numComments=9

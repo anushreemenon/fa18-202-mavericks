@@ -40,7 +40,7 @@ public class Player extends Leaf
                 // System.out.println("River Y: "+ riverY + " PlayerY = " + getY());
             
                 
-                if (getY() > -50){        //not yet crossed the river
+                if (getY() > riverY-50){        //not yet crossed the river
                     List<Log> logs = getNeighbours(75, true, Log.class);
                     if (logs.size() <=0) {
                         myWorld.lostLife();
