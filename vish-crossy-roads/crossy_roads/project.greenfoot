@@ -260,11 +260,19 @@ dependency83.type=UsesDependency
 dependency9.from=MyWorld
 dependency9.to=DisplayMessage
 dependency9.type=UsesDependency
+<<<<<<< HEAD
 editor.fx.0.height=732
 editor.fx.0.width=1280
 editor.fx.0.x=0
 editor.fx.0.y=0
 height=709
+=======
+editor.fx.0.height=801
+editor.fx.0.width=1440
+editor.fx.0.x=0
+editor.fx.0.y=23
+height=900
+>>>>>>> 5720c6cec185d0392f54d9a388cfacfb47e51daf
 package.numDependencies=83
 package.numTargets=28
 project.charset=UTF-8
@@ -478,7 +486,9 @@ target9.width=80
 target9.x=0
 target9.y=0
 version=3.0.0
-width=1280
+
+width=1440
 world.lastInstantiated=MyWorld
 xPosition=0
-yPosition=23
+yPosition=0
+
