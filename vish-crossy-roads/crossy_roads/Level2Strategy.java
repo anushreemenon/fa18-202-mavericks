@@ -1,16 +1,16 @@
 
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
- * Write a description of class Level1Strategy here.
+ * Write a description of class Level2Strategy here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Level1Strategy extends Actor implements LevelStrategy {
+public class Level2Strategy extends Actor implements LevelStrategy {
     //private List<Leaf> observers = new ArrayList<Leaf>();
     private int targetTimer=0;
     private static boolean isFinalLevelReached = false;
-    private static int speed = 3;
+    private static int speed = 5;
     private Target target;
     private MyWorld myWorld;
     
@@ -27,7 +27,7 @@ public class Level1Strategy extends Actor implements LevelStrategy {
     public void runTargetTimer()
     {
         if(getFinalLevelState()==false){
-            if(targetTimer==1000){
+            if(targetTimer==2000){
                 addTarget();
             }
             else

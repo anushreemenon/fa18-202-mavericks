@@ -14,12 +14,36 @@ public class LandTerrain extends Composite
      */
     public void act() 
     {
-        // Add your action code here.
+        display();
+
     }  
     
     public void display() 
     {
+        Component c;
+        Actor obj, land;
+        World myWorld = getWorld();
+
+        c = getChild(0);    
+
+        land = (Actor) c;
+        myWorld.addObject(land,0,getY());   // adding land 
+
+
+        int x = 50;
         
+        for (int i=1; i<12; i++) {
+
+            c = getChild(i);
+            obj = (Actor)c;
+            if (i< 7)
+                myWorld.addObject(obj,x,getY());  //adding trees and rocks
+            else
+                myWorld.addObject(obj,x,getY()-25);  //adding trees and rocks
+
+            x+=100;
+
+        }
  
     } 
 }

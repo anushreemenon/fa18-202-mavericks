@@ -28,16 +28,23 @@ public class Player extends Leaf
             lc.lostLife();
         }
         
-        List<River> r = getIntersectingObjects(River.class);
-        if (r.size() > 0) {
-             onWater = true;
-             List<Log> logs = getNeighbours(150, true, Log.class);
-             System.out.println("Logs count is " + logs.size());
+        boolean touching = isTouching(River.class);
+        
+        List<River> river = myWorld.getObjects(River.class);
+        int riverY = river.get(0).getY();
+        int riverX = river.get(0).getX();
+         
+        if (touching) {
+            if (getY() < riverY+150)
+                onWater = false;
+            else {         
+                onWater = true;             
+                List<Log> logs = getNeighbours(50, true, Log.class);
              
-             if (logs.size()>0) {
-                 System.out.println("Log found");
-                 onLog = true;
-             }
+                if (logs.size()>0) {
+                    onLog = true;
+                }
+            }
         }
         else {
             // System.out.println("Not on water");
