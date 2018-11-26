@@ -16,7 +16,7 @@ public class Target extends Leaf
     {
         List<Actor> actors = new ArrayList<Actor>();
         // Add your action code here.
-        World world = getWorld();
+        MyWorld world = (MyWorld)getWorld();
         Actor player = world.getObjects(Player.class).get(0);
         
         int worldX = world.getWidth();
@@ -28,6 +28,8 @@ public class Target extends Leaf
             setLocation((getX()), (getY()+1));}
         if(intersects(player)){
             Level1Strategy.setFinalLevelState(true);
+            world.endGame();
+
         }
         
     }   
