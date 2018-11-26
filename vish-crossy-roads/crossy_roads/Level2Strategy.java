@@ -27,7 +27,7 @@ public class Level2Strategy extends Actor implements LevelStrategy {
     public void runTargetTimer()
     {
         if(getFinalLevelState()==false){
-            if(targetTimer==2000){
+            if(targetTimer==3000){
                 addTarget();
             }
             else

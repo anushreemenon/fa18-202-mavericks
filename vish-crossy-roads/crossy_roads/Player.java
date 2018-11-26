@@ -17,33 +17,52 @@ public class Player extends Leaf
     private int vSpeed = 0; //vertical speed  
     private int acceleration = 2; //gravity effect while falling  
     private int jumpStrength = -8; 
+    boolean onLog;
     public void act() 
     {
         MyWorld myWorld = (MyWorld) getWorld();
+        Actor log;
+        onLog = false;
         if (!myWorld.isActionPaused())
         {
            
             // List<LifeCounter> lcs = myWorld.getObjects(LifeCounter.class);   
             // LifeCounter lc = lcs.get(0);
-
+            checkKeys();
+            
             if (isTouching(Car.class) || isTouching(CarBlue.class)) {
                 myWorld.lostLife();
                 // Greenfoot.delay(50);
             } else if (isTouching(River.class)) {
                 List<River> river = myWorld.getObjects(River.class);
                 int riverY = river.get(0).getY();
+                
+                System.out.println("River Y: "+ riverY + " PlayerY = " + getY());
             
                 
-                if (getY() >= riverY+150){         
-                    List<Log> logs = getNeighbours(50, true, Log.class);
+                if (getY() > riverY-50){        //not yet crossed the river
+                    List<Log> logs = getNeighbours(75, true, Log.class);
                     if (logs.size() <=0) {
                         myWorld.lostLife();
                         // Greenfoot.delay(50);
                     }
-                }
+                    else {
+                                if(!(Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("down") || Greenfoot.isKeyDown("left") || Greenfoot.isKeyDown("right"))) {
+                                    for (int i=0; i<logs.size();i++) {
+                                        log = (Actor)logs.get(i);
+                                        if (intersects(log)) {
+                                            setLocation(log.getX(),log.getY());
+                                            break;
+                                        }
+
+                                    }
+                                }
+                 
+                    }
             
-            } 
-            checkKeys();
+                }
+            }
+
         
         }
         
@@ -85,7 +104,7 @@ public class Player extends Leaf
             // Drag player down if he stands at one place and doesn't move
             World world = getWorld();
             if(Level1Strategy.getFinalLevelState()==false)
-                setLocation(getX(), getY()+1);
+                    setLocation(getX(), getY()+1);
             
             if(isAtEdge()) {
                     // Stop the level
