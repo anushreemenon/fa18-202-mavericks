@@ -30,7 +30,8 @@ public class MyWorld extends greenfoot.World
     private LifeCounter lifeCounter;
     private Boolean actionPaused;
     private Boolean levelLoaded;
-    
+    GreenfootSound backgroundMusic;
+ 
     
     public MyWorld()
     {    
@@ -44,6 +45,7 @@ public class MyWorld extends greenfoot.World
         gameOverSound = new GreenfootSound("GameOver.wav");
         explosionSound = new GreenfootSound("explosion.wav");
         powerUpSound = new GreenfootSound("powerup.wav");
+        backgroundMusic = new GreenfootSound("background.mp3");
         loadLevel();
         
     }
@@ -63,6 +65,7 @@ public class MyWorld extends greenfoot.World
         currentLevel.loadTerrains();
         lifeCounter.drawLifeCounter();
         addObject (lifeCounter,  130, 100);
+        backgroundMusic.playLoop();
         levelLoaded = true;
         actionPaused = false;
     }
@@ -74,6 +77,7 @@ public class MyWorld extends greenfoot.World
      */
     public void endGame ()
     {
+        backgroundMusic.pause();
         ScoreBoard s = new ScoreBoard (coinBoard.getCoinCount() , "Game Over", "Score: ");
         addObject (s, getWidth()/2,getHeight()/2);
         gameOverSound.play();
@@ -93,6 +97,7 @@ public class MyWorld extends greenfoot.World
     }
 
     public void lostLife() {
+        backgroundMusic.pause();
         lifeCounter.lostLife();
         explosionSound.play();
         actionPaused = true;
