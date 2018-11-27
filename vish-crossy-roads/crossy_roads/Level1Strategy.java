@@ -329,7 +329,6 @@ public class Level1Strategy extends Actor implements LevelStrategy {
    public void createPlayer() {
         // F. Create the Player and it to appropriate coordinatesin the world
         p = new Player();
-        //System.out.println("Attaching myWorld as the observer for Player..");
         p.attachObserver(myWorld);
         p.getImage().scale(50,50);
         myWorld.addObject( p, 600, 650);
@@ -368,7 +367,7 @@ public class Level1Strategy extends Actor implements LevelStrategy {
         }
     }
 
-    public void notifyAllObservers(boolean state){
+    public void notifyAllObservers(boolean finishstate){
         leaf.update(finishstate);
         target.update(finishstate);
         p.update(finishstate);
