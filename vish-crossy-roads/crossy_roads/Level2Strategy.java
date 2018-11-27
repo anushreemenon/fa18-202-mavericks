@@ -10,6 +10,7 @@ public class Level2Strategy extends Actor implements LevelStrategy {
     //private List<Leaf> observers = new ArrayList<Leaf>();
     private int targetTimer=0;
     private static boolean isFinalLevelReached = false;
+    private  boolean isFinishLevelReached = false;
     private static int speed = 5;
     private Target target;
     private MyWorld myWorld;
@@ -18,10 +19,15 @@ public class Level2Strategy extends Actor implements LevelStrategy {
        //myWorld =  getWorldOfType(MyWorld.class);
        runTargetTimer();
     }
+    public void setFinishLevel(boolean state){
+    }
 
     public static int getSpeed(){
        //myWorld =  getWorldOfType(MyWorld.class);
        return speed;
+    }
+    public boolean getFinishLevel(){
+        return isFinishLevelReached;
     }
     
     public void runTargetTimer()

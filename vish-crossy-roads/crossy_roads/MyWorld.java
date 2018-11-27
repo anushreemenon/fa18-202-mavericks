@@ -51,6 +51,7 @@ public class MyWorld extends greenfoot.World
         loadLevel();
         
     }
+    
     public void act ()
     {
         if (!levelLoaded)
@@ -60,7 +61,7 @@ public class MyWorld extends greenfoot.World
         List objects = getObjects(null);
         removeObjects(objects);
         currentLevel = new Level1Strategy();
-        currentLevel.setFinalLevelState(false);
+        currentLevel.setFinishLevel(false);
         addObject(currentLevel,67,25);
         addObject ((Actor)levelBoardDecorator, 70, 750);
 		((LevelBoardDecorator)levelBoardDecorator).showLevelBoard();

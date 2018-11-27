@@ -7,4 +7,5 @@
 public interface LevelStrategy  
 {
     public void loadTerrains();
+    public void setFinishLevel(boolean state);
 }

@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Coin extends Leaf
 {
+    
+    private boolean isFinishLevelReached = false;
     public Coin() {
         this.getImage().scale(50, 50);
     }
@@ -30,12 +32,17 @@ public class Coin extends Leaf
                 int worldX = world.getWidth();
                 
                 int worldY = world.getHeight();
-                if(Level1Strategy.getFinalLevelState()==false)   
+                if(getFinishLevel()==false)   
                     setLocation((getX())%worldX, (getY()+1)%worldY);
             }
         }
     }   
-    
+    public void update(boolean state){
+        this.isFinishLevelReached =  state;
+    }
+    public boolean getFinishLevel(){
+        return isFinishLevelReached;
+    }
 
   
 }

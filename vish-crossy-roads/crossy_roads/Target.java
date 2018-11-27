@@ -12,6 +12,8 @@ public class Target extends Leaf
      * Act - do whatever the Target wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    private boolean isFinishLevelReached = false;
+    private LevelStrategy strategy;
     public void act() 
     {
         List<Actor> actors = new ArrayList<Actor>();
@@ -23,16 +25,24 @@ public class Target extends Leaf
         
         int worldY = world.getHeight();
         
-        if(Level1Strategy.getFinalLevelState()==false){
-            
-            setLocation((getX()), (getY()+1));}
+        if(getFinishLevel()==false){
+            setLocation((getX()), (getY()+1));
+        }
         if(intersects(player)){
-            Level1Strategy.setFinalLevelState(true);
+           strategy.setFinishLevel(true);
             world.endGame();
 
         }
         
     }   
-    public void update(){
-    } 
+
+    public void update(boolean state){
+        this.isFinishLevelReached =  state;
+    }
+    public boolean getFinishLevel(){
+        return isFinishLevelReached;
+    }
+    public void attachStrategy(LevelStrategy levelStrategy){
+        strategy = levelStrategy;
+    }
 }

@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Log extends Leaf
 {
-    
+    private boolean isFinishLevelReached = false;
     public Log() {
         this.getImage().scale(120,30);
     }
@@ -32,13 +32,17 @@ public class Log extends Leaf
         else
             pos = 0;
             
-        if(Level1Strategy.getFinalLevelState()==false)
+        if(getFinishLevel()==false)
             setLocation((pos + getX()- 2), (getY()+1)%worldY);
     }    
     
     public void display() {
     }
 
-    public void update(){
+    public void update(boolean state){
+        this.isFinishLevelReached =  state;
+    }
+    public boolean getFinishLevel(){
+        return isFinishLevelReached;
     }
 }

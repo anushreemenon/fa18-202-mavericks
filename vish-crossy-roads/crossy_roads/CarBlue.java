@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class CarBlue extends Leaf
 {
+    private boolean isFinishLevelReached = false;
     public CarBlue() {
         this.getImage().scale(70,30);
     }
@@ -29,11 +30,15 @@ public class CarBlue extends Leaf
         else
             pos = 0;
             
-        if(Level1Strategy.getFinalLevelState()==false) {
+        if(getFinishLevel()==false) {
             int speed = Level1Strategy.getSpeed();
             setLocation((pos + getX()- speed), (getY()+1)%worldY);
         }
     }
-    public void update(){
+    public void update(boolean state){
+        this.isFinishLevelReached =  state;
+    }
+    public boolean getFinishLevel(){
+        return isFinishLevelReached;
     }    
 }

@@ -1,4 +1,6 @@
 
+import java.util.ArrayList;
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Level1Strategy here.
@@ -7,40 +9,53 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class Level1Strategy extends Actor implements LevelStrategy {
-    //private List<Leaf> observers = new ArrayList<Leaf>();
     private int targetTimer=0;
-    private static boolean isFinalLevelReached = false;
+    
+    private  boolean isFinishLevelReached = false;
     private static int speed = 3;
     private Target target;
     private MyWorld myWorld;
-    
+
+    private ArrayList<Car> redcarObservers = new ArrayList<>();
+    private ArrayList<CarBlue> bluecarObservers = new ArrayList<>();
+    private ArrayList<Log> logObservers = new ArrayList<>();
+    private ArrayList<Coin> coinObservers = new ArrayList<>();
+
+    private Player p;
+    private Leaf leaf;
+
     public void act(){
-       //myWorld =  getWorldOfType(MyWorld.class);
        runTargetTimer();
+       
     }
 
     public static int getSpeed(){
-       //myWorld =  getWorldOfType(MyWorld.class);
        return speed;
     }
     
     public void runTargetTimer()
     {
-        if(getFinalLevelState()==false){
+        boolean finishstate = getFinishLevel();
+        if(finishstate==false){
+            
             if(targetTimer==2000){
                 addTarget();
             }
             else
                 targetTimer++;
-            } 
+        } 
+        else{
+            notifyAllObservers(finishstate);
+        }
+        
     }
-    public static void setFinalLevelState(boolean state){
-        isFinalLevelReached = state;
+    public void setFinishLevel(boolean state){
+        isFinishLevelReached = state;
     }
-    public static boolean getFinalLevelState(){
-        return isFinalLevelReached;
+
+    public boolean getFinishLevel(){
+        return isFinishLevelReached;
     }
-    
 
     public void addTarget(){
         MyWorld myWorld =  getWorldOfType(MyWorld.class);
@@ -50,6 +65,7 @@ public class Level1Strategy extends Actor implements LevelStrategy {
     public void loadTerrains() {    
 
         myWorld =  getWorldOfType(MyWorld.class);  
+        leaf = new Leaf();
 
         int y = 0;
       
@@ -70,6 +86,7 @@ public class Level1Strategy extends Actor implements LevelStrategy {
     
     public void createTarget(){
         target = new Target();
+        target.attachStrategy(this);
         target.getImage().scale(myWorld.getWidth(),100);
     }
     public void createRiverTerrain(int y) {
@@ -95,6 +112,12 @@ public class Level1Strategy extends Actor implements LevelStrategy {
         Log log8 = new Log();
         Log log9 = new Log();
         
+        this.attachLogs(log1);
+        this.attachLogs(log2);
+        this.attachLogs(log3);
+        this.attachLogs(log4);
+
+        notifyLogs(false);
       
         // 7. Setup composite pattern
         riverTerrain.addChild ( r );
@@ -212,6 +235,13 @@ public class Level1Strategy extends Actor implements LevelStrategy {
         Coin coin4 = new Coin();
         Coin coin5 = new Coin();
 
+        this.attachCoins(coin1);
+        this.attachCoins(coin2);
+        this.attachCoins(coin3);
+        this.attachCoins(coin4);
+        this.attachCoins(coin5);
+        
+
         // 2. Add coins to Land terrain 1 (why? Next question, Why not land terrain 2??)
         landTerrain1.addChild ( coin1 );
         landTerrain1.addChild ( coin2 );
@@ -254,6 +284,24 @@ public class Level1Strategy extends Actor implements LevelStrategy {
         CarBlue car10 = new CarBlue();
         Car car11 = new Car();
         CarBlue car12 = new CarBlue();
+
+        this.attachRedCars(car2);
+        this.attachRedCars(car5);
+        this.attachRedCars(car8);
+        this.attachRedCars(car11);
+        notifyRedCars(false);
+
+        this.attachBlueCars(car1);
+        this.attachBlueCars(car3);
+        this.attachBlueCars(car4);
+        this.attachBlueCars(car6);
+        this.attachBlueCars(car7);
+        this.attachBlueCars(car9);
+        this.attachBlueCars(car10);
+        this.attachBlueCars(car12);
+
+        notifyBlueCars(false);
+        
      
         // 4. Setting up road terrain
         roadTerrain.addChild ( rd1 );      
@@ -280,10 +328,53 @@ public class Level1Strategy extends Actor implements LevelStrategy {
     
    public void createPlayer() {
         // F. Create the Player and it to appropriate coordinatesin the world
-        Player p = new Player();
+        p = new Player();
+        //System.out.println("Attaching myWorld as the observer for Player..");
+        p.attachObserver(myWorld);
         p.getImage().scale(50,50);
         myWorld.addObject( p, 600, 650);
     }
-     
+    public void attachRedCars(Car car){
+        redcarObservers.add(car);
+    }
+    public void notifyRedCars(boolean state){
+        for (Car car : redcarObservers){
+            car.update(state);
+        }
+    }
+    public void attachBlueCars(CarBlue car){
+        bluecarObservers.add(car);
+    }
+    public void notifyBlueCars(boolean state){
+        for (CarBlue car : bluecarObservers){
+            car.update(state);
+        }
+    }
 
+    public void attachLogs(Log log){
+        logObservers.add(log);
+    }
+    public void notifyLogs(boolean state){
+        for (Log log : logObservers){
+            log.update(state);
+        }
+    }
+    public void attachCoins(Coin coin){
+        coinObservers.add(coin);
+    }
+    public void notifyCoins(boolean state){
+        for (Coin coin  : coinObservers){
+            coin.update(state);
+        }
+    }
+
+    public void notifyAllObservers(boolean state){
+        leaf.update(finishstate);
+        target.update(finishstate);
+        p.update(finishstate);
+        notifyRedCars(finishstate);
+        notifyBlueCars(finishstate);
+        notifyLogs(finishstate);
+        notifyCoins(finishstate);
+    }
 }

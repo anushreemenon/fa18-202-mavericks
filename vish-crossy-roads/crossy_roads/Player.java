@@ -17,13 +17,15 @@ public class Player extends Leaf
     private int vSpeed = 0; //vertical speed  
     private int acceleration = 2; //gravity effect while falling  
     private int jumpStrength = -8; 
+    private boolean isFinishLevelReached = false;
+
     boolean onLog;
+    MyWorld myworld;
     public void act() 
     {
-        MyWorld myWorld = (MyWorld) getWorld();
         Actor log;
         onLog = false;
-        if (!myWorld.isActionPaused())
+        if (!myworld.isActionPaused())
         {
            
             // List<LifeCounter> lcs = myWorld.getObjects(LifeCounter.class);   
@@ -31,10 +33,10 @@ public class Player extends Leaf
             checkKeys();
             
             if (isTouching(Car.class) || isTouching(CarBlue.class)) {
-                myWorld.lostLife();
+                myworld.lostLife();
                 // Greenfoot.delay(50);
             } else if (isTouching(River.class)) {
-                List<River> river = myWorld.getObjects(River.class);
+                List<River> river = myworld.getObjects(River.class);
                 int riverY = river.get(0).getY();
                 
                 // System.out.println("River Y: "+ riverY + " PlayerY = " + getY());
@@ -43,7 +45,7 @@ public class Player extends Leaf
                 if (getY() > riverY-50){        //not yet crossed the river
                     List<Log> logs = getNeighbours(75, true, Log.class);
                     if (logs.size() <=0) {
-                        myWorld.lostLife();
+                        myworld.lostLife();
                         // Greenfoot.delay(50);
                     }
                     else {
@@ -103,13 +105,13 @@ public class Player extends Leaf
         else {
             // Drag player down if he stands at one place and doesn't move
             World world = getWorld();
-            if(Level1Strategy.getFinalLevelState()==false)
+            if(getFinishLevel()==false)
                     setLocation(getX(), getY()+1);
             
             if(isAtEdge()) {
                     // Stop the level
                     // TODO: Stop only when the Player reaches the lowermost edge of the world. Otherwise, do nothing.
-                    ((MyWorld)world).lostLife();
+                    myworld.lostLife();
             }
         }
 
@@ -143,6 +145,15 @@ public class Player extends Leaf
             vSpeed = vSpeed - acceleration;  
         }
     }   
+    public void attachObserver(MyWorld myWorld){
+        myworld = myWorld;
+    }
+    public void update(boolean state){
+        this.isFinishLevelReached =  state;
+    }
+    public boolean getFinishLevel(){
+        return isFinishLevelReached;
+    }
 }
 
 
