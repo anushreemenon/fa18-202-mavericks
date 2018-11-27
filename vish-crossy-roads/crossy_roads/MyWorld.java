@@ -25,7 +25,8 @@ public class MyWorld extends greenfoot.World
    
     static final int DEFAULT_MAX_LEVELS = 3;
     static final int level = 1;
-    private LevelBoard levelBoard;
+    private Actor levelBoard;
+	private Actor levelBoardDecorator;
     private CoinBoard coinBoard;
     private LifeCounter lifeCounter;
     private Boolean actionPaused;
@@ -38,10 +39,11 @@ public class MyWorld extends greenfoot.World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1200, 800, 1);
         levelBoard = new LevelBoard ();
+		((LevelBoard)levelBoard).setLevel(level);
+		levelBoardDecorator = new LevelBoardDecorator((ILevelBoardDecorator) levelBoard);
         coinBoard = new CoinBoard (this);
         lifeCounter = new LifeCounter ();
-        levelBoard.setLevel(level);
-        setPaintOrder(Player.class, ScoreBoard.class, LifeCounter.class, LevelBoard.class, CoinCounter.class, Coin.class, DisplayMessage.class, Level1Strategy.class);
+        setPaintOrder(Player.class, ScoreBoard.class, LifeCounter.class, LevelBoardDecorator.class, CoinCounter.class, Coin.class, DisplayMessage.class, Level1Strategy.class);
         gameOverSound = new GreenfootSound("GameOver.wav");
         explosionSound = new GreenfootSound("explosion.wav");
         powerUpSound = new GreenfootSound("powerup.wav");
@@ -60,7 +62,8 @@ public class MyWorld extends greenfoot.World
         currentLevel = new Level1Strategy();
         currentLevel.setFinalLevelState(false);
         addObject(currentLevel,67,25);
-        addObject (levelBoard, 70, 750);
+        addObject ((Actor)levelBoardDecorator, 70, 750);
+		((LevelBoardDecorator)levelBoardDecorator).showLevelBoard();
         coinBoard.loadCoinBoard();
         currentLevel.loadTerrains();
         lifeCounter.drawLifeCounter();
