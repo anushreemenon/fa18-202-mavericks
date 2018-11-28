@@ -40,6 +40,8 @@
  1. Finished the development for user story 'As a player I want to cross land by avoiding obstacles' and submitted for testing. 
  2. Added and tested the code to stop current level when the player reaches the edge of the world
  3. Added code to gradually drag down the Player with the moving terrains so that it touches lower edge of World and die.
+ 4. Worked on the "land" terrain. Added more trees and rocks in the 'land' terrain
+ 5. Committed the class diagram
 
  * **What am I planning to work on next?**
  1. Development and implementation of user story - Create a starter page
