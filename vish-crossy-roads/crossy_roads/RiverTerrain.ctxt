@@ -1,14 +1,12 @@
 #BlueJ class context
 comment0.target=RiverTerrain
 comment0.text=\n\ Write\ a\ description\ of\ class\ river_terrain\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=f
-comment1.target=RiverTerrain(int)
+comment1.params=
+comment1.target=void\ act()
 comment2.params=
-comment2.target=void\ act()
+comment2.target=Component\ getLog()
 comment3.params=
-comment3.target=Component\ getLog()
+comment3.target=void\ createRiver()
 comment4.params=
-comment4.target=void\ createRiver()
-comment5.params=
-comment5.target=void\ display()
-numComments=6
+comment4.target=void\ display()
+numComments=5

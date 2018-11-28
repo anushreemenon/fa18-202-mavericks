@@ -20,14 +20,13 @@ public class Coin extends Leaf
     public void act() 
     {
         MyWorld world =  getWorldOfType(MyWorld.class);
-        if (!world.isActionPaused())
+        if (!world.isActionPaused() )
         {
             
             if(isTouching(Player.class)) {
+                world.removeObject(this);
                 Greenfoot.playSound("coin.wav");
                 world.incrementCoinCount();
-                world.removeObject(this);
-                
             } else {
                 int worldX = world.getWidth();
                 

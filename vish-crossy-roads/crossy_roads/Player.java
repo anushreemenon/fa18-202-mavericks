@@ -31,7 +31,6 @@ public class Player extends Leaf
             // List<LifeCounter> lcs = myWorld.getObjects(LifeCounter.class);   
             // LifeCounter lc = lcs.get(0);
             checkKeys();
-            
             if (isTouching(Car.class) || isTouching(CarBlue.class)) {
                 myworld.lostLife();
                 // Greenfoot.delay(50);
