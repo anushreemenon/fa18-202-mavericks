@@ -32,3 +32,20 @@
 
  * **What tasks are blocked waiting on another team member?**
    - None
+
+------------------------------------
+
+## Week 3: (11/18 to 11/24)
+ * **What tasks did I work on / complete?**
+ 1. Finished the development for user story 'As a player I want to cross land by avoiding obstacles' and submitted for testing. 
+ 2. Added and tested the code to stop current level when the player reaches the edge of the world
+ 3. Added code to gradually drag down the Player with the moving terrains so that it touches lower edge of World and die.
+
+ * **What am I planning to work on next?**
+ 1. Development and implementation of user story - Create a starter page
+ 2. Implement the "decorator" pattern for "Level" board.
+ 3. Cleanup and revisit the class diagram.
+ 4. Add sequence diagrams for the parts that I worked on, thus far.
+ 
+ * **What tasks are blocked waiting on another team member?**
+   - None
