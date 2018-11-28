@@ -8,12 +8,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Car extends Leaf
 {
-    private LevelStrategy strategy;
+    private LevelStrategy currentStrategy;
     private boolean isFinishLevelReached = false;
+    World world;
 
-    public Car() {
+ 
+    public Car(LevelStrategy s) {
         this.getImage().scale(70,30);
+         currentStrategy = s;
     }
+    
     /**
      * Act - do whatever the car wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -21,11 +25,13 @@ public class Car extends Leaf
     private static int Y=0;
     public void act() 
     {
-        World world = getWorld();
+        world = getWorld();
         // Add your action code here.
         int worldX = world.getWidth();
         
         int worldY = world.getHeight();
+ 
+        
         int pos = 0;
         if (getX() == 0)
             pos = 1200;
@@ -33,8 +39,8 @@ public class Car extends Leaf
             pos = 0;
             
         if(getFinishLevel() == false) {
-            int speed = Level1Strategy.getSpeed();
-            setLocation((pos + getX()- speed), (getY()+1)%worldY);
+           // int speed = Level1Strategy.getSpeed();
+            setLocation((pos + getX()- currentStrategy.getCarSpeed()), (getY()+1)%worldY);
         }
     }  
     public void update(boolean state){

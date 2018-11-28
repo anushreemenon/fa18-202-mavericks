@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Log
+comment0.text=\n\ Write\ a\ description\ of\ class\ log\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=s
+comment1.target=Log(LevelStrategy)
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\n\ Act\ -\ do\ whatever\ the\ log\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment3.params=
+comment3.target=void\ display()
+comment4.params=state
+comment4.target=void\ update(boolean)
+comment5.params=
+comment5.target=boolean\ getFinishLevel()
+numComments=6

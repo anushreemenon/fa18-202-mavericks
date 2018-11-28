@@ -15,7 +15,11 @@ public class RiverTerrain extends Composite
    private Component log;
    private static int count = 0;
    private int logY = 300;
+   private int logFrequeny;
 
+   public RiverTerrain(int f) {
+       logFrequeny = f;
+    }
    
    public void act() {
      display();  
@@ -52,7 +56,7 @@ public class RiverTerrain extends Composite
         List<River> rv = myWorld.getObjects(River.class);    
         int rvY = rv.get(0).getY();
  
-        if (count%25 == 0) {
+        if (count%logFrequeny == 0) {
             log = getLog();
             actualLog = (Actor)log;
             

@@ -1,4 +1,6 @@
 
+import java.util.ArrayList;
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Level3Strategy here.
@@ -7,60 +9,77 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class Level3Strategy extends Actor implements LevelStrategy {
-    //private List<Leaf> observers = new ArrayList<Leaf>();
     private int targetTimer=0;
-    private static boolean isFinalLevelReached = false;
+    
     private  boolean isFinishLevelReached = false;
-    private static int speed = 8;
+    private int carSpeed = 8;
+    private int logSpeed = 5;
     private Target target;
     private MyWorld myWorld;
-    
+
+    private ArrayList<Car> redcarObservers = new ArrayList<>();
+    private ArrayList<CarBlue> bluecarObservers = new ArrayList<>();
+    private ArrayList<Log> logObservers = new ArrayList<>();
+    private ArrayList<Coin> coinObservers = new ArrayList<>();
+
+    private Player p;
+    private Leaf leaf;
+
     public void act(){
-       //myWorld =  getWorldOfType(MyWorld.class);
        runTargetTimer();
+       
     }
 
-    public void setFinishLevel(boolean state){
+    public int getCarSpeed(){
+       return carSpeed;
     }
-    public static int getSpeed(){
-       //myWorld =  getWorldOfType(MyWorld.class);
-       return speed;
-    }
-    public boolean getFinishLevel(){
-        return isFinishLevelReached;
+    
+    public int getLogSpeed(){
+       return logSpeed;
     }
     
     public void runTargetTimer()
     {
-        if(getFinalLevelState()==false){
+        boolean finishstate = getFinishLevel();
+        if(finishstate==false){
+            
             if(targetTimer==4000){
                 addTarget();
             }
             else
                 targetTimer++;
-            } 
-    }
-    public static void setFinalLevelState(boolean state){
-        isFinalLevelReached = state;
-    }
-    public static boolean getFinalLevelState(){
-        return isFinalLevelReached;
+        } 
+        else{
+            notifyAllObservers(finishstate);
+            System.out.println("Setting next level");
+            myWorld.setNextLevel();
+            setFinishLevel(false);
+        }
+        
     }
     
+    public void resetTimer(){
+        targetTimer = 0;
+    }
+
+    
+    public void setFinishLevel(boolean state){
+        isFinishLevelReached = state;
+    }
+
+    public boolean getFinishLevel(){
+        return isFinishLevelReached;
+    }
 
     public void addTarget(){
         MyWorld myWorld =  getWorldOfType(MyWorld.class);
-
-      // G. Setup the 'Target' terrain
-        target = new Target();
-        target.getImage().scale(myWorld.getWidth(),100); 
         myWorld.addObject( target, 600, 50);
-        
     }
     
     public void loadTerrains() {    
 
         myWorld =  getWorldOfType(MyWorld.class);  
+        leaf = new Leaf();
 
         int y = 0;
       
@@ -76,41 +95,44 @@ public class Level3Strategy extends Actor implements LevelStrategy {
         createLandTerrain(y);
 
         createPlayer();
+        createTarget();
+    }
+    
+    public void createTarget(){
+        target = new Target();
+        target.attachStrategy(this);
+        target.getImage().scale(myWorld.getWidth(),100);
     }
     
     public void createRiverTerrain(int y) {
         //------------------------------------------------------------
          // A. River terrain:
         // 1. Create river terrain object
-        RiverTerrain riverTerrain = new RiverTerrain();
+        RiverTerrain riverTerrain = new RiverTerrain(25);
       
         // 2. Create river object
         River r = new River();
 
         // 4. Scale river image
-        r.getImage().scale(2400,300);
+        // r.getImage().scale(2400,300);
       
         // 5. Create wooden log objects
-        Log log1 = new Log();                                                                                                                                      
-        Log log2 = new Log();                                                                                                                                      
-        Log log3 = new Log();
-        Log log4 = new Log(); 
-        Log log5 = new Log();
-        Log log6 = new Log();
-        Log log7 = new Log();
-        Log log8 = new Log();
-        Log log9 = new Log();
+        Log log1 = new Log(this);                                                                                                                                      
+        Log log2 = new Log(this);                                                                                                                                      
+        Log log3 = new Log(this);
+        Log log4 = new Log(this); 
+        Log log5 = new Log(this);
+        Log log6 = new Log(this);
+        Log log7 = new Log(this);
+        Log log8 = new Log(this);
+        Log log9 = new Log(this);
         
-        // 6. Scale log images
-        log1.getImage().scale(120,30);
-        log2.getImage().scale(120,30);
-        log3.getImage().scale(120,30);
-        log4.getImage().scale(120,30);
-        log5.getImage().scale(120,30);
-        log6.getImage().scale(120,30);
-        log7.getImage().scale(120,30);
-        log8.getImage().scale(120,30);
-        log9.getImage().scale(120,30);
+        this.attachLogs(log1);
+        this.attachLogs(log2);
+        this.attachLogs(log3);
+        this.attachLogs(log4);
+
+        notifyLogs(false);
       
         // 7. Setup composite pattern
         riverTerrain.addChild ( r );
@@ -141,7 +163,6 @@ public class Level3Strategy extends Actor implements LevelStrategy {
         // 2. Land objects
         Land l1 = new Land();//Upper 
 
-        l1.getImage().scale(2500,100);
 
         // 3. Tree objects
         Tree t1 = new Tree();
@@ -172,39 +193,27 @@ public class Level3Strategy extends Actor implements LevelStrategy {
         Rock r10 = new Rock();
 
         // 5. Scale rock images to required sizes
-        r1.getImage().scale(50,50);
-        r2.getImage().scale(50,50);
-        r3.getImage().scale(50,50);
-        r4.getImage().scale(50,50);     
-        r5.getImage().scale(50,50);
-        r6.getImage().scale(60,60);
-        r7.getImage().scale(60,60);
-        r8.getImage().scale(60,60);
-        r9.getImage().scale(50,50);
-        r10.getImage().scale(70,70);
+        r6.scale(60,60);
+        r7.scale(60,60);
+        r8.scale(60,60);
+        r10.scale(70,70);
         
         // 6. Scale tree images to appropriate size
-        t1.getImage().scale(30,75);
-        t2.getImage().scale(30,75);
-        t3.getImage().scale(30,75);
-        t4.getImage().scale(30,75);
-        t5.getImage().scale(30,75);
-        t6.getImage().scale(30,75);
-        t7.getImage().scale(40,85);
-        t8.getImage().scale(40,85);
-        t9.getImage().scale(40,85);
-        t10.getImage().scale(40,85);
-        t11.getImage().scale(40,85);
-        t12.getImage().scale(40,85);
-        t13.getImage().scale(20,65);
-        t14.getImage().scale(20,65);
+        t7.scale(40,85);
+        t8.scale(40,85);
+        t9.scale(40,85);
+        t10.scale(40,85);
+        t11.scale(40,85);
+        t12.scale(40,85);
+        t13.scale(20,65);
+        t14.scale(20,65);
         
         // 7. Scale image of land to appropriate size
 
         if (y == 300)
-            l1.getImage().scale(2500,300);
+            l1.scale(2500,300);
         else
-            l1.getImage().scale(2500,120);
+            l1.scale(2500,120);
 
 
          // 8. Setup the composite pattern for land terrain
@@ -241,6 +250,13 @@ public class Level3Strategy extends Actor implements LevelStrategy {
         Coin coin4 = new Coin();
         Coin coin5 = new Coin();
 
+        this.attachCoins(coin1);
+        this.attachCoins(coin2);
+        this.attachCoins(coin3);
+        this.attachCoins(coin4);
+        this.attachCoins(coin5);
+        
+
         // 2. Add coins to Land terrain 1 (why? Next question, Why not land terrain 2??)
         landTerrain1.addChild ( coin1 );
         landTerrain1.addChild ( coin2 );
@@ -271,18 +287,36 @@ public class Level3Strategy extends Actor implements LevelStrategy {
         Road rd3 = new Road();
 
         // 3. Create objects of car
-        CarBlue car1 = new CarBlue();           
-        Car car2 = new Car();          
-        CarBlue car3 = new CarBlue();
-        CarBlue car4 = new CarBlue();           
-        Car car5 = new Car();          
-        CarBlue car6 = new CarBlue();
-        CarBlue car7 = new CarBlue();
-        Car car8 = new Car();
-        CarBlue car9 = new CarBlue();
-        CarBlue car10 = new CarBlue();
-        Car car11 = new Car();
-        CarBlue car12 = new CarBlue();
+        CarBlue car1 = new CarBlue(this);           
+        Car car2 = new Car(this);          
+        CarBlue car3 = new CarBlue(this);
+        CarBlue car4 = new CarBlue(this);           
+        Car car5 = new Car(this);          
+        CarBlue car6 = new CarBlue(this);
+        CarBlue car7 = new CarBlue(this);
+        Car car8 = new Car(this);
+        CarBlue car9 = new CarBlue(this);
+        CarBlue car10 = new CarBlue(this);
+        Car car11 = new Car(this);
+        CarBlue car12 = new CarBlue(this);
+
+        this.attachRedCars(car2);
+        this.attachRedCars(car5);
+        this.attachRedCars(car8);
+        this.attachRedCars(car11);
+        notifyRedCars(false);
+
+        this.attachBlueCars(car1);
+        this.attachBlueCars(car3);
+        this.attachBlueCars(car4);
+        this.attachBlueCars(car6);
+        this.attachBlueCars(car7);
+        this.attachBlueCars(car9);
+        this.attachBlueCars(car10);
+        this.attachBlueCars(car12);
+
+        notifyBlueCars(false);
+        
      
         // 4. Setting up road terrain
         roadTerrain.addChild ( rd1 );      
@@ -301,25 +335,6 @@ public class Level3Strategy extends Actor implements LevelStrategy {
         roadTerrain.addChild ( car11 );
         roadTerrain.addChild ( car12 );
       
-        // 5. Scale road images to appropriate size
-        rd1.getImage().scale(2500,100);
-        rd2.getImage().scale(2500,100);
-        rd3.getImage().scale(2500,100);
-      
-        // 6. Scale car images
-        car1.getImage().scale(70,30);
-        car2.getImage().scale(70,30);
-        car3.getImage().scale(70,30);
-        car4.getImage().scale(70,30);
-        car5.getImage().scale(70,30);
-        car6.getImage().scale(70,30);
-        car7.getImage().scale(70,30);
-        car8.getImage().scale(70,30);
-        car9.getImage().scale(70,30);
-        car10.getImage().scale(70,30);
-        car11.getImage().scale(70,30);
-        car12.getImage().scale(70,30);
-      
         // 7. Adding road terrain to the my world
         myWorld.addObject( roadTerrain, 0, y );
 
@@ -328,10 +343,52 @@ public class Level3Strategy extends Actor implements LevelStrategy {
     
    public void createPlayer() {
         // F. Create the Player and it to appropriate coordinatesin the world
-        Player p = new Player();
+        p = new Player();
+        p.attachObserver(myWorld);
         p.getImage().scale(50,50);
-        myWorld.addObject( p, 600, 700);
+        myWorld.addObject( p, 600, 650);
     }
-     
+    public void attachRedCars(Car car){
+        redcarObservers.add(car);
+    }
+    public void notifyRedCars(boolean state){
+        for (Car car : redcarObservers){
+            car.update(state);
+        }
+    }
+    public void attachBlueCars(CarBlue car){
+        bluecarObservers.add(car);
+    }
+    public void notifyBlueCars(boolean state){
+        for (CarBlue car : bluecarObservers){
+            car.update(state);
+        }
+    }
 
+    public void attachLogs(Log log){
+        logObservers.add(log);
+    }
+    public void notifyLogs(boolean state){
+        for (Log log : logObservers){
+            log.update(state);
+        }
+    }
+    public void attachCoins(Coin coin){
+        coinObservers.add(coin);
+    }
+    public void notifyCoins(boolean state){
+        for (Coin coin  : coinObservers){
+            coin.update(state);
+        }
+    }
+
+    public void notifyAllObservers(boolean finishstate){
+        leaf.update(finishstate);
+        target.update(finishstate);
+        p.update(finishstate);
+        notifyRedCars(finishstate);
+        notifyBlueCars(finishstate);
+        notifyLogs(finishstate);
+        notifyCoins(finishstate);
+    }
 }

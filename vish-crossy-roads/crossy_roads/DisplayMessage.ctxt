@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=DisplayMessage
+comment0.text=\n\ Write\ a\ description\ of\ class\ DisplayMessage\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=str
+comment1.target=DisplayMessage(java.lang.String)
+comment2.params=str
+comment2.target=void\ updateMessage(java.lang.String)
+comment3.params=
+comment3.target=void\ act()
+comment3.text=\n\ Act\ -\ do\ whatever\ the\ DisplayMessage\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+numComments=4

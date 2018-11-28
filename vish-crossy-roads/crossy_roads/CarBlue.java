@@ -8,9 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class CarBlue extends Leaf
 {
+    private LevelStrategy currentStrategy;
     private boolean isFinishLevelReached = false;
-    public CarBlue() {
+    public CarBlue(LevelStrategy s) {
         this.getImage().scale(70,30);
+         currentStrategy = s;
     }
     /**
      * Act - do whatever the car_blue wants to do. This method is called whenever
@@ -31,8 +33,8 @@ public class CarBlue extends Leaf
             pos = 0;
             
         if(getFinishLevel()==false) {
-            int speed = Level1Strategy.getSpeed();
-            setLocation((pos + getX()- speed), (getY()+1)%worldY);
+           // int speed = Level1Strategy.getSpeed();
+            setLocation((pos + getX()- currentStrategy.getCarSpeed()), (getY()+1)%worldY);
         }
     }
     public void update(boolean state){

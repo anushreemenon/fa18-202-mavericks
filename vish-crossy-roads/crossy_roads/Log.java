@@ -8,9 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Log extends Leaf
 {
+    private LevelStrategy currentStrategy;
     private boolean isFinishLevelReached = false;
-    public Log() {
+    public Log(LevelStrategy s) {
         this.getImage().scale(120,30);
+        currentStrategy = s;
     }
 
     private static int Y=0;
@@ -33,7 +35,7 @@ public class Log extends Leaf
             pos = 0;
             
         if(getFinishLevel()==false)
-            setLocation((pos + getX()- 2), (getY()+1)%worldY);
+            setLocation((pos + getX()- currentStrategy.getLogSpeed()), (getY()+1)%worldY);
     }    
     
     public void display() {

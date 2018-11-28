@@ -12,7 +12,8 @@ public class Level1Strategy extends Actor implements LevelStrategy {
     private int targetTimer=0;
     
     private  boolean isFinishLevelReached = false;
-    private static int speed = 3;
+    private int carSpeed = 3;
+    private int logSpeed = 2;
     private Target target;
     private MyWorld myWorld;
 
@@ -29,8 +30,13 @@ public class Level1Strategy extends Actor implements LevelStrategy {
        
     }
 
-    public static int getSpeed(){
-       return speed;
+    public int getCarSpeed(){
+       return carSpeed;
+    }
+    
+    
+    public int getLogSpeed(){
+       return logSpeed;
     }
     
     public void runTargetTimer()
@@ -46,9 +52,16 @@ public class Level1Strategy extends Actor implements LevelStrategy {
         } 
         else{
             notifyAllObservers(finishstate);
+            myWorld.setNextLevel();
+            setFinishLevel(false);
         }
         
     }
+    
+    public void resetTimer(){
+        targetTimer = 0;
+    }
+
     public void setFinishLevel(boolean state){
         isFinishLevelReached = state;
     }
@@ -89,11 +102,12 @@ public class Level1Strategy extends Actor implements LevelStrategy {
         target.attachStrategy(this);
         target.getImage().scale(myWorld.getWidth(),100);
     }
+    
     public void createRiverTerrain(int y) {
         //------------------------------------------------------------
          // A. River terrain:
         // 1. Create river terrain object
-        RiverTerrain riverTerrain = new RiverTerrain();
+        RiverTerrain riverTerrain = new RiverTerrain(25);
       
         // 2. Create river object
         River r = new River();
@@ -102,15 +116,15 @@ public class Level1Strategy extends Actor implements LevelStrategy {
         // r.getImage().scale(2400,300);
       
         // 5. Create wooden log objects
-        Log log1 = new Log();                                                                                                                                      
-        Log log2 = new Log();                                                                                                                                      
-        Log log3 = new Log();
-        Log log4 = new Log(); 
-        Log log5 = new Log();
-        Log log6 = new Log();
-        Log log7 = new Log();
-        Log log8 = new Log();
-        Log log9 = new Log();
+        Log log1 = new Log(this);                                                                                                                                      
+        Log log2 = new Log(this);                                                                                                                                      
+        Log log3 = new Log(this);
+        Log log4 = new Log(this); 
+        Log log5 = new Log(this);
+        Log log6 = new Log(this);
+        Log log7 = new Log(this);
+        Log log8 = new Log(this);
+        Log log9 = new Log(this);
         
         this.attachLogs(log1);
         this.attachLogs(log2);
@@ -272,18 +286,18 @@ public class Level1Strategy extends Actor implements LevelStrategy {
         Road rd3 = new Road();
 
         // 3. Create objects of car
-        CarBlue car1 = new CarBlue();           
-        Car car2 = new Car();          
-        CarBlue car3 = new CarBlue();
-        CarBlue car4 = new CarBlue();           
-        Car car5 = new Car();          
-        CarBlue car6 = new CarBlue();
-        CarBlue car7 = new CarBlue();
-        Car car8 = new Car();
-        CarBlue car9 = new CarBlue();
-        CarBlue car10 = new CarBlue();
-        Car car11 = new Car();
-        CarBlue car12 = new CarBlue();
+        CarBlue car1 = new CarBlue(this);           
+        Car car2 = new Car(this);          
+        CarBlue car3 = new CarBlue(this);
+        CarBlue car4 = new CarBlue(this);           
+        Car car5 = new Car(this);          
+        CarBlue car6 = new CarBlue(this);
+        CarBlue car7 = new CarBlue(this);
+        Car car8 = new Car(this);
+        CarBlue car9 = new CarBlue(this);
+        CarBlue car10 = new CarBlue(this);
+        Car car11 = new Car(this);
+        CarBlue car12 = new CarBlue(this);
 
         this.attachRedCars(car2);
         this.attachRedCars(car5);

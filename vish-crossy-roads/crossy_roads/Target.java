@@ -30,7 +30,7 @@ public class Target extends Leaf
         }
         if(intersects(player)){
            strategy.setFinishLevel(true);
-            world.endGame();
+            //world.endGame();
 
         }
         

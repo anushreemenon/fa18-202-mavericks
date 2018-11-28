@@ -46,7 +46,7 @@ public class Player extends Leaf
                     List<Log> logs = getNeighbours(75, true, Log.class);
                     if (logs.size() <=0) {
                         myworld.lostLife();
-                        // Greenfoot.delay(50);
+                         Greenfoot.delay(50);
                     }
                     else {
                                 if(!(Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("down") || Greenfoot.isKeyDown("left") || Greenfoot.isKeyDown("right"))) {
@@ -104,7 +104,7 @@ public class Player extends Leaf
         }
         else {
             // Drag player down if he stands at one place and doesn't move
-            World world = getWorld();
+            //World world = getWorld();
             if(getFinishLevel()==false)
                     setLocation(getX(), getY()+1);
             

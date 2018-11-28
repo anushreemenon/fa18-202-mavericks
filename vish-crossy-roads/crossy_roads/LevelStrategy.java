@@ -8,4 +8,8 @@ public interface LevelStrategy
 {
     public void loadTerrains();
     public void setFinishLevel(boolean state);
+    public int getCarSpeed();
+    public int getLogSpeed();
+    public void resetTimer();
+    
 }

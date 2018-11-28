@@ -15,7 +15,7 @@ public class MyWorld extends greenfoot.World
      * 
      */
     
-    private Level1Strategy currentLevel;
+    private LevelStrategy currentLevel;
     private int currentScore;
     private int noOfCoinsCollected;
     private int currentNoOfLives;
@@ -23,10 +23,9 @@ public class MyWorld extends greenfoot.World
     private GreenfootSound explosionSound;
     private GreenfootSound powerUpSound;
    
-    static final int DEFAULT_MAX_LEVELS = 3;
-    static final int level = 1;
+    private static int level;
     private Actor levelBoard;
-	private Actor levelBoardDecorator;
+    private Actor levelBoardDecorator;
     private CoinBoard coinBoard;
     private LifeCounter lifeCounter;
     private Boolean actionPaused;
@@ -37,10 +36,12 @@ public class MyWorld extends greenfoot.World
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+
         super(1200, 800, 1);
+        level = 1;
         levelBoard = new LevelBoard ();
-		((LevelBoard)levelBoard).setLevel(level);
-		levelBoardDecorator = new LevelBoardDecorator((ILevelBoardDecorator) levelBoard);
+        ((LevelBoard)levelBoard).setLevel(level);
+        levelBoardDecorator = new LevelBoardDecorator((ILevelBoardDecorator) levelBoard);
         coinBoard = new CoinBoard (this);
         lifeCounter = new LifeCounter ();
         setPaintOrder(Player.class, ScoreBoard.class, LifeCounter.class, LevelBoardDecorator.class, CoinCounter.class, Coin.class, DisplayMessage.class, Level1Strategy.class);
@@ -48,23 +49,27 @@ public class MyWorld extends greenfoot.World
         explosionSound = new GreenfootSound("explosion.wav");
         powerUpSound = new GreenfootSound("powerup.wav");
         backgroundMusic = new GreenfootSound("background.mp3");
+        currentLevel = new Level1Strategy();
+
         loadLevel();
         
     }
     
     public void act ()
     {
-        if (!levelLoaded)
+        if (!levelLoaded) {
             loadLevel();
+            levelLoaded = true;
+        }
     }
     void loadLevel() { 
         List objects = getObjects(null);
         removeObjects(objects);
-        currentLevel = new Level1Strategy();
+
         currentLevel.setFinishLevel(false);
-        addObject(currentLevel,67,25);
+        addObject((Actor) currentLevel,67,25);
         addObject ((Actor)levelBoardDecorator, 70, 750);
-		((LevelBoardDecorator)levelBoardDecorator).showLevelBoard();
+        ((LevelBoardDecorator)levelBoardDecorator).showLevelBoard();
         coinBoard.loadCoinBoard();
         currentLevel.loadTerrains();
         lifeCounter.drawLifeCounter();
@@ -77,7 +82,7 @@ public class MyWorld extends greenfoot.World
      * The Act method is responsible for:
      *      loading new levels and death screens
      *      Triggering scoreboard and end the game
-     *      Spawning cars
+     *      
      */
     public void endGame ()
     {
@@ -106,6 +111,8 @@ public class MyWorld extends greenfoot.World
         explosionSound.play();
         actionPaused = true;
         levelLoaded = false;
+        currentLevel.resetTimer();
+        Greenfoot.delay(50);
         // startLevel();
     }
 
@@ -115,6 +122,34 @@ public class MyWorld extends greenfoot.World
     public boolean isActionPaused ()
     {
         return actionPaused;
+    }
+    
+    public void setNextLevel()
+    {
+        actionPaused = true;
+        if (currentLevel.getClass().getName() == "Level1Strategy") {
+            currentLevel = new Level2Strategy();
+            level+=1;
+            this.showText("Level 1 crossed!", getWidth()/2, getHeight()/2);
+            Greenfoot.delay(100);
+            this.showText("", getWidth()/2, getHeight()/2);
+            ((LevelBoard)levelBoard).setLevel(level);
+        }
+        else if (currentLevel.getClass().getName() == "Level2Strategy") {
+                level+=1;
+                this.showText("Level 2 crossed!", getWidth()/2, getHeight()/2);
+                Greenfoot.delay(100);
+                this.showText("", getWidth()/2, getHeight()/2);
+                ((LevelBoard)levelBoard).setLevel(level);
+                currentLevel = new Level3Strategy();
+            }
+             else
+                endGame();
+        
+        levelLoaded = false;
+        actionPaused = false;
+        
+        
     }
 
 
