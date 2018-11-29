@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Target
+comment0.text=\n\ Write\ a\ description\ of\ class\ Target\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=state
+comment2.target=void\ update(boolean)
+comment3.params=
+comment3.target=boolean\ getFinishLevel()
+comment4.params=levelStrategy
+comment4.target=void\ attachStrategy(LevelStrategy)
+numComments=5

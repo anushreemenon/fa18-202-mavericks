@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=RiverTerrain
+comment0.text=\n\ Write\ a\ description\ of\ class\ river_terrain\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=Component\ getLog()
+comment3.params=
+comment3.target=void\ createRiver()
+comment4.params=
+comment4.target=void\ display()
+numComments=5
