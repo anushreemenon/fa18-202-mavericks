@@ -116,7 +116,7 @@ public class Player extends Leaf
             if(isAtEdge()) {
                     // Stop the level
                     // TODO: Stop only when the Player reaches the lowermost edge of the world. Otherwise, do nothing.
-                    myworld.lostLife();
+                    lostLife();
             }
         }
 
