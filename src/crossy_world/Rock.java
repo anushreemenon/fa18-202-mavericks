@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Rock extends Leaf implements Cloneable {
     
   public Rock() {
-      this.getImage().scale(50,50);
+      this.getImage().scale(40,40);
   }
   
   @Override 

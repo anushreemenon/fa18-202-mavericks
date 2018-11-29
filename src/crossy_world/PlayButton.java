@@ -20,8 +20,9 @@ public class PlayButton extends Actor
      */
     public void act() 
     {
-		if (Greenfoot.mouseClicked(this)) {
-			((StartScreen)w).startGame();
-		}
+        if (Greenfoot.mouseClicked(this)) {
+             ((StartScreen)w).stopBackgroundMusic();
+            ((StartScreen)w).startGame();
+        }
     }    
 }

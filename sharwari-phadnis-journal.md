@@ -9,8 +9,7 @@ What tasks did I work on / complete?
 I chose "Courage" and as a part of this XP value, I made certain suggestions:
 
 Took a step to go beyond keeping a static game and implement dynamically changing terrains.
-
-Created 
+ 
 
 What am I planning to work on next?
 Started working on creating UI mockups
@@ -29,10 +28,44 @@ What tasks did I work on / complete?
 
 
 
-Created 
-
 What am I planning to work on next?<br>
 Started working on integrating dynamically changing terrain feature
+
+What tasks are blocked waiting on another team member?
+
+No blocking items, so far.
+
+----------------------------------------------------------------------------------------------------------------
+
+Week 3: (11/18 to 11/24)
+What tasks did I work on / complete?
+- Implemented dynamically moving terrains.
+- Implemented finish line feature.
+- Refactored Level1Strategy code.
+- Eliminated blank terrains visibility in the game.
+- Fixed minor bugs.
+
+
+
+What am I planning to work on next?<br>
+Started implementing Observer Pattern for notifying the Actors such as Logs, Cars, Coins and Target about the finish line.
+
+What tasks are blocked waiting on another team member?
+
+No blocking items, so far.
+
+----------------------------------------------------------------------------------------------------------------
+
+Week 4: (11/22 to 11/30)
+What tasks did I work on / complete?
+- Implemented Observer Pattern for notifying the Actors such as Logs, Cars, Coins and Target about the finish line.
+- Improved finish line experience.
+- Worked on finalizing Player's avatar.
+- Fixed minor bugs.
+- Tested end to end game functionaity by corssing all the 3 levels.
+
+What am I planning to work on next?<br>
+Working on polishing the game and making video for the game.
 
 What tasks are blocked waiting on another team member?
 

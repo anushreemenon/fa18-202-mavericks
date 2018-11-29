@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class StartScreen extends World
 {
-
+    GreenfootSound backgroundMusic;
     /**
      * Constructor for objects of class StartScreen.
      * 
@@ -17,9 +17,11 @@ public class StartScreen extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1200, 800, 1);
+        backgroundMusic = new GreenfootSound("background.mp3");
         GreenfootImage image = getBackground();
         image.scale(1200, 800);
         setBackground(image);
+        backgroundMusic.play();
         Greenfoot.setWorld(this);
         prepare();
     }
@@ -29,13 +31,18 @@ public class StartScreen extends World
             Greenfoot.setWorld(new MyWorld());
     }
     
-	public void startGame() {
-		Greenfoot.setWorld(new MyWorld());
-	}
-	
-	public void exitGame() {
-		System.exit(0);
-	}
+    public void startGame() {
+        Greenfoot.setWorld(new MyWorld());
+    }
+    
+    public void exitGame() {
+        System.exit(0);
+    }
+    
+    public void stopBackgroundMusic()
+    {
+        backgroundMusic.stop();
+    }
     
     /**
      * Prepare the world for the start of the program.

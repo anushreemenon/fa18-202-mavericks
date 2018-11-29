@@ -208,7 +208,11 @@ public class Level1Strategy extends Actor implements LevelStrategy {
         Rock r9 = r1.clone();
         Rock r10 = r1.clone();
 
-
+        r1.getImage().scale(30,40);
+        r2.getImage().scale(30,40);
+        r3.getImage().scale(30,40);
+        r4.getImage().scale(30,40);
+        
         // 5. Scale rock images to required sizes
         r6.scale(60,60);
         r7.scale(60,60);
@@ -380,7 +384,7 @@ public class Level1Strategy extends Actor implements LevelStrategy {
         // F. Create the Player and it to appropriate coordinatesin the world
         p = new Player();
         p.attachObserver(myWorld);
-        p.getImage().scale(50,50);
+        p.getImage().scale(70,70);
         myWorld.addObject( p, 600, 650);
     }
     public void attachRedCars(Car car){

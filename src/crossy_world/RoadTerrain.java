@@ -57,7 +57,7 @@ public class RoadTerrain extends Composite {
             
         int rtY = rt.get(0).getY();
              
-        if (count%20 == 0) {
+        if (count%22 == 0) {
             car = getCar();
             actualCar = (Actor)car;
 

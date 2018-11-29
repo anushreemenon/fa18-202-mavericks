@@ -30,7 +30,7 @@ public class MyWorld extends greenfoot.World
     private LifeCounter lifeCounter;
     private Boolean actionPaused;
     private Boolean levelLoaded;
-    GreenfootSound backgroundMusic;
+    private GreenfootSound backgroundMusic;
  
     
     public MyWorld()
@@ -61,6 +61,8 @@ public class MyWorld extends greenfoot.World
             loadLevel();
             levelLoaded = true;
         }
+        if (!backgroundMusic.isPlaying())
+            backgroundMusic.play();
     }
     void loadLevel() { 
         List objects = getObjects(null);
@@ -74,7 +76,7 @@ public class MyWorld extends greenfoot.World
         currentLevel.loadTerrains();
         lifeCounter.drawLifeCounter();
         addObject (lifeCounter,  130, 100);
-        backgroundMusic.playLoop();
+        backgroundMusic.play();
         levelLoaded = true;
         actionPaused = false;
     }
@@ -92,6 +94,11 @@ public class MyWorld extends greenfoot.World
         gameOverSound.play();
         // End program
         Greenfoot.stop();  
+    }
+    
+    public void stopBackgroundMusic()
+    {
+        backgroundMusic.stop();
     }
 
     public void incrementCoinCount() {

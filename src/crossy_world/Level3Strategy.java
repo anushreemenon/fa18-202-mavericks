@@ -168,7 +168,7 @@ public class Level3Strategy extends Actor implements LevelStrategy {
       
     }
     
-    public void createLandTerrain(int y) {
+  public void createLandTerrain(int y) {
         
         //------------------------------------------------------------
          // B. Land Terrain 1:
@@ -179,34 +179,40 @@ public class Level3Strategy extends Actor implements LevelStrategy {
         // 2. Land objects
         Land l1 = new Land();//Upper 
 
-
+        try {
         // 3. Tree objects
         Tree t1 = new Tree();
-        Tree t2 = new Tree();       
-        Tree t3 = new Tree();
-        Tree t4 = new Tree();
-        Tree t5 = new Tree();
-        Tree t6 = new Tree();
-        Tree t7 = new Tree();
-        Tree t8 = new Tree();
-        Tree t9 = new Tree();
-        Tree t10 = new Tree();
-        Tree t11 = new Tree();
-        Tree t12 = new Tree();
-        Tree t13 = new Tree();
-        Tree t14 = new Tree();
-    
+        Tree t2 = t1.clone();       
+        Tree t3 = t1.clone(); 
+        Tree t4 = t1.clone(); 
+        Tree t5 = t1.clone(); 
+        Tree t6 = t1.clone(); 
+        Tree t7 = t1.clone(); 
+        Tree t8 = t1.clone(); 
+        Tree t9 = t1.clone(); 
+        Tree t10 = t1.clone(); 
+        Tree t11 = t1.clone(); 
+        Tree t12 = t1.clone(); 
+        Tree t13 = t1.clone(); 
+        Tree t14 = t1.clone(); 
+ 
         // 4. Rock objects
         Rock r1 = new Rock();
-        Rock r2 = new Rock();
-        Rock r3 = new Rock();
-        Rock r4 = new Rock();
-        Rock r5 = new Rock();
-        Rock r6 = new Rock();
-        Rock r7 = new Rock();
-        Rock r8 = new Rock();
-        Rock r9 = new Rock();
-        Rock r10 = new Rock();
+        Rock r2 = r1.clone();
+        Rock r3 = r1.clone();      
+        Rock r4 = r1.clone();
+        Rock r5 = r1.clone();
+        Rock r6 = r1.clone();
+        Rock r7 = r1.clone();
+        Rock r8 = r1.clone();
+        Rock r9 = r1.clone();
+        Rock r10 = r1.clone();
+        
+        r1.scale(30,40);
+        r2.scale(30,40);
+        r3.scale(30,40);
+        r4.scale(30,40);
+
 
         // 5. Scale rock images to required sizes
         r6.scale(60,60);
@@ -286,6 +292,10 @@ public class Level3Strategy extends Actor implements LevelStrategy {
         myWorld.addObject( coin3, 600, y);
         myWorld.addObject( coin4, 100, y+300);
         myWorld.addObject( coin5, 350, y+100);
+        
+           } catch (CloneNotSupportedException ex) {
+        System.out.println("Caught exception");
+    }
 
     }
    
@@ -376,7 +386,7 @@ public class Level3Strategy extends Actor implements LevelStrategy {
         // F. Create the Player and it to appropriate coordinatesin the world
         p = new Player();
         p.attachObserver(myWorld);
-        p.getImage().scale(50,50);
+        p.getImage().scale(70,70);
         myWorld.addObject( p, 600, 650);
     }
     public void attachRedCars(Car car){
