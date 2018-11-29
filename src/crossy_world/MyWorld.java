@@ -61,8 +61,11 @@ public class MyWorld extends greenfoot.World
             loadLevel();
             levelLoaded = true;
         }
-        if (!backgroundMusic.isPlaying())
-            backgroundMusic.play();
+        if (!backgroundMusic.isPlaying()){
+            try {
+				backgroundMusic.play();
+			} catch(Exception e){}
+		}
     }
     void loadLevel() { 
         List objects = getObjects(null);
@@ -76,7 +79,9 @@ public class MyWorld extends greenfoot.World
         currentLevel.loadTerrains();
         lifeCounter.drawLifeCounter();
         addObject (lifeCounter,  130, 100);
-        backgroundMusic.play();
+        try {
+			backgroundMusic.play();
+		} catch(Exception e){}
         levelLoaded = true;
         actionPaused = false;
     }

@@ -21,7 +21,9 @@ public class StartScreen extends World
         GreenfootImage image = getBackground();
         image.scale(1200, 800);
         setBackground(image);
-        backgroundMusic.play();
+		try {
+			backgroundMusic.play();
+		} catch(Exception e){}
         Greenfoot.setWorld(this);
         prepare();
     }
