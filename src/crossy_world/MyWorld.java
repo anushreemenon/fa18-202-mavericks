@@ -31,6 +31,7 @@ public class MyWorld extends greenfoot.World
     private Boolean actionPaused;
     private Boolean levelLoaded;
     private GreenfootSound backgroundMusic;
+    private GreenfootImage boom;
  
     
     public MyWorld()
@@ -50,7 +51,7 @@ public class MyWorld extends greenfoot.World
         powerUpSound = new GreenfootSound("powerup.wav");
         backgroundMusic = new GreenfootSound("background.mp3");
         currentLevel = new Level1Strategy();
-
+        boom = new GreenfootImage ("boom.png");
         loadLevel();
         
     }
@@ -114,6 +115,9 @@ public class MyWorld extends greenfoot.World
 
     public void lostLife() {
         backgroundMusic.pause();
+        boom.scale(80,80);
+        List<Player> objects = getObjects(Player.class);
+        objects.get(0).setImage(boom);
         lifeCounter.lostLife();
         explosionSound.play();
         actionPaused = true;

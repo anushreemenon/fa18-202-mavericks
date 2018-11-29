@@ -207,26 +207,6 @@ public class Level2Strategy extends Actor implements LevelStrategy {
         Rock r9 = r1.clone();
         Rock r10 = r1.clone();
         
-        r1.scale(30,40);
-        r2.scale(30,40);
-        r3.scale(30,40);
-        r4.scale(30,40);
-
-        // 5. Scale rock images to required sizes
-        r6.scale(60,60);
-        r7.scale(60,60);
-        r8.scale(60,60);
-        r10.scale(70,70);
-        
-        // 6. Scale tree images to appropriate size
-        t7.scale(40,85);
-        t8.scale(40,85);
-        t9.scale(40,85);
-        t10.scale(40,85);
-        t11.scale(40,85);
-        t12.scale(40,85);
-        t13.scale(20,65);
-        t14.scale(20,65);
         
         // 7. Scale image of land to appropriate size
 
