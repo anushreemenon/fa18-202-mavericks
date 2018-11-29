@@ -23,7 +23,6 @@ public class Log extends Leaf implements Cloneable
        currentStrategy = s;
     }
     
-    private static int Y=0;
     /**
      * Act - do whatever the log wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

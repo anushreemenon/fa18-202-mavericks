@@ -71,7 +71,6 @@ public class MyWorld extends greenfoot.World
     void loadLevel() { 
         List objects = getObjects(null);
         removeObjects(objects);
-
         currentLevel.setFinishLevel(false);
         addObject((Actor) currentLevel,67,25);
         addObject ((Actor)levelBoardDecorator, 70, 750);
@@ -80,9 +79,6 @@ public class MyWorld extends greenfoot.World
         currentLevel.loadTerrains();
         lifeCounter.drawLifeCounter();
         addObject (lifeCounter,  130, 100);
-        try {
-			backgroundMusic.play();
-		} catch(Exception e){}
         levelLoaded = true;
         actionPaused = false;
     }
@@ -129,7 +125,6 @@ public class MyWorld extends greenfoot.World
         levelLoaded = false;
         currentLevel.resetTimer();
         Greenfoot.delay(50);
-        // startLevel();
     }
 
     /**
@@ -153,20 +148,19 @@ public class MyWorld extends greenfoot.World
             ((LevelBoard)levelBoard).setLevel(level);
         }
         else if (currentLevel.getClass().getName() == "Level2Strategy") {
-                level+=1;
-                ScoreBoard s = new ScoreBoard (coinBoard.getCoinCount() , "Level 2 crossed!", "Score: ");
-                addObject (s, getWidth()/2,getHeight()/2);
-                Greenfoot.playSound("GameOver.wav");
-                Greenfoot.delay(250);
-                ((LevelBoard)levelBoard).setLevel(level);
-                currentLevel = new Level3Strategy();
-            }
-             else
-                endGame();
+            level+=1;
+            ScoreBoard s = new ScoreBoard (coinBoard.getCoinCount() , "Level 2 crossed!", "Score: ");
+            addObject (s, getWidth()/2,getHeight()/2);
+            Greenfoot.playSound("GameOver.wav");
+            Greenfoot.delay(250);
+            ((LevelBoard)levelBoard).setLevel(level);
+            currentLevel = new Level3Strategy();
+        }
+        else
+            endGame();
         
         levelLoaded = false;
         actionPaused = false;
-        
         
     }
 

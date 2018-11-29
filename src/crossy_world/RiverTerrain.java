@@ -31,7 +31,7 @@ public class RiverTerrain extends Composite
         int logCount = 0;   
         
         while (logCount < 1)
-              logCount = Greenfoot.getRandomNumber(10);
+            logCount = Greenfoot.getRandomNumber(10);
 
         return getChild(logCount);
     }
@@ -67,9 +67,9 @@ public class RiverTerrain extends Composite
             else {  
                 logY = rvY+100;
         
-        }
+            }
        
-    }
+        }
    } 
 }
         

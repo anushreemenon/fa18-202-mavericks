@@ -41,7 +41,6 @@ public class CarBlue extends Leaf implements Cloneable
             pos = 0;
             
         if(getFinishLevel()==false) {
-           // int speed = Level1Strategy.getSpeed();
             setLocation((pos + getX()- currentStrategy.getCarSpeed()), (getY()+1)%worldY);
         }
     }
