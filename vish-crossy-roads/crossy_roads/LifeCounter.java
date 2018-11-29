@@ -13,10 +13,11 @@ public class LifeCounter extends Actor
     
     private GreenfootImage player = new GreenfootImage ("boy2.png");
     private GreenfootImage image = new GreenfootImage (200,200);
-    static final int DEFAULT_MAX_LIVES = 3;
+    static final int MAX_LIVES = 5;
+    static final int DEFAULT_LIVES = 3;
     public LifeCounter ()
     {
-        livesLeft = DEFAULT_MAX_LIVES;
+        livesLeft = DEFAULT_LIVES;
         drawLifeCounter();
     }
 
@@ -40,7 +41,7 @@ public class LifeCounter extends Actor
     }
 
     public void powerUp() {
-        if (livesLeft < DEFAULT_MAX_LIVES){
+        if (livesLeft < MAX_LIVES){
             livesLeft++;
             drawLifeCounter();
             Greenfoot.playSound("powerup.wav");
