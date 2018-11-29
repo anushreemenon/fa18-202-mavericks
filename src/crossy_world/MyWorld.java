@@ -48,7 +48,7 @@ public class MyWorld extends greenfoot.World
         setPaintOrder(Player.class, ScoreBoard.class, LifeCounter.class, LevelBoardDecorator.class, CoinCounter.class, Coin.class, DisplayMessage.class, Level1Strategy.class);
         currentLevel = new Level1Strategy();
         boom = new GreenfootImage ("boom.png");
-        music = new Sound();
+        music = Sound.getInstance();
         loadLevel();
         
     }

@@ -12,11 +12,18 @@ public class Sound
     private GreenfootSound explosionSound;
     private GreenfootSound powerUpSound;
     private GreenfootSound backgroundMusic;
-    
+    private static Sound single_instance = null; 
+    public static Sound getInstance() 
+    { 
+        if (single_instance == null) 
+            single_instance = new Sound(); 
+  
+        return single_instance; 
+    } 
     /**
      * Constructor for objects of class Sound
      */
-    public Sound()
+    private Sound()
     {
         gameOverSound = new GreenfootSound("GameOver.wav");
         explosionSound = new GreenfootSound("explosion.wav");
