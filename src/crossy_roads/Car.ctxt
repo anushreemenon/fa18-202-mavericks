@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Car
+comment0.text=\n\ Write\ a\ description\ of\ class\ car\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=Car()
+comment2.params=
+comment2.target=Car\ clone()
+comment3.params=s
+comment3.target=void\ attachStrategy(LevelStrategy)
+comment4.params=
+comment4.target=void\ act()
+comment5.params=state
+comment5.target=void\ update(boolean)
+comment6.params=
+comment6.target=boolean\ getFinishLevel()
+numComments=7
