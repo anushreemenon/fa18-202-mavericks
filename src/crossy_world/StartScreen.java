@@ -56,5 +56,9 @@ public class StartScreen extends World
         QuitButton quitButton = new QuitButton(this);
         addObject(quitButton,883,562);
         quitButton.setLocation(862,551);
+        CrossyLabel crossyLabel = new CrossyLabel();
+        addObject(crossyLabel,597,127);
+        WorldLabel worldLabel = new WorldLabel();
+        addObject(worldLabel,606,319);
     }
 }
