@@ -3,4 +3,6 @@ comment0.target=Rock
 comment0.text=\n\ Write\ a\ description\ of\ class\ rock\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
 comment1.target=Rock()
-numComments=2
+comment2.params=
+comment2.target=Rock\ clone()
+numComments=3

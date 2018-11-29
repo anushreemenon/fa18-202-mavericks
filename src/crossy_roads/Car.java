@@ -6,16 +6,24 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Car extends Leaf
+public class Car extends Leaf implements Cloneable
 {
     private LevelStrategy currentStrategy;
     private boolean isFinishLevelReached = false;
     World world;
 
  
-    public Car(LevelStrategy s) {
+    public Car() {
         this.getImage().scale(70,30);
-         currentStrategy = s;
+    }
+    
+    @Override 
+    public Car clone() throws CloneNotSupportedException {
+          return (Car) super.clone();
+    }
+      
+    public void attachStrategy(LevelStrategy s) {
+       currentStrategy = s;
     }
     
     /**

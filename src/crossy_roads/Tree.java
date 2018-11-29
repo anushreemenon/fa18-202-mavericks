@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Tree extends Leaf
+public class Tree extends Leaf implements Cloneable
 {
 
     public Tree() {
@@ -20,4 +20,10 @@ public class Tree extends Leaf
      
     public void update(){
     }
+    
+      @Override 
+      public Tree clone() throws CloneNotSupportedException {
+          return (Tree) super.clone();
+      }
 }
+

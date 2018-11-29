@@ -6,15 +6,23 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Log extends Leaf
+public class Log extends Leaf implements Cloneable
 {
     private LevelStrategy currentStrategy;
     private boolean isFinishLevelReached = false;
-    public Log(LevelStrategy s) {
+    public Log() {
         this.getImage().scale(120,30);
-        currentStrategy = s;
     }
-
+        
+      @Override 
+      public Log clone() throws CloneNotSupportedException {
+          return (Log) super.clone();
+      }
+      
+    public void attachStrategy(LevelStrategy s) {
+       currentStrategy = s;
+    }
+    
     private static int Y=0;
     /**
      * Act - do whatever the log wants to do. This method is called whenever

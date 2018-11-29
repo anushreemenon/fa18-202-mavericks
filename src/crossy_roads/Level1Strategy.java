@@ -108,7 +108,7 @@ public class Level1Strategy extends Actor implements LevelStrategy {
          // A. River terrain:
         // 1. Create river terrain object
         RiverTerrain riverTerrain = new RiverTerrain(25);
-      
+        try {
         // 2. Create river object
         River r = new River();
 
@@ -116,15 +116,29 @@ public class Level1Strategy extends Actor implements LevelStrategy {
         // r.getImage().scale(2400,300);
       
         // 5. Create wooden log objects
-        Log log1 = new Log(this);                                                                                                                                      
-        Log log2 = new Log(this);                                                                                                                                      
-        Log log3 = new Log(this);
-        Log log4 = new Log(this); 
-        Log log5 = new Log(this);
-        Log log6 = new Log(this);
-        Log log7 = new Log(this);
-        Log log8 = new Log(this);
-        Log log9 = new Log(this);
+        Log log1 = new Log();
+        log1.attachStrategy(this);
+        
+        Log log2 = log1.clone();
+        log2.attachStrategy(this);
+        
+        Log log3 = log1.clone();
+        log3.attachStrategy(this);
+        
+        Log log4 = log1.clone(); 
+        log4.attachStrategy(this);
+        
+        Log log5 = log1.clone();
+        log5.attachStrategy(this);
+        
+        Log log6 = log1.clone();
+        log6.attachStrategy(this);
+        Log log7 = log1.clone();
+        log7.attachStrategy(this);
+        Log log8 = log1.clone();
+        log8.attachStrategy(this);
+        Log log9 = log1.clone();
+        log9.attachStrategy(this);
         
         this.attachLogs(log1);
         this.attachLogs(log2);
@@ -144,8 +158,11 @@ public class Level1Strategy extends Actor implements LevelStrategy {
         riverTerrain.addChild ( log7 );
         riverTerrain.addChild ( log8 );
         riverTerrain.addChild ( log9 );
-
-
+    }
+    catch (CloneNotSupportedException ex) {
+        System.out.println("Caught exception");
+        ex.printStackTrace();
+    }
         // 3. Adding river terrain to my world
         myWorld.addObject(riverTerrain,0,y);
       
@@ -162,34 +179,35 @@ public class Level1Strategy extends Actor implements LevelStrategy {
         // 2. Land objects
         Land l1 = new Land();//Upper 
 
-
+        try {
         // 3. Tree objects
         Tree t1 = new Tree();
-        Tree t2 = new Tree();       
-        Tree t3 = new Tree();
-        Tree t4 = new Tree();
-        Tree t5 = new Tree();
-        Tree t6 = new Tree();
-        Tree t7 = new Tree();
-        Tree t8 = new Tree();
-        Tree t9 = new Tree();
-        Tree t10 = new Tree();
-        Tree t11 = new Tree();
-        Tree t12 = new Tree();
-        Tree t13 = new Tree();
-        Tree t14 = new Tree();
-    
+        Tree t2 = t1.clone();       
+        Tree t3 = t1.clone(); 
+        Tree t4 = t1.clone(); 
+        Tree t5 = t1.clone(); 
+        Tree t6 = t1.clone(); 
+        Tree t7 = t1.clone(); 
+        Tree t8 = t1.clone(); 
+        Tree t9 = t1.clone(); 
+        Tree t10 = t1.clone(); 
+        Tree t11 = t1.clone(); 
+        Tree t12 = t1.clone(); 
+        Tree t13 = t1.clone(); 
+        Tree t14 = t1.clone(); 
+ 
         // 4. Rock objects
         Rock r1 = new Rock();
-        Rock r2 = new Rock();
-        Rock r3 = new Rock();
-        Rock r4 = new Rock();
-        Rock r5 = new Rock();
-        Rock r6 = new Rock();
-        Rock r7 = new Rock();
-        Rock r8 = new Rock();
-        Rock r9 = new Rock();
-        Rock r10 = new Rock();
+        Rock r2 = r1.clone();
+        Rock r3 = r1.clone();      
+        Rock r4 = r1.clone();
+        Rock r5 = r1.clone();
+        Rock r6 = r1.clone();
+        Rock r7 = r1.clone();
+        Rock r8 = r1.clone();
+        Rock r9 = r1.clone();
+        Rock r10 = r1.clone();
+
 
         // 5. Scale rock images to required sizes
         r6.scale(60,60);
@@ -269,6 +287,10 @@ public class Level1Strategy extends Actor implements LevelStrategy {
         myWorld.addObject( coin3, 600, y);
         myWorld.addObject( coin4, 100, y+300);
         myWorld.addObject( coin5, 350, y+100);
+        
+           } catch (CloneNotSupportedException ex) {
+        System.out.println("Caught exception");
+    }
 
     }
    
@@ -279,25 +301,37 @@ public class Level1Strategy extends Actor implements LevelStrategy {
         // C. Road terrain:
         // 1. Create object pof road terrain
         RoadTerrain roadTerrain = new RoadTerrain();
-        
+        try {
         // 2. Create objects of road
         Road rd1 = new Road();
         Road rd2 = new Road();
         Road rd3 = new Road();
 
         // 3. Create objects of car
-        CarBlue car1 = new CarBlue(this);           
-        Car car2 = new Car(this);          
-        CarBlue car3 = new CarBlue(this);
-        CarBlue car4 = new CarBlue(this);           
-        Car car5 = new Car(this);          
-        CarBlue car6 = new CarBlue(this);
-        CarBlue car7 = new CarBlue(this);
-        Car car8 = new Car(this);
-        CarBlue car9 = new CarBlue(this);
-        CarBlue car10 = new CarBlue(this);
-        Car car11 = new Car(this);
-        CarBlue car12 = new CarBlue(this);
+        CarBlue car1 = new CarBlue();
+        car1.attachStrategy(this);
+        Car car2 = new Car();   
+        car2.attachStrategy(this);
+        CarBlue car3 = car1.clone();
+        car3.attachStrategy(this);
+        CarBlue car4 = car1.clone(); 
+        car4.attachStrategy(this);
+        Car car5 = car2.clone();
+        car5.attachStrategy(this);
+        CarBlue car6 = car1.clone();
+        car6.attachStrategy(this);
+        CarBlue car7 = car1.clone();
+        car7.attachStrategy(this);
+        Car car8 = car2.clone();   
+        car8.attachStrategy(this);
+        CarBlue car9 = car1.clone();
+        car9.attachStrategy(this);
+        CarBlue car10 = car1.clone();
+        car10.attachStrategy(this);
+        Car car11 = car2.clone();    
+        car11.attachStrategy(this);
+        CarBlue car12 = car1.clone();
+        car12.attachStrategy(this);
 
         this.attachRedCars(car2);
         this.attachRedCars(car5);
@@ -336,7 +370,9 @@ public class Level1Strategy extends Actor implements LevelStrategy {
       
         // 7. Adding road terrain to the my world
         myWorld.addObject( roadTerrain, 0, y );
-
+    } catch (CloneNotSupportedException ex) {
+        System.out.println("Caught exception");
+    }
     }
     
     

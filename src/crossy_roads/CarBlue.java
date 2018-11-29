@@ -6,13 +6,21 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class CarBlue extends Leaf
+public class CarBlue extends Leaf implements Cloneable
 {
     private LevelStrategy currentStrategy;
     private boolean isFinishLevelReached = false;
-    public CarBlue(LevelStrategy s) {
+    public CarBlue() {
         this.getImage().scale(70,30);
-         currentStrategy = s;
+    }
+    
+    @Override 
+    public CarBlue clone() throws CloneNotSupportedException {
+          return (CarBlue) super.clone();
+    }
+      
+    public void attachStrategy(LevelStrategy s) {
+       currentStrategy = s;
     }
     /**
      * Act - do whatever the car_blue wants to do. This method is called whenever
