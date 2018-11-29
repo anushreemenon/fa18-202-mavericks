@@ -299,16 +299,11 @@ dependency94.type=UsesDependency
 dependency95.from=QuitButton
 dependency95.to=StartScreen
 dependency95.type=UsesDependency
-editor.fx.0.height=900
-editor.fx.0.width=1440
+editor.fx.0.height=0
+editor.fx.0.width=0
 editor.fx.0.x=0
-<<<<<<< HEAD
-editor.fx.0.y=23
-height=823
-=======
 editor.fx.0.y=0
-height=900
->>>>>>> d334112a3bacc4cac9f0077e6c0622f4c5938f5e
+height=798
 package.numDependencies=95
 package.numTargets=33
 project.charset=UTF-8
@@ -559,10 +554,5 @@ target9.y=0
 version=3.0.0
 width=1494
 world.lastInstantiated=StartScreen
-<<<<<<< HEAD
-xPosition=-54
-yPosition=23
-=======
 xPosition=0
-yPosition=0
->>>>>>> d334112a3bacc4cac9f0077e6c0622f4c5938f5e
+yPosition=23
