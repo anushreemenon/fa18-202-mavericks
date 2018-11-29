@@ -22,7 +22,6 @@ public class Target extends Leaf
         Actor player = world.getObjects(Player.class).get(0);
         
         int worldX = world.getWidth();
-        
         int worldY = world.getHeight();
         
         if(getFinishLevel()==false){
@@ -30,8 +29,6 @@ public class Target extends Leaf
         }
         if(intersects(player)){
            strategy.setFinishLevel(true);
-            //world.endGame();
-
         }
         
     }   

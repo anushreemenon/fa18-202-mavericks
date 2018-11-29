@@ -16,7 +16,6 @@ public class Tree extends Leaf implements Cloneable
      * Act - do whatever the rock wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-     private static int Y=0;
      
     public void update(){
     }
