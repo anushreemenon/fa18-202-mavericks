@@ -29,10 +29,27 @@ What tasks did I work on / complete?
 
 
 
-Created 
-
 What am I planning to work on next?<br>
 Started working on integrating dynamically changing terrain feature
+
+What tasks are blocked waiting on another team member?
+
+No blocking items, so far.
+
+----------------------------------------------------------------------------------------------------------------
+
+Week 3: (11/18 to 11/24)
+What tasks did I work on / complete?
+- Implemented dynamically moving terrains.
+- Implemented finish line feature.
+- Refactored Level1Strategy code.
+- Eliminated blank terrains visibility in the game.
+- Fixed minor bugs.
+
+
+
+What am I planning to work on next?<br>
+Started implementing Observer Pattern for notifying the Actors such as Logs, Cars, Coins and Target about the finish line.
 
 What tasks are blocked waiting on another team member?
 
