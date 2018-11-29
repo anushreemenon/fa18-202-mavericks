@@ -18,9 +18,14 @@ public class Player extends Leaf
     private int acceleration = 2; //gravity effect while falling  
     private int jumpStrength = -8; 
     private boolean isFinishLevelReached = false;
-
+    private GreenfootImage boom = new GreenfootImage ("boom.jpg");
     boolean onLog;
     MyWorld myworld;
+    public void lostLife() {
+        boom.scale(80,80);
+        this.setImage(boom);
+        myworld.lostLife();
+    }
     public void act() 
     {
         Actor log;
@@ -32,7 +37,8 @@ public class Player extends Leaf
             // LifeCounter lc = lcs.get(0);
             checkKeys();
             if (isTouching(Car.class) || isTouching(CarBlue.class)) {
-                myworld.lostLife();
+                lostLife();
+                
                 // Greenfoot.delay(50);
             } else if (isTouching(River.class)) {
                 List<River> river = myworld.getObjects(River.class);
@@ -44,8 +50,8 @@ public class Player extends Leaf
                 if (getY() > riverY-50){        //not yet crossed the river
                     List<Log> logs = getNeighbours(75, true, Log.class);
                     if (logs.size() <=0) {
-                        myworld.lostLife();
-                         Greenfoot.delay(50);
+                        lostLife();
+                        //  Greenfoot.delay(50);
                     }
                     else {
                                 if(!(Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("down") || Greenfoot.isKeyDown("left") || Greenfoot.isKeyDown("right"))) {

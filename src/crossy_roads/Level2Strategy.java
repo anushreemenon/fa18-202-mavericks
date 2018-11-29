@@ -280,11 +280,11 @@ public class Level2Strategy extends Actor implements LevelStrategy {
         landTerrain1.addChild ( coin5 );
 
         // 3. add the coins to MyWorld
-        myWorld.addObject( coin1, 1000, 700);
-        myWorld.addObject( coin2, 500, 500);
-        myWorld.addObject( coin3, 600, 600);
-        myWorld.addObject( coin4, 100, 700);
-        myWorld.addObject( coin5, 350, 650);
+        myWorld.addObject( coin1, 1000, y);
+        myWorld.addObject( coin2, 500, y+200);
+        myWorld.addObject( coin3, 600, y);
+        myWorld.addObject( coin4, 100, y+300);
+        myWorld.addObject( coin5, 350, y+100);
 
     }
    
