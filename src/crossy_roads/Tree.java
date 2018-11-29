@@ -10,7 +10,7 @@ public class Tree extends Leaf implements Cloneable
 {
 
     public Tree() {
-        this.getImage().scale(30,75);
+        this.getImage().scale(30,60);
     }
     /**
      * Act - do whatever the rock wants to do. This method is called whenever

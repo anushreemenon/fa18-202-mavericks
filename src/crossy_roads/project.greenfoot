@@ -4,13 +4,13 @@ class.CarBlue.image=car01.png
 class.Coin.image=coin.png
 class.CoinCounter.image=coin.png
 class.Land.image=Land.jpg
-class.Log.image=log.jpg
+class.Log.image=log.png
 class.PlayButton.image=play.png
 class.Player.image=boy_run.png
 class.QuitButton.image=quit.png
 class.River.image=river-2.jpg
 class.Road.image=Road-2.jpg
-class.Rock.image=rock.png
+class.Rock.image=rock2.png
 class.StartScreen.image=crossy-road-grayscale-blurred\ -\ Copy.jpg
 class.Target.image=finish.jpeg
 class.Tree.image=tree2.png
@@ -302,8 +302,13 @@ dependency95.type=UsesDependency
 editor.fx.0.height=900
 editor.fx.0.width=1440
 editor.fx.0.x=0
+<<<<<<< HEAD
+editor.fx.0.y=23
+height=823
+=======
 editor.fx.0.y=0
 height=900
+>>>>>>> d334112a3bacc4cac9f0077e6c0622f4c5938f5e
 package.numDependencies=95
 package.numTargets=33
 project.charset=UTF-8
@@ -554,5 +559,10 @@ target9.y=0
 version=3.0.0
 width=1494
 world.lastInstantiated=StartScreen
+<<<<<<< HEAD
+xPosition=-54
+yPosition=23
+=======
 xPosition=0
 yPosition=0
+>>>>>>> d334112a3bacc4cac9f0077e6c0622f4c5938f5e
