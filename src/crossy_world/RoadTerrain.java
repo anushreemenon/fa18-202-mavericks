@@ -21,11 +21,10 @@ public class RoadTerrain extends Composite {
     }
 
     public Component getCar() {
-
         Component car;
         int carCounter = 0;    
         while (carCounter <= 2)
-              carCounter = Greenfoot.getRandomNumber(15);
+            carCounter = Greenfoot.getRandomNumber(15);
 
         return getChild(carCounter);
     }
@@ -51,8 +50,6 @@ public class RoadTerrain extends Composite {
         count++;       
         createRoads();
 
-        //carY = getY()+300;
-        
         List<Road> rt = myWorld.getObjects(Road.class);
             
         int rtY = rt.get(0).getY();
@@ -65,12 +62,10 @@ public class RoadTerrain extends Composite {
                     myWorld.addObject(actualCar,1200,carY);
                     carY -=50;
             } else {
-            carY = rtY;
-        }
+                carY = rtY;
+            }
         }
 
 
-    } 
-        
-        
+    }    
 }

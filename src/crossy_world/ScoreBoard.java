@@ -8,7 +8,7 @@ import greenfoot.*; // (World, Actor, GreenfootImage, and Greenfoot)
 public class ScoreBoard extends Actor
 {
     public static final float FONT_SIZE = 48.0f;
-    public static final int WIDTH = 400;
+    public static final int WIDTH = 500;
     public static final int HEIGHT = 300;
 
     /**

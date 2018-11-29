@@ -146,18 +146,18 @@ public class MyWorld extends greenfoot.World
         if (currentLevel.getClass().getName() == "Level1Strategy") {
             currentLevel = new Level2Strategy();
             level+=1;
-            this.showText("Level 1 crossed!", getWidth()/2, getHeight()/2);
+            ScoreBoard s = new ScoreBoard (coinBoard.getCoinCount() , "Level 1 crossed!", "Score: ");
+            addObject (s, getWidth()/2,getHeight()/2);
             Greenfoot.playSound("GameOver.wav");
             Greenfoot.delay(250);
-            this.showText("", getWidth()/2, getHeight()/2);
             ((LevelBoard)levelBoard).setLevel(level);
         }
         else if (currentLevel.getClass().getName() == "Level2Strategy") {
                 level+=1;
-                this.showText("Level 2 crossed!", getWidth()/2, getHeight()/2);
-               Greenfoot.playSound("GameOver.wav");
+                ScoreBoard s = new ScoreBoard (coinBoard.getCoinCount() , "Level 2 crossed!", "Score: ");
+                addObject (s, getWidth()/2,getHeight()/2);
+                Greenfoot.playSound("GameOver.wav");
                 Greenfoot.delay(250);
-                this.showText("", getWidth()/2, getHeight()/2);
                 ((LevelBoard)levelBoard).setLevel(level);
                 currentLevel = new Level3Strategy();
             }

@@ -18,13 +18,9 @@ public class Road extends Leaf
      */
     private static int Y=0;
     public void display() {
-        
-       // addObject(this, 67, 25);
-       
        World myWorld = getWorld();
        if (myWorld != null)
             myWorld.addObject(this,67,25);
-        
     }
     
     public void update(){
