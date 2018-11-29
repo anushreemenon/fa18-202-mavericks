@@ -18,7 +18,7 @@ public class Player extends Leaf
     private int acceleration = 2; //gravity effect while falling  
     private int jumpStrength = -8; 
     private boolean isFinishLevelReached = false;
-    private GreenfootImage boom = new GreenfootImage ("boom.jpg");
+    private GreenfootImage boom = new GreenfootImage ("boom.png");
     boolean onLog;
     MyWorld myworld;
     public void lostLife() {
