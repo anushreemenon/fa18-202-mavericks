@@ -71,7 +71,7 @@ public class MyWorld extends greenfoot.World
         currentLevel.loadTerrains();
         lifeCounter.drawLifeCounter();
         addObject (lifeCounter,  130, 100);
-        music.playBackGroundMusic();
+        music.playBackGroundMusic();    
         levelLoaded = true;
         actionPaused = false;
     }
@@ -127,17 +127,17 @@ public class MyWorld extends greenfoot.World
     {
         actionPaused = true;
         if (currentLevel.getClass().getName() == "Level1Strategy") {
-            currentLevel = new Level2Strategy();
             level+=1;
-            ScoreBoard s = new ScoreBoard (coinBoard.getCoinCount() , "Level 1 crossed!", "Score: ");
+            ScoreBoard s = new ScoreBoard (coinBoard.getCoinCount() , "Level 1 Complete", "Score: ");
             addObject (s, getWidth()/2,getHeight()/2);
             Greenfoot.playSound("GameOver.wav");
             Greenfoot.delay(250);
+            currentLevel = new Level2Strategy();
             ((LevelBoard)levelBoard).setLevel(level);
         }
         else if (currentLevel.getClass().getName() == "Level2Strategy") {
             level+=1;
-            ScoreBoard s = new ScoreBoard (coinBoard.getCoinCount() , "Level 2 crossed!", "Score: ");
+            ScoreBoard s = new ScoreBoard (coinBoard.getCoinCount() , "Level 2 Complete", "Score: ");
             addObject (s, getWidth()/2,getHeight()/2);
             Greenfoot.playSound("GameOver.wav");
             Greenfoot.delay(250);

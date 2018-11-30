@@ -25,42 +25,42 @@ public class Sound
      */
     private Sound()
     {
-		try {
-			gameOverSound = new GreenfootSound("GameOver.wav");
-			explosionSound = new GreenfootSound("explosion.wav");
-			powerUpSound = new GreenfootSound("powerup.wav");
-			backgroundMusic = new GreenfootSound("background.mp3");
-		} catch(Exception e){}
+        try {
+            gameOverSound = new GreenfootSound("GameOver.wav");
+            explosionSound = new GreenfootSound("explosion.wav");
+            powerUpSound = new GreenfootSound("powerup.wav");
+            backgroundMusic = new GreenfootSound("background.wav");
+        } catch(Exception e){}
     }
 
 
     public void playGameOver() {
-		try {
-			gameOverSound.play();
-		} catch(Exception e){}
+        try {
+            gameOverSound.play();
+        } catch(Exception e){}
     }
 
     public void playBackGroundMusic() {
         try {
-            backgroundMusic.playLoop();
+              backgroundMusic.playLoop();      
         } catch(Exception e){}
     }
 
     public void playPowerUp() {
-		try {
-			powerUpSound.play();
-		} catch(Exception e){}
+        try {
+            powerUpSound.play();
+        } catch(Exception e){}
     }
 
     public void playExplosion() {
         try {
-			explosionSound.play();
-		} catch(Exception e){}
+            explosionSound.play();
+        } catch(Exception e){}
     }
 
     public void pauseBackGround() {
-		try {
-			backgroundMusic.pause();
-		} catch(Exception e){}
+        try {
+            backgroundMusic.pause();
+        } catch(Exception e){}
     }
 }

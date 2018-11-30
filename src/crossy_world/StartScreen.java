@@ -50,7 +50,8 @@ public class StartScreen extends World
      */
     private void prepare()
     {
-        music.playBackGroundMusic();
+
+        music.playBackGroundMusic();    
         PlayButton playButton = new PlayButton(this);
         addObject(playButton,445,601);
         playButton.setLocation(329,551);
