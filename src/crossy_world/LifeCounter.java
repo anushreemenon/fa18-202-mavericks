@@ -39,8 +39,10 @@ public class LifeCounter extends Actor
         livesLeft--;
         drawLifeCounter();
         if (livesLeft <= 0){
-            List<Mediator> objects = getWorld().getObjects(Mediator.class);
-            mediator = objects.get(0);
+            if (mediator == null){
+                List<Mediator> objects = getWorld().getObjects(Mediator.class);
+                mediator = objects.get(0);
+            }
             mediator.endGame();
         }
     }

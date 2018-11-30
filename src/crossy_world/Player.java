@@ -23,8 +23,10 @@ public class Player extends Leaf
     
     public void act() 
     {
-        List<Mediator> objects = getWorld().getObjects(Mediator.class);
-        mediator = objects.get(0);
+        if (mediator == null){
+            List<Mediator> objects = myworld.getObjects(Mediator.class);
+            mediator = objects.get(0);
+        }
         Actor log;
         if (!myworld.getActionPaused())
         {
@@ -71,8 +73,10 @@ public class Player extends Leaf
 
     public void checkKeys()
     {
-        List<Mediator> objects = getWorld().getObjects(Mediator.class);
-        mediator = objects.get(0);
+        if (mediator == null){
+            List<Mediator> objects = myworld.getObjects(Mediator.class);
+            mediator = objects.get(0);
+        }
         boolean obstacle = true;
         if( Greenfoot.isKeyDown("left"))
         {

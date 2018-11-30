@@ -9,7 +9,7 @@ import java.util.*;
  */
 public class Coin extends Leaf
 {
-    protected Mediator mediator;
+    protected Mediator mediator = null;
     private boolean isFinishLevelReached = false;
     public Coin() {
         this.getImage().scale(50, 50);
@@ -25,10 +25,12 @@ public class Coin extends Leaf
         {
             
             if(isTouching(Player.class)) {
-                world.removeObject(this);
+                world.removeObject(this);   
                 Greenfoot.playSound("coin.wav");
-                List<Mediator> objects = world.getObjects(Mediator.class);
-                mediator = objects.get(0);
+                if (mediator == null){
+                    List<Mediator> objects = world.getObjects(Mediator.class);
+                    mediator = objects.get(0);
+                }
                 mediator.incrementCoinCount();
             } else {
                 int worldX = world.getWidth();

@@ -44,8 +44,10 @@ public class CoinBoard extends Actor
         coinCount++;
         totalCount++;
         if ((coinCount % COINS_FOR_EXTRA_LIFE) == 0) {
-            List<Mediator> objects = myWorld.getObjects(Mediator.class);
-            mediator = objects.get(0);
+            if (mediator == null){
+                List<Mediator> objects = myWorld.getObjects(Mediator.class);
+                mediator = objects.get(0);
+            }
             mediator.powerUp();
             coinCount = 0;
         }
