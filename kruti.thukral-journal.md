@@ -73,9 +73,9 @@ None
 3. Mediator pattern implementation
 4. Score Board pop up when level completes
 5. Bug Fixes:
-    a. Incorrect coin counter
-    b. size of the objects and boom image not displayed at the edge of the world
-    c. Game coming to an end after losing life when sufficient lives are available to continue the game
+* Incorrect coin counter
+* size of the objects and boom image not displayed at the edge of the world
+* Game coming to an end after losing life when sufficient lives are available to continue the game
 
 
 As part of XP value of Feedback, during the course of the week I suggested below:
