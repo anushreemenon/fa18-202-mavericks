@@ -15,6 +15,7 @@ public class Strategy extends Actor implements LevelStrategy {
     protected int maxTimer = 0;
     private Target target;
     private MyWorld myWorld;
+    protected String info;
 
     private ArrayList<Car> redcarObservers = new ArrayList<>();
     private ArrayList<CarBlue> bluecarObservers = new ArrayList<>();
@@ -408,5 +409,9 @@ public class Strategy extends Actor implements LevelStrategy {
         notifyBlueCars(finishstate);
         notifyLogs(finishstate);
         notifyCoins(finishstate);
+    }
+
+    public String levelInfo() {
+        return info;
     }
 }

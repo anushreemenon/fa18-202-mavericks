@@ -18,6 +18,7 @@ public class Leaf extends Actor implements Component {
         int worldY = world.getHeight();
         if(getFinishLevel()==false)
             setLocation((getX())%worldX, (getY()+1)%worldY);
+        
     }
     public Leaf() {
         

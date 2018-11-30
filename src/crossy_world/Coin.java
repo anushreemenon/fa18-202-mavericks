@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.*;
 
 /**
  * Write a description of class Coin here.
@@ -8,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Coin extends Leaf
 {
-    
+    protected Mediator mediator;
     private boolean isFinishLevelReached = false;
     public Coin() {
         this.getImage().scale(50, 50);
@@ -20,13 +21,15 @@ public class Coin extends Leaf
     public void act() 
     {
         MyWorld world =  getWorldOfType(MyWorld.class);
-        if (!world.isActionPaused() )
+        if (!world.getActionPaused() )
         {
             
             if(isTouching(Player.class)) {
                 world.removeObject(this);
                 Greenfoot.playSound("coin.wav");
-                world.incrementCoinCount();
+                List<Mediator> objects = world.getObjects(Mediator.class);
+                mediator = objects.get(0);
+                mediator.incrementCoinCount();
             } else {
                 int worldX = world.getWidth();
                 

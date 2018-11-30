@@ -15,6 +15,7 @@ public class Level3Strategy extends Strategy {
         carSpeed = 8;
         logSpeed = 5;
         maxTimer = 4000;
+        info = "Level 3";
     }
 }
 

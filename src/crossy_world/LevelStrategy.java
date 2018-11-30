@@ -11,5 +11,6 @@ public interface LevelStrategy
     public int getCarSpeed();
     public int getLogSpeed();
     public void resetTimer();
+    public String levelInfo();
     
 }

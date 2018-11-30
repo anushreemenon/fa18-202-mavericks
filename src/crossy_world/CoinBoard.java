@@ -1,6 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import greenfoot.Font;
 import greenfoot.Color;
+import java.util.*;
 
 /**
  * class LevelCounter 
@@ -13,11 +14,21 @@ public class CoinBoard extends Actor
     private CoinCounter coin; 
     private DisplayMessage displayMessage;
     private int coinCount;
-    MyWorld myWorld;
+    World myWorld;
     static final int COINS_FOR_EXTRA_LIFE = 5;
     private int totalCount;
-
-    public CoinBoard (MyWorld world)
+    private static Sound single_instance = null; 
+    private static CoinBoard coin_board_instance = null; 
+    protected Mediator mediator;
+    
+    public static CoinBoard getInstance() 
+    { 
+        if (coin_board_instance == null) 
+            coin_board_instance = new CoinBoard(); 
+  
+        return coin_board_instance; 
+    } 
+    private CoinBoard ()
     {
         coinCount = 0;
         totalCount = 0;
@@ -25,7 +36,7 @@ public class CoinBoard extends Actor
         displayMessage = new DisplayMessage(str);
         coin = new CoinCounter();
         coin.getImage().scale(60,60);
-        myWorld = world;
+        
     }
 
     public void incrementCount ()
@@ -33,7 +44,9 @@ public class CoinBoard extends Actor
         coinCount++;
         totalCount++;
         if ((coinCount % COINS_FOR_EXTRA_LIFE) == 0) {
-            myWorld.powerUp();
+            List<Mediator> objects = myWorld.getObjects(Mediator.class);
+            mediator = objects.get(0);
+            mediator.powerUp();
             coinCount = 0;
         }
         String str = " " + coinCount; 
@@ -41,12 +54,14 @@ public class CoinBoard extends Actor
     }
 
     public void loadCoinBoard () {
+        myWorld = getWorld();
         myWorld.addObject (coin, myWorld.getWidth() - 120, 30);
         myWorld.addObject (displayMessage, myWorld.getWidth() - 70, 30);
     }
 
     public int getCoinCount() {
         return totalCount;
-    }
+    } 
+    
 
 }

@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.*;
 /**
  * Write a description of class LifeCounter here.
  * 
@@ -15,10 +15,22 @@ public class LifeCounter extends Actor
     private GreenfootImage image = new GreenfootImage (200,200);
     static final int MAX_LIVES = 5;
     static final int DEFAULT_LIVES = 3;
+
+    private static LifeCounter life_counter_instance = null; 
+    protected Mediator mediator;
+    
+    public static LifeCounter getInstance() 
+    { 
+        if (life_counter_instance == null) 
+            life_counter_instance = new LifeCounter(); 
+  
+        return life_counter_instance; 
+    } 
     public LifeCounter ()
     {
         livesLeft = DEFAULT_LIVES;
         drawLifeCounter();
+        
     }
 
     public void lostLife()
@@ -27,8 +39,9 @@ public class LifeCounter extends Actor
         livesLeft--;
         drawLifeCounter();
         if (livesLeft <= 0){
-            MyWorld myWorld =  getWorldOfType(MyWorld.class);
-            myWorld.endGame();
+            List<Mediator> objects = getWorld().getObjects(Mediator.class);
+            mediator = objects.get(0);
+            mediator.endGame();
         }
     }
 

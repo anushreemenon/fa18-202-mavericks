@@ -18,26 +18,28 @@ public class Player extends Leaf
     private int acceleration = 2; //gravity effect while falling  
     private int jumpStrength = -8; 
     private boolean isFinishLevelReached = false;
-   
+    protected Mediator mediator;
     MyWorld myworld;
     
     public void act() 
     {
+        List<Mediator> objects = getWorld().getObjects(Mediator.class);
+        mediator = objects.get(0);
         Actor log;
-        if (!myworld.isActionPaused())
+        if (!myworld.getActionPaused())
         {
             // List<LifeCounter> lcs = myWorld.getObjects(LifeCounter.class);   
             // LifeCounter lc = lcs.get(0);
             checkKeys();
             if (isTouching(Car.class) || isTouching(CarBlue.class)) {
-                myworld.lostLife();
+                mediator.lostLife();
             } else if (isTouching(River.class)) {
                 List<River> river = myworld.getObjects(River.class);
                 int riverY = river.get(0).getY();
                 if (getY() > riverY-50) {        //not yet crossed the river
                     List<Log> logs = getNeighbours(75, true, Log.class);
                     if (logs.size() <=0) {
-                        myworld.lostLife();
+                        mediator.lostLife();
                     }
                     else {
                         if(!(Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("down") || Greenfoot.isKeyDown("left") || Greenfoot.isKeyDown("right"))) {
@@ -69,6 +71,8 @@ public class Player extends Leaf
 
     public void checkKeys()
     {
+        List<Mediator> objects = getWorld().getObjects(Mediator.class);
+        mediator = objects.get(0);
         boolean obstacle = true;
         if( Greenfoot.isKeyDown("left"))
         {
@@ -98,7 +102,7 @@ public class Player extends Leaf
             if(isAtEdge()) {
                     // Stop the level
                     // TODO: Stop only when the Player reaches the lowermost edge of the world. Otherwise, do nothing.
-                    myworld.lostLife();
+                    mediator.lostLife();
             }
         }
 
@@ -131,7 +135,8 @@ public class Player extends Leaf
             setLocation(getX(), getY()-vSpeed);  
             vSpeed = vSpeed - acceleration;  
         }
-    }   
+    }  
+     
     public void attachObserver(MyWorld myWorld){
         myworld = myWorld;
     }
