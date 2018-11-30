@@ -65,3 +65,24 @@ As part of XP value of Feedback, during the course of the week I suggested below
 ### What tasks are blocked waiting on another team member?
 None
 
+## Week 4: 11/25 - 11/30:
+### What tasks did I work on / complete?
+
+1. Implemention of sound singleton class and taking care of all the sounds in the game
+2. Code Clean up
+3. Mediator pattern implementation
+4. Score Board pop up when level completes
+5. Bug Fixes:
+    a. Incorrect coin counter
+    b. size of the objects and boom image not displayed at the edge of the world
+    c. Game coming to an end after losing life when sufficient lives are available to continue the game
+
+
+As part of XP value of Feedback, during the course of the week I suggested below:
+1. Feedback for code clean up and other technical priorties
+
+### What am I planning to work on next?
+    None
+
+### What tasks are blocked waiting on another team member?
+    None
