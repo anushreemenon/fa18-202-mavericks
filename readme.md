@@ -12,6 +12,9 @@ John Doe (Player) has to cross land, road and river by avoid all obstacles in ea
 ### Use cases:
 https://github.com/nguyensjsu/fa18-202-mavericks/blob/master/docs/Use-Case-Specification.pdf
 
+### Mockups:
+https://github.com/nguyensjsu/fa18-202-mavericks/tree/master/mockups
+
 ## Design:
 Game uses Greenfoot game engine. We have implemented entire game from scratch (not picked up any source code from online). We identified and implemented below design patterns.
 
