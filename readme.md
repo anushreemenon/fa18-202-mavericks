@@ -3,10 +3,10 @@
 Crossy World is a new and improved version of classic arcade game - "Frogger". We have greatly improved the game by providing a continous navigation where player keeps crossing multiple terrains till he reaches the finish line.
 
 ## The names of each team member:
-Kruti Thukral
-Sharwari Phadnis
-Pratik Bhandarkar
-Vishwanath Manvi
+Kruti Thukral <br>
+Sharwari Phadnis <br>
+Pratik Bhandarkar <br>
+Vishwanath Manvi <br>
 
 ## A summary of areas of contributions (for each team member)
 
