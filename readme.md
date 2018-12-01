@@ -59,4 +59,7 @@ https://github.com/nguyensjsu/fa18-202-mavericks/blob/master/vishwanath.manvi-jo
 ## Sprint Task Sheet:
 https://docs.google.com/spreadsheets/u/1/d/1dMe1_Ixf5i2VE0_i3Y-k3izS20wZZ5Eb07uHHIjhDTg/edit#gid=0
 
+## Game Ad Video:
+https://youtu.be/EpRtCIgjst0
+
 
