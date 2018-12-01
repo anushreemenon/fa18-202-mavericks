@@ -62,10 +62,11 @@ Vishwanath Manvi <br>
 5. Implemented navigation(up/down/left/right) of the the main Player.
 6. Implemented **Observer Design pattern**:
          - Observer Design Pattern helped in notifying all the Terrains such as Roads, River, Land to stop moving vertically once the Player reaches the finish line. This helped in eliminating the singleton class and to scale the same code to all the Levels.
-7. Helped in end to end testing, fixing bugs in the code.
-8. Created System Sequence Diagrams mentioned in the Use Case Specification Document.
-9. Developed an **Ad Video** for the game.
-10. As a champion of XP value **"Courage"**, I helped in taking important decisions related to the critical and challenging Game Features such as changing a static terrain game to dynamically changing terrains. 
+7. Implemented vertically moving terrains in the game.
+8. Helped in end to end testing, fixing bugs in the code.
+9. Created System Sequence Diagrams mentioned in the Use Case Specification Document.
+10. Developed an **Ad Video** for the game.
+11. As a champion of XP value **"Courage"**, I helped in taking important decisions related to the critical and challenging Game Features such as changing a static terrain game to dynamically changing terrains. 
 
 ### Pratik Bhandarkar:
 1. suggested several game development ideas for this project and participated in the brainstorming meeting to finalize the idea to be developed
