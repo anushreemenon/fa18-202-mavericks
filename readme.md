@@ -25,12 +25,12 @@ Game uses Greenfoot game engine. We have implemented entire game from scratch (n
 ### UML Diagrams:
 - Class overview diagram: https://github.com/nguyensjsu/fa18-202-mavericks/blob/master/docs/uml-diagrams/Class%20Diagram%20(overview).jpg <br>
 - Detailed class diagram: https://github.com/nguyensjsu/fa18-202-mavericks/blob/master/docs/uml-diagrams/Class%20Diagram.jpg <br>
-- Sequence Diagrams: https://github.com/nguyensjsu/fa18-202-mavericks/tree/master/docs/uml-diagrams <br>
+- System Sequence Diagrams: https://github.com/nguyensjsu/fa18-202-mavericks/tree/master/docs/uml-diagrams <br>
 
 
 ## Project Team:
 Kruti Thukral <br>
-Sharwari Phadnis <br>
+Sharwari Phadnis (Student ID: 012168884)<br>
 Pratik Bhandarkar (Student ID: 013735748) <br>
 Vishwanath Manvi <br>
 
