@@ -51,3 +51,19 @@
  
  * **What tasks are blocked waiting on another team member?**
    - None
+   
+   ----------------------------------
+   
+## Week 4: (11/25 to 12/1)
+ * **What tasks did I work on / complete?**
+ 1. Added "decorator pattern" for level counter board 
+ 2. Designed and Added a star up screen for the game with backround music
+ 3. Added exception handling for sounds played in the game
+ 4. Updated the class diagram. Added a new class overview diagram with less details and more readability
+ 5. Contributed into the making of ad video
+
+ * **What am I planning to work on next?**
+ 1. Prepare for the demo and presentation of the game
+ 
+ * **What tasks are blocked waiting on another team member?**
+   - None
