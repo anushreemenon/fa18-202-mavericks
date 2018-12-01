@@ -63,6 +63,10 @@ public class LifeCounter extends Actor
         }
     }
 
+    public void resetLifeCounter() {
+        livesLeft = DEFAULT_LIVES;
+    }
+
     
     
 }

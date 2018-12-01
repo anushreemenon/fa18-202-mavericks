@@ -65,5 +65,9 @@ public class CoinBoard extends Actor
         return totalCount;
     } 
     
+    public void resetCoinBoard() {
+        coinCount = 0;
+        totalCount = 0;
+    }
 
 }

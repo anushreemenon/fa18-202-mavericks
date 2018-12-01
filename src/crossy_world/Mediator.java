@@ -66,7 +66,7 @@ public class Mediator extends Actor implements IMediator
         msg = msg + " Complete";
         ScoreBoard s = new ScoreBoard (CoinBoard.getInstance().getCoinCount() , msg, "Score: ");
         myworld.addObject (s, myworld.getWidth()/2,myworld.getHeight()/2);
-        Greenfoot.playSound("GameOver.wav");
+        music.playGameOver();
         Greenfoot.delay(250);
     }
 

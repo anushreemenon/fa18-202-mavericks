@@ -11,4 +11,6 @@ comment4.params=
 comment4.target=void\ drawLifeCounter()
 comment5.params=
 comment5.target=void\ powerUp()
-numComments=6
+comment6.params=
+comment6.target=void\ resetLifeCounter()
+numComments=7

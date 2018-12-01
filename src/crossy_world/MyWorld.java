@@ -40,6 +40,8 @@ public class MyWorld extends greenfoot.World
         levelBoardDecorator = new LevelBoardDecorator((ILevelBoardDecorator) levelBoard);
         coinBoard = CoinBoard.getInstance();
         lifeCounter = LifeCounter.getInstance ();
+        lifeCounter.resetLifeCounter();
+        coinBoard.resetCoinBoard();
         setPaintOrder(Player.class, ScoreBoard.class, LifeCounter.class, LevelBoardDecorator.class, CoinCounter.class, Coin.class, DisplayMessage.class, Level1Strategy.class);
         currentLevel = new Level1Strategy();
         music = Sound.getInstance();
