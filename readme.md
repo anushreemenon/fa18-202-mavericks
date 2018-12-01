@@ -55,8 +55,20 @@ Vishwanath Manvi <br>
 6. Helped in refactoring code from other modules, testing and fixing issues.
 7. As a champion of XP value <b> "Communication" </b>, I was helping with most of the communications with the team that included setting up meetings, communicating updates over slack and whatsapp, taking notes, etc.
 
-### Sharwari Phadnis
+### Kruti Thukral (012586041)
+1. Implemented Composite Pattern to set up various terrains in the game
+2. Contributed to User stories, Task estimation, Use case specifications
+3. Implement the story of player being able to check his/her lives, coins collected, the current level in order to track his/her progress in the game
+2. Implement the stroy to collect coins to get extra lives
+5. Implemented Mediator Design pattern:
+         - implement object of communication between the actors and the world
+6. Helped in end to end testing, fixing bugs in the code.
+7. Implemention of sound singleton class and taking care of all the sounds in the game
+8. Code Clean up
+9. Score Board pop up when level completes
+10. As a champion of XP value **"Feedback"**, I gave inputs throughout the course of the project to ensure timely deliverable of tasks
 
+### Sharwari Phadnis
 1. Implemented proof of concept for the game. This was aimed to check the possibility of implementing dynamically moving terrains.
 2. Worked on exploring various ideas for Games and finalizing Crossy World for the project.
 3. Created UI mockups for the primary screens in the game to get an initial idea of how the game will look.
