@@ -2,8 +2,15 @@
 
 Crossy World is a new and improved version of classic arcade game - "Frogger". Crossy world is a casual game that provides a seamless experience to the player by having a continous navigation not restricted by a single screen size. The game is more of a marathon rather than sprint. More terrains can be added in future to make it even more interesting.
 
-## Gameplay:
+## Ad video:
+https://youtu.be/EpRtCIgjst0
+
+## Requirements:
+### Gameplay:
 John Doe (Player) has to cross land, road and river by avoid all obstacles in each of the terrains. He has 3 lives to begin with. He can collect coins to increase his score and collecting 5 coins gives him an extra life. He keeps navigating through all the terrains until he reaches the finish line. On reaching the finish line, he moves to the next level. In level 2 and 3, gameplay remains same except the difficulty level increases where number of terrains to cross increases along with the speed of cars and logs. Finishing level 3 completes the game and John wins. Score is equal to the number of coins collected.
+
+### Use cases:
+https://github.com/nguyensjsu/fa18-202-mavericks/blob/master/docs/Use-Case-Specification.pdf
 
 ## Design:
 Game uses Greenfoot game engine. We have implemented entire game from scratch (not picked up any source code from online). We identified and implemented below design patterns.
@@ -15,8 +22,9 @@ Game uses Greenfoot game engine. We have implemented entire game from scratch (n
 5. Mediator  - 
 6. Prototype - To clone objects in the world instead of creating from scratch.
 
-## Ad video:
-https://youtu.be/EpRtCIgjst0
+### UML Diagrams:
+Class Diagram: https://github.com/nguyensjsu/fa18-202-mavericks/blob/master/docs/uml-diagrams/Class%20Diagram.jpg
+Sequence Diagrams: https://github.com/nguyensjsu/fa18-202-mavericks/tree/master/docs/uml-diagrams
 
 
 ## Project Team:
@@ -31,7 +39,7 @@ Vishwanath Manvi <br>
 
 1. Pitched multiple game ideas to be implemented including the game we finalized - Crossy World.
 2. Helped drive requirements discussion and design and user story creation in the initial phase.
-3. Imnplemented 2 feature stories - player crossing river terrains, crashing obstacles
+3. Implemented 2 feature stories - player crossing river terrains, crashing obstacles
 4. Implemented the logic of populating cars and river logs randomly.
 5. Implemented 2 design patterns - 
          i. Strategy pattern for handling the game differently for each level. At each game level, the number of terrains, car and log speed changes. Also, strategy pattern can be extended to load each level differently with other terrains (not implemented currently). 
@@ -51,7 +59,6 @@ Vishwanath Manvi <br>
 6. Helped in end to end testing, fixing bugs in the code.
 7. Created System Sequence Diagrams mentioned in the Use Case Specification Document.
 8. As a champion of XP value **"Courage"**, I helped in taking important decisions and implementation of feature such as changing a static terrain game to dynamically changing terrains. 
-
 
 
 ## GitHub Repo:
