@@ -23,9 +23,9 @@ Game uses Greenfoot game engine. We have implemented entire game from scratch (n
 6. Prototype - To clone objects in the world instead of creating from scratch.
 
 ### UML Diagrams:
-Class overview diagram: https://github.com/nguyensjsu/fa18-202-mavericks/blob/master/docs/uml-diagrams/Class%20Diagram%20(overview).jpg
-Detailed class diagram: https://github.com/nguyensjsu/fa18-202-mavericks/blob/master/docs/uml-diagrams/Class%20Diagram.jpg
-Sequence Diagrams: https://github.com/nguyensjsu/fa18-202-mavericks/tree/master/docs/uml-diagrams
+- Class overview diagram: https://github.com/nguyensjsu/fa18-202-mavericks/blob/master/docs/uml-diagrams/Class%20Diagram%20(overview).jpg <br>
+- Detailed class diagram: https://github.com/nguyensjsu/fa18-202-mavericks/blob/master/docs/uml-diagrams/Class%20Diagram.jpg <br>
+- Sequence Diagrams: https://github.com/nguyensjsu/fa18-202-mavericks/tree/master/docs/uml-diagrams <br>
 
 
 ## Project Team:
