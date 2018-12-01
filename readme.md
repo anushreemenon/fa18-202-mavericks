@@ -22,7 +22,7 @@ Game uses Greenfoot game engine. We have implemented entire game from scratch (n
 2. Strategy  - To set game differently for each level.
 3. Observer  - To notify terrains to stop moving vertically once the player reaches finish line.
 4. Decorator - To add the graphics and UI components to the Level board
-5. Mediator  - 
+5. Mediator  - To implement loose coupling between Actors and the world
 6. Prototype - To clone objects in the world instead of creating from scratch.
 
 ### Mockups:
@@ -35,7 +35,7 @@ https://github.com/nguyensjsu/fa18-202-mavericks/tree/master/mockups
 
 
 ## Project Team:
-Kruti Thukral <br>
+Kruti Thukral  (Student ID:012586041)<br>
 Sharwari Phadnis (Student ID: 012168884)<br>
 Pratik Bhandarkar (Student ID: 013735748) <br>
 Vishwanath Manvi <br>
@@ -55,7 +55,7 @@ Vishwanath Manvi <br>
 6. Helped in refactoring code from other modules, testing and fixing issues.
 7. As a champion of XP value <b> "Communication" </b>, I was helping with most of the communications with the team that included setting up meetings, communicating updates over slack and whatsapp, taking notes, etc.
 
-### Kruti Thukral (012586041)
+### Kruti Thukral
 1. Implemented Composite Pattern to set up various terrains in the game
 2. Contributed to User stories, Task estimation, Use case specifications
 3. Implement the story of player being able to check his/her lives, coins collected, the current level in order to track his/her progress in the game
