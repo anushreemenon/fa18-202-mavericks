@@ -1,5 +1,23 @@
 # Weekly Scrum Report:
 
+## Week 4: 11/25 - 11/30:
+
+### What tasks did I work on / complete?
+1. Implemented Protype pattern for object creation
+2. Fixed issues
+3. Refactored code and images
+4. Assisted team in ad video
+
+### What am I planning to work on next?
+1. Prepare on presentation
+
+### What tasks are blocked waiting on another team member?
+None.
+
+### Communication XP Value:
+1. Setup a peer review meeting for code review and testing and this helped in refactoring.
+2. Setup a brainstorming discussion for ad video campaign and communicated next steps.
+
 ## Week 3: 11/18 - 11/24:
 
 ### What tasks did I work on / complete?
@@ -11,6 +29,9 @@
 1. Fix issues
 2. Implement more design patterns
 3. Prep presentation
+
+### Communication XP Value:
+1. Setup meeting to review progress, work on blockers and communicated action items
 
 ### What tasks are blocked waiting on another team member?
 None.
