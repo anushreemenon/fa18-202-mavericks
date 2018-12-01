@@ -15,17 +15,17 @@ Game uses Greenfoot game engine. We have implemented entire game from scratch (n
 5. Mediator  - 
 6. Prototype - To clone objects in the world instead of creating from scratch.
 
-## Ad Video:
-youtube.com
+## Ad video:
+https://youtu.be/EpRtCIgjst0
 
 
-## The names of each team member:
+## Project Team:
 Kruti Thukral <br>
 Sharwari Phadnis <br>
 Pratik Bhandarkar <br>
 Vishwanath Manvi <br>
 
-## A summary of areas of contributions (for each team member)
+## Key Contributions from team members:
 
 ### Vishwanath Manvi:
 
@@ -43,14 +43,12 @@ Vishwanath Manvi <br>
 
 
 ## GitHub Repo:
-
 https://github.com/nguyensjsu/fa18-202-mavericks/
 
 ## Project Task Board:
 https://github.com/nguyensjsu/fa18-202-mavericks/projects/1
 
-## Project Journals:
-
+## Individual journals:
 https://github.com/nguyensjsu/fa18-202-mavericks/blob/master/kruti.thukral-journal.md
 https://github.com/nguyensjsu/fa18-202-mavericks/blob/master/sharwari-phadnis-journal.md
 https://github.com/nguyensjsu/fa18-202-mavericks/blob/master/pratik.bhandarkar-journal.md
@@ -59,7 +57,5 @@ https://github.com/nguyensjsu/fa18-202-mavericks/blob/master/vishwanath.manvi-jo
 ## Sprint Task Sheet:
 https://docs.google.com/spreadsheets/u/1/d/1dMe1_Ixf5i2VE0_i3Y-k3izS20wZZ5Eb07uHHIjhDTg/edit#gid=0
 
-## Game Ad Video:
-https://youtu.be/EpRtCIgjst0
 
 
