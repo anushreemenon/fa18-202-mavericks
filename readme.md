@@ -40,6 +40,18 @@ Vishwanath Manvi <br>
 6. Helped in refactoring code from other modules, testing and fixing issues.
 7. As a champion of XP value <b> "Communication" </b>, I was helping with most of the communications with the team that included setting up meetings, communicating updates over slack and whatsapp, taking notes, etc.
 
+### Sharwari Phadnis
+
+1. Implemented proof of concept for the game. This was aimed to check the possibility of implementing dynamically moving terrains.
+2. Created UI mockups for the primary screens in the game.
+3. Implemented finish line feature.
+4. Implemented navigation(up/down/left/right) of the the main Player.
+5. Implemented Observer Design pattern:
+         - Observer Design Pattern helped in notifying all the Terrains such as Roads, River, Land to stop moving vertically once the Player reaches the finish line. This helped in eliminating the singleton class and to scale the same code to all the Levels.
+6. Helped in end to end testing, fixing bugs in the code.
+7. Created System Sequence Diagrams mentioned in the Use Case Specification Document.
+8. As a champion of XP value **"Courage"**, I helped in taking important decisions and implementation of feature such as changing a static terrain game to dynamically changing terrains. 
+
 
 
 ## GitHub Repo:
