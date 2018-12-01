@@ -5,7 +5,18 @@ Crossy World is a new and improved version of classic arcade game - "Frogger". W
 ## Gameplay:
 John Doe (Player) has to cross land, road and river by avoid all obstacles in each of the terrains. He has 3 lives to begin with. He can collect coins to increase his score and collecting 5 coins gives him an extra life. He keeps navigating through all the terrains until he reaches the finish line. On reaching the finish line, he moves to the next level. In level 2 and 3, gameplay remains same except the difficulty level increases where number of terrains to cross increases along with the speed of cars and logs. Finishing level 3 completes the game and John wins. Score is equal to the number of coins collected.
 
+## Design:
+Game uses Greenfoot game engine. We have implemented entire game from scratch (not picked up any source code from online). We identified and implemented below design patterns.
+
+1. Composite - For composing all objects in various terrains like Road, River, Land.
+2. Strategy  - To set game differently for each level.
+3. Observer  - 
+4. Decorator - To show levelboard graphically
+5. Mediator  - 
+6. Prototype - To clone objects in the world instead of creating from scratch.
+
 ## Ad Video:
+youtube.com
 
 
 ## The names of each team member:
