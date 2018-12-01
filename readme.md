@@ -60,6 +60,19 @@ Vishwanath Manvi <br>
 7. Created System Sequence Diagrams mentioned in the Use Case Specification Document.
 8. As a champion of XP value **"Courage"**, I helped in taking important decisions and implementation of feature such as changing a static terrain game to dynamically changing terrains. 
 
+### Pratik Bhandarkar:
+    1. suggested several game development ideas for this project and participated in the brainstorming meeting to finalize the idea to be developed
+    2. Developed a comprehensive use-case diagram that consists of all the user-stories handled in the game
+    3. Created and maintained class diagram of all the major classes in the game
+    4. Coded the land terrain for the game and added more trees and rocks to it. Wired it with rest of the game.
+    5. Added the obstacle detection logic for the player. If there is a tree or a rock in its way, the player cannot move in that direction. This forces the user to move the player to move the player in some other direction.
+    6. Wrote a logic to gradually move the player along with the moving terrain towards the lowermost edge of the world. This adds a challenge because the game-user cannot keep the player standing forever at one place.
+    7. Added a "decorator pattern" for the "level counter board". The LevelBoard class returns a simple string with current level number (such as "Level 2") and the LevelBoardDecorator class decorates this string with UI components and displays it on the lower-left order of the screen.
+    8. Designed and coded the start up screen for the game. Introduced the switching of the StarScreen to MyWorld when the "Play" button is clicked
+    9. Added code to handle exceptions that may be thrown while playing a game-sound
+    10. Helped creating an "ad video" for the game
+    11. As an advocate of "Simplicity" property of XP, made suggestions to maintain readability of the code and clarity of design. Refactord the code of creating new objects and adding the to current World in Level1Strategy class. This helped in adding new functionalities and strategies during further development
+
 
 ## GitHub Repo:
 https://github.com/nguyensjsu/fa18-202-mavericks/
