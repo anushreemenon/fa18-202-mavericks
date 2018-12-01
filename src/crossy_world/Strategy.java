@@ -364,7 +364,7 @@ public class Strategy extends Actor implements LevelStrategy {
         // F. Create the Player and it to appropriate coordinatesin the world
         p = new Player();
         p.attachObserver(myWorld);
-        p.getImage().scale(70,70);
+        p.getImage().scale(60,60);
         myWorld.addObject( p, 600, 650);
     }
     public void attachRedCars(Car car){
