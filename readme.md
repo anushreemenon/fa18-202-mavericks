@@ -61,7 +61,7 @@ Vishwanath Manvi <br>
 7. Helped in end to end testing, fixing bugs in the code.
 8. Created System Sequence Diagrams mentioned in the Use Case Specification Document.
 9. Developed an **Ad Video** for the game.
-10. As a champion of XP value **"Courage"**, I helped in taking important decisions and implementation of feature such as changing a static terrain game to dynamically changing terrains. 
+10. As a champion of XP value **"Courage"**, I helped in taking important decisions related to the critical and challenging Game Features such as changing a static terrain game to dynamically changing terrains. 
 
 ### Pratik Bhandarkar:
 1. suggested several game development ideas for this project and participated in the brainstorming meeting to finalize the idea to be developed
