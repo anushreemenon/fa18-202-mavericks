@@ -52,14 +52,16 @@ Vishwanath Manvi <br>
 ### Sharwari Phadnis
 
 1. Implemented proof of concept for the game. This was aimed to check the possibility of implementing dynamically moving terrains.
-2. Created UI mockups for the primary screens in the game.
-3. Implemented finish line feature.
-4. Implemented navigation(up/down/left/right) of the the main Player.
-5. Implemented Observer Design pattern:
+2. Worked on exploring various ideas for Games and finalizing Crossy World for the project.
+3. Created UI mockups for the primary screens in the game to get an initial idea of how the game will look.
+4. Implemented code for **_Finish line_** feature.
+5. Implemented navigation(up/down/left/right) of the the main Player.
+6. Implemented **Observer Design pattern**:
          - Observer Design Pattern helped in notifying all the Terrains such as Roads, River, Land to stop moving vertically once the Player reaches the finish line. This helped in eliminating the singleton class and to scale the same code to all the Levels.
-6. Helped in end to end testing, fixing bugs in the code.
-7. Created System Sequence Diagrams mentioned in the Use Case Specification Document.
-8. As a champion of XP value **"Courage"**, I helped in taking important decisions and implementation of feature such as changing a static terrain game to dynamically changing terrains. 
+7. Helped in end to end testing, fixing bugs in the code.
+8. Created System Sequence Diagrams mentioned in the Use Case Specification Document.
+9. Developed an **Ad Video** for the game.
+10. As a champion of XP value **"Courage"**, I helped in taking important decisions and implementation of feature such as changing a static terrain game to dynamically changing terrains. 
 
 ### Pratik Bhandarkar:
 1. suggested several game development ideas for this project and participated in the brainstorming meeting to finalize the idea to be developed
