@@ -1,6 +1,6 @@
 # Game: Crossy World
 
-Crossy World is a new and improved version of classic arcade game - "Frogger". Crossy world is a casual game that provides a seamless experience to the player by having a continous navigation not restricted by a single screen size. The game is more of a marathon rather than sprint. More terrains can be added in future to make it even more interesting.
+Crossy World is a new and improved version of classic arcade game - "Frogger". Crossy world is a casual game of crossing different terrains by avoiding obstacles to get golden coins. It provides a seamless gaming experience by having continous navigation not restricted by a single screen size like frogger. The game is more of a marathon rather than sprint. More terrains can be added in future to make it even more interesting.
 
 ## Ad video:
 https://youtu.be/EpRtCIgjst0
