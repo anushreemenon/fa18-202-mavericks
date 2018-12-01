@@ -43,7 +43,7 @@ What tasks did I work on / complete?
 - Implemented finish line feature.
 - Refactored Level1Strategy code.
 - Eliminated blank terrains visibility in the game.
-- Fixed minor bugs.
+- Fixed bugs.
 
 
 
@@ -58,15 +58,18 @@ No blocking items, so far.
 
 Week 4: (11/22 to 11/30)
 What tasks did I work on / complete?
+- Worked on System Sequence Diagrams for Use Case Specifications of the game.
 - Implemented Observer Pattern for notifying the Actors such as Logs, Cars, Coins and Target about the finish line.
 - Improved finish line experience.
 - Worked on finalizing Player's avatar.
-- Fixed minor bugs.
-- Tested end to end game functionaity by corssing all the 3 levels.
+- Fixed bugs.
+- Tested end to end game functionality by crossing all the 3 levels.
+- Created Ad video for the game.
+
 
 What am I planning to work on next?<br>
-Working on polishing the game and making video for the game.
+All tasks completed
 
 What tasks are blocked waiting on another team member?
 
-No blocking items, so far.
+No blocking items.
