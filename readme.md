@@ -12,8 +12,6 @@ John Doe (Player) has to cross land, road and river by avoid all obstacles in ea
 ### Use cases:
 https://github.com/nguyensjsu/fa18-202-mavericks/blob/master/docs/Use-Case-Specification.pdf
 
-### Mockups:
-https://github.com/nguyensjsu/fa18-202-mavericks/tree/master/mockups
 
 ## Design:
 Game uses Greenfoot game engine. We have implemented entire game from scratch (not picked up any source code from online). We identified and implemented below design patterns.
@@ -24,6 +22,9 @@ Game uses Greenfoot game engine. We have implemented entire game from scratch (n
 4. Decorator - To add the graphics and UI components to the Level board
 5. Mediator  - 
 6. Prototype - To clone objects in the world instead of creating from scratch.
+
+### Mockups:
+https://github.com/nguyensjsu/fa18-202-mavericks/tree/master/mockups
 
 ### UML Diagrams:
 - Class overview diagram: https://github.com/nguyensjsu/fa18-202-mavericks/blob/master/docs/uml-diagrams/Class%20Diagram%20(overview).jpg <br>
