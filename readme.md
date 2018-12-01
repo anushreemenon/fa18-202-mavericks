@@ -1,6 +1,6 @@
 # Game: Crossy World
 
-Crossy World is a new and improved version of classic arcade game - "Frogger". We have greatly improved the game by providing a continous navigation where player keeps crossing multiple terrains till he reaches the finish line. 
+Crossy World is a new and improved version of classic arcade game - "Frogger". Crossy world is a casual game that provides a seamless experience to the player by having a continous navigation not restricted by a single screen size. The game is more of a marathon rather than sprint. More terrains can be added in future to make it even more interesting.
 
 ## Gameplay:
 John Doe (Player) has to cross land, road and river by avoid all obstacles in each of the terrains. He has 3 lives to begin with. He can collect coins to increase his score and collecting 5 coins gives him an extra life. He keeps navigating through all the terrains until he reaches the finish line. On reaching the finish line, he moves to the next level. In level 2 and 3, gameplay remains same except the difficulty level increases where number of terrains to cross increases along with the speed of cars and logs. Finishing level 3 completes the game and John wins. Score is equal to the number of coins collected.
