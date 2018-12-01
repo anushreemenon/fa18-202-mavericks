@@ -18,12 +18,13 @@ Game uses Greenfoot game engine. We have implemented entire game from scratch (n
 1. Composite - For composing all objects in various terrains like Road, River, Land.
 2. Strategy  - To set game differently for each level.
 3. Observer  - To notify terrains to stop moving vertically once the player reaches finish line.
-4. Decorator - To show levelboard graphically
+4. Decorator - To add the graphics and UI components to the Level board
 5. Mediator  - 
 6. Prototype - To clone objects in the world instead of creating from scratch.
 
 ### UML Diagrams:
-Class Diagram: https://github.com/nguyensjsu/fa18-202-mavericks/blob/master/docs/uml-diagrams/Class%20Diagram.jpg
+Class overview diagram: https://github.com/nguyensjsu/fa18-202-mavericks/blob/master/docs/uml-diagrams/Class%20Diagram%20(overview).jpg
+Detailed class diagram: https://github.com/nguyensjsu/fa18-202-mavericks/blob/master/docs/uml-diagrams/Class%20Diagram.jpg
 Sequence Diagrams: https://github.com/nguyensjsu/fa18-202-mavericks/tree/master/docs/uml-diagrams
 
 
@@ -70,8 +71,8 @@ Vishwanath Manvi <br>
     7. Added a "decorator pattern" for the "level counter board". The LevelBoard class returns a simple string with current level number (such as "Level 2") and the LevelBoardDecorator class decorates this string with UI components and displays it on the lower-left order of the screen.
     8. Designed and coded the start up screen for the game. Introduced the switching of the StarScreen to MyWorld when the "Play" button is clicked
     9. Added code to handle exceptions that may be thrown while playing a game-sound
-    10. Helped creating an "ad video" for the game
-    11. As an advocate of "Simplicity" property of XP, made suggestions to maintain readability of the code and clarity of design. Refactord the code of creating new objects and adding the to current World in Level1Strategy class. This helped in adding new functionalities and strategies during further development
+    10. Helped creating an "**ad video**" for the game
+    11. As an advocate of "**Simplicity**" property of XP, made suggestions to maintain readability of the code and clarity of design. Refactord the code of creating new objects and adding the to current World in Level1Strategy class. This helped in adding new functionalities and strategies during further development
 
 
 ## GitHub Repo:
