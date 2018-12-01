@@ -10,7 +10,7 @@ Game uses Greenfoot game engine. We have implemented entire game from scratch (n
 
 1. Composite - For composing all objects in various terrains like Road, River, Land.
 2. Strategy  - To set game differently for each level.
-3. Observer  - 
+3. Observer  - To notify terrains to stop moving vertically once the player reaches finish line.
 4. Decorator - To show levelboard graphically
 5. Mediator  - 
 6. Prototype - To clone objects in the world instead of creating from scratch.
